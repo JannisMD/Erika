@@ -1,0 +1,19 @@
+language: node_js
+node_js: '4.0'
+
+sudo: false
+
+addons:
+  firefox: "latest-esr"
+
+before_script:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - sleep 3
+
+script:
+  - TEST_BROWSERS=Firefox,PhantomJS npm run all
+
+before_install:
+  - npm install -g grunt-cli wiredeps
+  - wiredeps --branch=$TRAVIS_BRANCH --tag=$TRAVIS_TAG --verbose

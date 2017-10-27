@@ -1,0 +1,17 @@
+{
+  "name": "loot_server",
+  "version": "1.0.0",
+  "description": "HS Mannheim Unternehmensinformatik Projekt Gruppe Hangmen ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jannis Mücke, Sefa Kaya, Yves Lehmann, Kevin Sächerl, Marco Wünschel",
+  "license": "ISC",
+  "dependencies": {
+    "bpmn-js": "^0.22.1",
+    "express": "^4.15.3",
+    "socket.io": "^2.0.3"
+  }
+
+}
