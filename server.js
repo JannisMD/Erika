@@ -23,7 +23,7 @@ var connection = mysql.createConnection({
   database: 'hangmen',
   connectionTimeout: 30000
 });
-
+///test für git
 connection.connect(function(error){
   //Callback Funktion
   if(error){
