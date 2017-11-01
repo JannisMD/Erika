@@ -1706,7 +1706,7 @@
 			color: #ffffff !important;
 		}
 
-		a.special:not(.button) {
+		a.special:not(.f) {
 			text-decoration: none;
 			border-bottom: 0;
 			display: block;
@@ -3984,4 +3984,36 @@ iframe {
   opacity: 1;
   right: 0;
 
+}
+
+
+
+
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 0px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 400px;
+    background-color: none;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 10%;
+    left: 150%;
+    margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
