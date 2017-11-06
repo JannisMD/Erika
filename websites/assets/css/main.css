@@ -3987,10 +3987,7 @@ iframe {
 }
 
 
-
-
-
-
+/* Textnachricht im Menüseite */
 .tooltip {
     position: relative;
     display: inline-block;
@@ -3999,10 +3996,10 @@ iframe {
 
 .tooltip .tooltiptext {
     visibility: hidden;
-    width: 400px;
+    width: 650px;
     background-color: none;
     color: #fff;
-    text-align: center;
+    text-align: left;
     border-radius: 6px;
     padding: 5px 0;
 
@@ -4017,6 +4014,7 @@ iframe {
 .tooltip:hover .tooltiptext {
     visibility: visible;
 }
+
 
 /* Timer */
 #demo {

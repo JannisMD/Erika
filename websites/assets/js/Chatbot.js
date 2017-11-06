@@ -17,7 +17,7 @@ o.write('<body onload="document._l();">'),o.close();
 // Chatbot wird automatisch ausgeführt
 window.dexterSettings = {
     onLoad: function (api) {
-      setTimeout(function(){api.open()}, 4000);
+      setTimeout(function(){api.open()}, 5000);
       api.replyTo("hallo");
     }
   }
