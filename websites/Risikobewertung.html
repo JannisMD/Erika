@@ -45,9 +45,11 @@
 							<div class="inner">
 								<h2>Risikobewertung</h2>
                                 <p>Wählen Sie das passende Standard Geschäftsprozess</p>
+                                <!-- BPMN Prozess -->
+                                <div id="canvas" style="height: 400px"></div>
+																<div id="canvas2" style="height: 400px"></div>
                             </div>
                         </header>
-
 			</div>
 
 		<!-- Scripts -->
@@ -57,6 +59,14 @@
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
+			<!--REIN MACHEN WENN VIEWER GEBRAUCHT WIRD -->
+			<script src="bower_components/bpmn-js/dist/bpmn-viewer.js"></script>
+			<!-- REIN MACHEN WENN MODELAR GEBRAUCHT WIRD -->
+			<link rel="stylesheet" href="bower_components/bpmn-js/dist/assets/diagram-js.css" />
+			<link rel="stylesheet" href="bower_components/bpmn-js/dist/assets/bpmn-font/css/bpmn-embedded.css" />
+			<script src="bower_components/bpmn-js/dist/bpmn-modeler.js"></script>
+			<!--REIN MACHEN DAMIT JS DAVON GELADEN WIRD -->
+			<script src="assets/js/bedrohungenUndRisiken.js"></script>
 
 	</body>
 </html>

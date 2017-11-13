@@ -16,6 +16,7 @@ viewer.importXML(diagramXML, function(err) {
   }
 });*/
 
+
 'use strict';
 var BpmnViewer = window.BpmnJS;
 var viewer = new BpmnViewer({ container: '#canvas'});
