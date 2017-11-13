@@ -22,10 +22,11 @@ var BpmnViewer = window.BpmnJS;
 var viewer = new BpmnViewer({ container: '#canvas'});
 
 var xhr = new XMLHttpRequest();
-
+var dieXml;
 xhr.onreadystatechange = function(){
   if(xhr.readyState === 4){
     viewer.importXML(xhr.response, function(err){
+      dieXml = xhr.response;
       if(!err){
         console.log('Erfolg!');
         viewer.get('canvas').zoom('fit-viewport');
@@ -36,5 +37,29 @@ xhr.onreadystatechange = function(){
   }
 };
 
-xhr.open('GET','/Einkaufmuster1.bpmn', true);
+xhr.open('GET','/diagram.bpmn', true);
 xhr.send(null);
+
+function getLayers(){
+  var overlays = viewer.get('overlays');
+  var overlayHtml = $('<div><img src="images/ElectricDangerKlein.png" alt="" /></div>');
+
+  overlayHtml.click(function(e) {
+    //Hier muss eigentlich dann ein server aufruf rein der abfragt welche Bedrohungen auf die Task zutreffen. Server startet dann sql abfrage und schickt ergebnis zurück
+    alert('Hier Besteht das Risiko das Marco sich mal wieder grundlos gesäuft und alte Damen schlägt. Aber das sind wir ja gewöhnt');
+  });
+  //HIER MUSS NOCH DER CODE REIN WANN AN WELCHES TASK EIN DREIECK RAN MUSS
+  //UND UNTEN FOLGT DANN DIE ÜBERGABE: AM BESTEN WÄREN VORGEFERTIGTE TASKS:
+  //////////////////////////////////////////////////////////////////////////
+
+
+  ///////////////////////////////////////////////////////////////////////////
+  // attach the overlayHtml to a node
+  overlays.add('StartEvent_1', {
+    position: {
+      bottom: 0,
+      right: 0
+    },
+    html: overlayHtml
+  });
+}
