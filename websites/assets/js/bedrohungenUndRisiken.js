@@ -55,10 +55,12 @@ function getLayers(){
 
   ///////////////////////////////////////////////////////////////////////////
   // attach the overlayHtml to a node
-  overlays.add('StartEvent_1', {
+  overlays.add('Task_0kq4444', {
     position: {
-      bottom: 0,
-      right: 0
+      bottom: 50,
+      right: 45,
+
+
     },
     html: overlayHtml
   });
