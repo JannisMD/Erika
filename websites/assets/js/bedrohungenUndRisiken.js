@@ -16,7 +16,6 @@ viewer.importXML(diagramXML, function(err) {
   }
 });*/
 
-
 'use strict';
 var BpmnViewer = window.BpmnJS;
 var viewer = new BpmnViewer({ container: '#canvas'});
@@ -36,6 +35,7 @@ xhr.onreadystatechange = function(){
     });
   }
 };
+
 
 xhr.open('GET','/diagram.bpmn', true);
 xhr.send(null);
@@ -65,3 +65,10 @@ function getLayers(){
     html: overlayHtml
   });
 }
+
+// Arbeitsabläufe können durch Button geöffnet werden
+$(document).ready(function(){
+  $("#show").click(function(){
+      $("#canvas").toggle(1000);
+  });
+  });

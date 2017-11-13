@@ -11,6 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
+
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
@@ -46,11 +47,13 @@
 							<div class="inner">
 								<h2>Bedrohungen und Risiken</h2>
                 <p>Hier sehen Sie die aktuellen Bedrohungen und Risiken in der IT-Sicherheitsbranche</p>
+								<!-- Arbeitsabläufe -->
+								<button type="button" id="show" class="btn btn-primary btn-lg" style="width: auto">Standard Arbeitsablauf 1</button><br>
 								<div id="canvas" style="height: 400px; color: black;"></div>
 								<button type="button" onclick="getLayers()" class="btn btn-primary btn-lg" style="width: auto">Arbeitsablauf analysieren</button>
 								<button type="button" class="btn btn-primary btn-lg" style="width: auto">Arbeitsablauf speichern</button>
-                            </div>
-                        </header>
+                    </div>
+                  </header>
 
 								<!--button type="button" name="button" onclick="getLayers()">Bedrohungen anzeigen</button-->
 
@@ -72,6 +75,7 @@
 			<script src="bower_components/bpmn-js/dist/bpmn-modeler.js"></script>
 			<!--REIN MACHEN DAMIT JS DAVON GELADEN WIRD -->
 			<script src="assets/js/bedrohungenUndRisiken.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 
 	</body>
 </html>
