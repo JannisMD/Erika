@@ -82,8 +82,8 @@ function getLayers(){
                   // attach the overlayHtml to a node
                   overlays.add(dreieckSetzen, {
                     position: {
-                      bottom: 50,
-                      right: 45,
+                      bottom: 25,
+                      right: 25,
                     },
                     html: overlayHtml
 
