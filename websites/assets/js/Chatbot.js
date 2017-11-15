@@ -1,5 +1,5 @@
 
-// BOT
+// BOT 
 var i=document.createElement('iframe');
 i.style.width=0;
 i.style.height=0;
@@ -15,9 +15,9 @@ o.open()._l=function(){
 o.write('<body onload="document._l();">'),o.close();
 
 // Chatbot wird automatisch ausgeführt
-window.dexterSettings = {
+/*window.dexterSettings = {
     onLoad: function (api) {
       setTimeout(function(){api.open()}, 5000);
       api.replyTo("hallo");
     }
-  }
+  }*/
