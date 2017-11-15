@@ -27,6 +27,7 @@ var dreieckSetzen;
 
 function getLayers(){
 
+
   //HIER WIRD DIE XML AUSGEWERTET UND GESCHAUT WELCHE TASK HABE ICH & FÜR WELCHE BRAUCHE ICH EIN DREIECK
   //////////////////////////////////////////////////////////////////////////////////////////////////////
   //DA WIR LEIDER DIE XML ALS STRING ABGESPEICHERT HABEN BRAUCHE ICH EINEN PARSER
