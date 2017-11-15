@@ -153,7 +153,7 @@ function getLayers(){
 //HIER WIRD NACH DEM MODDELLIEREN DES BENUTZERS DIE FERTIGE XML DATEI GESPEICHERT
 //Die Datei mit dem aktuellen Diagramm
 var fertigeXmlDatei;
-//////////////////////////////////////
+///////////////////////////////////////
 function saveXML(){
   viewer.moddle.toXML(viewer.definitions, {format: true},function (err,updatedXML){
     fertigeXmlDatei = updatedXML;
