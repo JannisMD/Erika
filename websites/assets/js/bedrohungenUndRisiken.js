@@ -1,3 +1,5 @@
+
+
 'use strict';
 var BpmnViewer = window.BpmnJS;
 var viewer = new BpmnViewer({ container: '#canvas'});
@@ -90,6 +92,7 @@ function getLayers(){
 
                   });
 
+
                   //um zu wissen welche stelle wir gerade sind definieren wir eine variable die anzeigt welche Stelle
                   var welcheStelle = k;
                   //Hier werden die variablen gesetzt und mit den Datenbankeinträgen befüllt
@@ -114,14 +117,19 @@ function getLayers(){
                   console.log(maßnahmen);
                   console.log(akteure);
                   var index = 0;
+
+
+
+
                   // Hier werden die ganzen Informationen als Pop-up Fesnter angezeigt
-                  alert('Arbeitsschritt:'+' ' + tagElements[j].getAttribute('name') + '\n' +
+                  /*alert('Arbeitsschritt:'+' ' + tagElements[j].getAttribute('name') + '\n' +
                         'Bedrohungen:'+' '+ bedrohungen+ '\n' +
                         'Beschreibung:'+' '+ bedrohungenBeschreibung + '\n' +
                         'Risiken:'+' '+ risiken + '\n' +
                         'Beschreibung:'+' '+ risikenBeschreibung + '\n' +
                         'Maßnahmen:'+' '+ maßnahmen + '\n' +
-                        'Akteure:'+' '+ akteure);
+                        'Akteure:'+' '+ akteure);*/
+
 
 
 
@@ -170,3 +178,5 @@ $(document).ready(function(){
       $("#canvas").toggle(1000);
   });
   });
+
+// SweetAlert...Bedrohungen werden angezeigt (alternative für alert)

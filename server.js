@@ -9,6 +9,7 @@ var server = app.listen(3000,function(){
 });
 app.use(express.static('websites'));
 
+
 //@author Jannis Mücke,
 //Hochschule Mannheim, Unternehmensinformatik Projekt
 var formidable = require('express-formidable');
