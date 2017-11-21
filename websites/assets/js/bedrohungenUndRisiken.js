@@ -1,5 +1,3 @@
-
-
 'use strict';
 var BpmnViewer = window.BpmnJS;
 var viewer = new BpmnViewer({ container: '#canvas'});
@@ -28,7 +26,7 @@ xhr.send(null);
 var dreieckSetzen;
 
 function getLayers(){
-
+  saveXML();
 
   //HIER WIRD DIE XML AUSGEWERTET UND GESCHAUT WELCHE TASK HABE ICH & FÜR WELCHE BRAUCHE ICH EIN DREIECK
   //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -136,15 +134,20 @@ function getLayers(){
                   }
                   //launch it.
                   // since this was transient, we can launch another instance at the same time.
-                  alertify
-                      .errorAlert('< div style="text-align= center"> Arbeitsschritt: ' + ' ' + '<b style="color: black">' + tagElements[j].getAttribute('name') + '</b>' + '</div>' +  '<br/><br/>' +
+                  alertify.errorAlert('Arbeitsschritt: ' + ' ' + '<b style="color: black">' + tagElements[j].getAttribute('name') + '</b>' + '</div>' +  '<br/><br/>' +
                           "Bedrohung: " + bedrohungen + '<br/>' +
                           "Bedrohungs-Beschreibung: " + bedrohungenBeschreibung + '<br/>' +
                           "Risiken: " + risiken + '<br/>' +
                           "Risiken-Beschreibung: " + risikenBeschreibung + '<br/>' +
                           "Maßnahmen: " + maßnahmen + '<br/>' +
                           "Akteure: " + akteure);
-                          //"<a href='javascript:alertify.errorAlert(\"Another error\");'> Click here </a>");
+
+
+
+
+
+
+                        //  "<a href='javascript:alertify.errorAlert(\"Another error\");'> Click here </a>");
 
 
 
@@ -199,6 +202,7 @@ function saveXML(){
   viewer.moddle.toXML(viewer.definitions, {format: true},function (err,updatedXML){
     fertigeXmlDatei = updatedXML;
     console.log(fertigeXmlDatei);
+    alertify.success('Areitsablauf erfolgreich gespeichert');
 
   });
 }
@@ -211,4 +215,14 @@ $(document).ready(function(){
   });
   });
 
-// SweetAlert...Bedrohungen werden angezeigt (alternative für alert)
+  $(document).ready(function(){
+    $("#show2").click(function(){
+        $("#canvas2").toggle(1000);
+    });
+    });
+
+    $(document).ready(function(){
+      $("#show3").click(function(){
+          $("#canvas3").toggle(1000);
+      });
+      });
