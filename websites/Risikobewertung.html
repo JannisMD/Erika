@@ -14,8 +14,8 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 
-		<!-- SweetAlert wird importiert -->
-		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<!-- SweetAlert wird importiert >
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script-->
 	</head>
 	<body>
 
@@ -53,7 +53,9 @@
 																<div id="canvas" style="height: 400px; color: black;"></div>
 																<button type="button" onclick="getLayers()"  class="btn btn-primary btn-lg" style="width: auto">Arbeitsablauf analysieren</button>
 																<button type="button" class="btn btn-primary btn-lg" onclick="saveXML()" style="width: auto">Arbeitsablauf speichern</button>
-                            </div>
+																<button type="button" name="button" onclick="aufrufen()"></button>
+
+													  	</div>
                         </header>
 			</div>
 
@@ -73,7 +75,22 @@
 			<script src="bower_components/bpmn-js/dist/bpmn-modeler.js"></script>
 			<!--REIN MACHEN DAMIT JS DAVON GELADEN WIRD -->
 			<script src="assets/js/bedrohungenUndRisiken.js"></script>
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+			<!--<script src="node_modules/alertifyjs/build/css/alertify.min.css"></script>
+			<script src="node_modules/alertifyjs/build/css/themes/default.min.css"></script>
+			<script src="node_modules/alertifyjs/build/alertify.min.js"></script>-->
+			<!-- JavaScript -->
+<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/alertify.min.js"></script>
+
+<!-- CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/css/alertify.min.css"/>
+<!-- Default theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/css/themes/default.min.css"/>
+<!-- Semantic UI theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/css/themes/semantic.min.css"/>
+<!-- Bootstrap theme -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/css/themes/bootstrap.min.css"/>
 
 	</body>
 </html>
