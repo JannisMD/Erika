@@ -11,15 +11,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<!-- CSS Einstellungen für Pop-up Fenster -->
-		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/css/alertify.min.css"/>
-		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/css/themes/default.min.css"/>
-		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/css/themes/semantic.min.css"/>
-		<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/css/themes/bootstrap.min.css"/>
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!-- Pop-up Fenster für Bedrohungen und Risiken -->
-		<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/alertify.min.js"></script>
+		<!-- REIN MACHEN WENN MODELAR GEBRAUCHT WIRD -->
+		<link rel="stylesheet" href="bower_components/bpmn-js/dist/assets/diagram-js.css" />
+		<link rel="stylesheet" href="bower_components/bpmn-js/dist/assets/bpmn-font/css/bpmn-embedded.css" />
+		<!-- include the style -->
+		<link rel="stylesheet" href="bower_components/alertify-js/build/css/alertify.min.css" />
+		<!-- include a theme -->
+		<link rel="stylesheet" href="../bower_components/alertify-js/build/css/themes/default.min.css" />
+
 
 	</head>
 	<body>
@@ -81,20 +82,12 @@
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 			<!--REIN MACHEN WENN VIEWER GEBRAUCHT WIRD -->
-			<script src="bower_components/bpmn-js/dist/bpmn-viewer.js"></script>
-			<!-- REIN MACHEN WENN MODELAR GEBRAUCHT WIRD -->
-			<link rel="stylesheet" href="bower_components/bpmn-js/dist/assets/diagram-js.css" />
-			<link rel="stylesheet" href="bower_components/bpmn-js/dist/assets/bpmn-font/css/bpmn-embedded.css" />
-			<script src="bower_components/bpmn-js/dist/bpmn-modeler.js"></script>
+			<script src="./../bower_components/bpmn-js/dist/bpmn-viewer.js"></script>
+			<script src="./../bower_components/bpmn-js/dist/bpmn-modeler.js"></script>
 			<!--REIN MACHEN DAMIT JS DAVON GELADEN WIRD -->
 			<script src="assets/js/bedrohungenUndRisiken.js"></script>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
-
-			<!--<script src="node_modules/alertifyjs/build/css/alertify.min.css"></script>
-			<script src="node_modules/alertifyjs/build/css/themes/default.min.css"></script>
-			<script src="node_modules/alertifyjs/build/alertify.min.js"></script>-->
-
+			<script src="./../bower_components/alertify-js/build/alertify.min.js"></script>
 
 	</body>
 </html>

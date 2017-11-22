@@ -1,3 +1,4 @@
+
 'use strict';
 var BpmnViewer = window.BpmnJS;
 var viewer = new BpmnViewer({ container: '#canvas'});
@@ -116,10 +117,9 @@ function getLayers(){
                   console.log(akteure);
                   var index = 0;
 
-
-
-                  // Extend existing 'alert' dialog
-                /*  if(!alertify.errorAlert){
+                  // Pop-up Fenster.
+                  //Bedrohungen und Risiken werden durch Pop-up Fenster angezeigt.
+                  if(!alertify.errorAlert){
                     //define a new errorAlert base on alert
                     alertify.dialog('errorAlert',function factory(){
                       return{
@@ -133,50 +133,15 @@ function getLayers(){
                       },true,'alert');
 
                   }
-                  //launch it.
-                  // since this was transient, we can launch another instance at the same time.
+
                   alertify.errorAlert('Arbeitsschritt: ' + ' ' + '<b style="color: black">' + tagElements[j].getAttribute('name') + '</b>' + '</div>' +  '<br/><br/>' +
                           "Bedrohung: " + bedrohungen + '<br/>' +
                           "Bedrohungs-Beschreibung: " + bedrohungenBeschreibung + '<br/>' +
                           "Risiken: " + risiken + '<br/>' +
                           "Risiken-Beschreibung: " + risikenBeschreibung + '<br/>' +
                           "Maßnahmen: " + maßnahmen + '<br/>' +
-                          "Akteure: " + akteure);*/
-
-
-                        //  "<a href='javascript:alertify.errorAlert(\"Another error\");'> Click here </a>");
-
-
-                  bootbox.alert("This is the default alert!");
-
-
-
-
-
-
-
-                  // Hier werden die ganzen Informationen als Pop-up Fesnter angezeigt
-                  /*alert('Arbeitsschritt:'+' ' + tagElements[j].getAttribute('name') + '\n' +
-                        'Bedrohungen:'+' '+ bedrohungen+ '\n' +
-                        'Beschreibung:'+' '+ bedrohungenBeschreibung + '\n' +
-                        'Risiken:'+' '+ risiken + '\n' +
-                        'Beschreibung:'+' '+ risikenBeschreibung + '\n' +
-                        'Maßnahmen:'+' '+ maßnahmen + '\n' +
-                        'Akteure:'+' '+ akteure);*/
-
-
-
-
-                  /*overlayHtml.click(function(e) {
-
-
-                    //MUSS NOCH SCHÖNER GEMACHT WERDEN
-                    //alert('Bedrohung: ' + bedrohungen + '\n' +'Beschreibung der Bedrohung: ' + bedrohungenBeschreibung + '\n' + 'Risiken: '+ risiken + '\n' + 'Beschreibung der Risiken: ' + risikenBeschreibung + '\n' + 'Maßnahmen: ' + maßnahmen + '\n' + 'Akteure: ' + akteure + '\n');
-                    alert('Bedrohung: ' + bedrohungen + '\n' +'Beschreibung der Bedrohung: ' + bedrohungenBeschreibung + '\n' + 'Risiken: '+ risiken + '\n' + 'Beschreibung der Risiken: ' + risikenBeschreibung + '\n' + 'Maßnahmen: ' + maßnahmen + '\n' + 'Akteure: ' + akteure + '\n');
-                    //Zur überprüfung consolen logs
-
-
-                  });*/
+                          "Akteure: " + akteure);
+                  });
 
                   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                   //dreieckSetzen variable wieder löschen damit sie beim nächsten durchlauf Leer ist
