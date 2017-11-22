@@ -141,7 +141,7 @@ function getLayers(){
                           "Risiken-Beschreibung: " + risikenBeschreibung + '<br/>' +
                           "Maßnahmen: " + maßnahmen + '<br/>' +
                           "Akteure: " + akteure);
-                  });
+                  
 
                   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                   //dreieckSetzen variable wieder löschen damit sie beim nächsten durchlauf Leer ist
