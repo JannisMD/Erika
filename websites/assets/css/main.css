@@ -4056,9 +4056,21 @@ iframe {
 	background: white;
 	border-radius: 50%;
 	bottom: 0;
-	margin: 22px;
+	margin: 20px;
 	/*padding: 0.5em 1em;*/
 	position: fixed;
 	right: 72px;
-	width: 4%;
+	width: 60px;
+}
+
+#newsfeed2 {
+	background: white;
+	border-radius: 50%;
+	bottom: 0;
+	margin: 20px;
+	/*padding: 0.5em 1em;*/
+	position: fixed;
+	right: 142px;
+	width: 60px;
+
 }
