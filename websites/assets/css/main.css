@@ -4063,14 +4063,10 @@ iframe {
 	width: 60px;
 }
 
-#newsfeed2 {
+
+/* Icon */
+#icon {
 	background: white;
 	border-radius: 50%;
-	bottom: 0;
-	margin: 20px;
-	/*padding: 0.5em 1em;*/
-	position: fixed;
-	right: 142px;
 	width: 60px;
-
 }
