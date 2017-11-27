@@ -47,8 +47,22 @@ app.get('/getKeyWords', function(req,res){
       console.log('Abfrage war erfolgreich');
       var antwort = [];
       antwort = zeilen;
+      console.log(zeilen);
+      res.send(zeilen);
+    }
+  });
+});
+app.get('/getKeyWordsRichtigeTabelle', function(req,res){
+  console.log('App get main Root');
+  connection.query("select distinctrow Taskname, Bedrohungsname,Bedrohungsbeschreibung,Risikoname,Risikobeschreibung,Maßnahmenname,Maßnahmenbeschreibung from Task ta, Bedrohung be, Risiko ri, Maßnahme ma, ThB t where t.ID_T = ta.ID_T and t.ID_B = be.ID_B order by Taskname", function(error, zeilen, felder){
+    if (error) {
+      console.log('Abfrage fehlgeschlagen');
+    }else{
+      console.log('Abfrage war erfolgreich');
+      var antwort = [];
+      antwort = zeilen;
       console.log(antwort);
-      res.send(antwort);
+      res.send(zeilen);
     }
   });
 });
@@ -71,6 +85,26 @@ app.get('/diagram.bpmn', function(req,res){
   var fs = require('fs');
 
   var diagramSenden = fs.readFileSync('./testablauf.bpmn', 'utf8');
+
+  console.log(diagramSenden);
+  res.send(diagramSenden);
+
+});
+app.get('/B_01.bpmn', function(req,res){
+  console.log('diagram wird abgefragt');
+  var fs = require('fs');
+
+  var diagramSenden = fs.readFileSync('./B_01.bpmn', 'utf8');
+
+  console.log(diagramSenden);
+  res.send(diagramSenden);
+
+});
+app.get('/B_02.bpmn', function(req,res){
+  console.log('diagram wird abgefragt');
+  var fs = require('fs');
+
+  var diagramSenden = fs.readFileSync('./NeuerProzessTest.bpmn', 'utf8');
 
   console.log(diagramSenden);
   res.send(diagramSenden);
