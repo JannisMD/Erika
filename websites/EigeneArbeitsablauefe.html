@@ -42,16 +42,36 @@
 						</div>
 					</nav>
 
-				<!-- Wrapper -->
-					<section id="wrapper">
-						<header>
-							<div class="inner">
-								<h2>Eigene Arbeitsabläufe</h2>
-                    <p>Hier sehen Sie Ihre eigene Arbeitsabläufe, die Sie während durchführung eines Risikobewertung ausgewählt haben.</p>
-                            </div>
-                        </header>
 
-			</div>
+
+
+
+					<!-- Wrapper -->
+						<section id="wrapper">
+							<header>
+								<div class="inner">
+									<h2>Risikobewertung</h2>
+	                    <p>Hier siehst du deine Abläufe</p>
+	                    <!-- Arbeitsabläufe -->
+											<button type="button" id="show" class="btn btn-primary btn-lg" style="width: 62%">Übernommene AA1</button><br>
+											<div id="canvas" style="height: 400px; color: black;"></div>
+
+
+											<button type="button" id="show2" class="btn btn-primary btn-lg" style="width: 62%">Bearbeite AA</button><br>
+											<div id="canvas2" style="height: 400px; color: black; background-color:white"></div>
+
+
+											<button type="button" id="show3" class="btn btn-primary btn-lg" style="width: 62%">SHochgeladene aa</button><br>
+											<div id="canvas3" style="height: 400px; color: black; background-color:white"></div>
+											<br>
+											<button type="button" onclick="getLayers()"  class="btn btn-primary btn-lg" style="width: auto">Arbeitsabläufe analysieren</button>
+											<button type="button" class="btn btn-primary btn-lg" onclick="gebeGefahrenAus()" style="width: auto">Ergebnisse ausgeben</button>
+									</div>
+	              </header>
+				</div>
+
+
+
 
 		<!-- Scripts -->
 			<script src="assets/js/skel.min.js"></script>
