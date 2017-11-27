@@ -1697,7 +1697,7 @@
 		-ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
 		border-bottom: dotted 1px rgba(255, 255, 255, 0.35);
-		color: #ffffff;
+		color: white;
 		text-decoration: none;
 	}
 
@@ -4049,4 +4049,16 @@ iframe {
 .alertify-notifier .ajs-message.ajs-warning {
   background: rgba(252, 248, 215, 0.95);
   border-color: #999;
+}
+
+/* Newsfeed */
+#newsfeed {
+	background: white;
+	border-radius: 50%;
+	bottom: 0;
+	margin: 22px;
+	/*padding: 0.5em 1em;*/
+	position: fixed;
+	right: 72px;
+	width: 4%;
 }

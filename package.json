@@ -10,7 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "alertifyjs": "^1.11.0",
-    "bootbox": "^4.4.0",
     "bpmn-js": "^0.22.1",
     "express": "^4.15.3",
     "express-formidable": "^1.0.0",
