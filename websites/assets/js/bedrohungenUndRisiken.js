@@ -490,27 +490,41 @@ $(document).ready(function(){
       });
 
 
+/* Hilfestellung BPMN Tool
+function hilfeBPMN(){
+  window.open("images/hilfe.pdf");
+}*/
 
-
-//Report wird angezeigt
-function aus() {
+function hilfeBPMN() {
 var pre = document.createElement('pre');
+//custom style.
 pre.style.maxHeight = "400px";
 pre.style.margin = "0";
 pre.style.padding = "24px";
 pre.style.whiteSpace = "pre-wrap";
-pre.style.textAlign = "left";
-pre.appendChild(document.createTextNode(text));
+pre.style.textAlign = "justify";
+pre.appendChild(document.createTextNode((text)));
 //show as confirm
 alertify.confirm(pre, function(){
         alertify.success('Accepted');
     },function(){
         alertify.error('Declined');
-    }).set({labels:{ok:'Accept', cancel: 'Decline'}, padding: false});}
+    }).set({labels:{ok:'Accept', cancel: 'Decline'}, padding: false});
+}
 
 
-    var text = "Wie verwendet man die Arbeitsabläufe?" + "Arbeitsabläufe, die wir hier modellieren möchten wir möglichst einfach, ohne viel Schnick Schnack darstellen." +
-    "Damit Sie von jedem angewendet werden können und ohne großen Aufwand. Hierfür verwenden wir eine vereinfachte Form der BPMN2 Notation." +
-    "BPMN ist eine grafische Dokumentationssprache für Arbeitsabläufe. Der Vorteil dieser Notation ist, dass sie standardisiert ist. Damit ist sie vielseitig und überall anwendbar." +
-    "Falls Sie Ihre eigenen Arbeitsabläufe bereits modelliert haben, können Sie diese bequem über unser Tool  hochladen. " +
-    "Unser Produkt scannt Ihre Arbeitsabläufe nach Keywords und führt so eine individuell anpassbare Risikoanalyse für Ihr Unternehmen durch. ";
+
+var text = document.write('<img src="https://comps.canstockphoto.com/java-green-round-button-stock-illustrations_csp50057757.jpg">');
+
+
+
+
+
+
+/* Ein Bild wird dynamisch im Javascript erzeugt
+
+  var divWrapper = document.getElementById('wrapper');
+  var image = document.createElement('img');
+  image.setAttribute('src', './images/papierkorb.png');
+  image.src = './images/papierkorb.png'; // Alternative!
+  divWrapper.appendChild(image);*/
