@@ -3935,10 +3935,11 @@ span.psw {
 }
 
 iframe {
-    border-radius: 30px;
-    height: 120px;
+		top: 200px;
+    border-radius: 45%;
     width: 400px;
     float: right;
+
 }
 
 /*Hover*/
@@ -4066,7 +4067,15 @@ iframe {
 
 /* Icon */
 #icon {
-	background: white;
-	border-radius: 50%;
+
+	
 	width: 60px;
 }
+
+ /* TAN */
+  #tan {
+	position: absolute;
+	right: 480px;
+	bottom: 78px;
+
+	}

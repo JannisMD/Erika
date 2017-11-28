@@ -495,6 +495,10 @@ function hilfeBPMN(){
   window.open("images/hilfe.pdf");
 }
 
+function popUp() {
+  alertify.success('TAN wurde per SMS geschickt');
+}
+
 /*function hilfeBPMN() {
 var pre = document.createElement('pre');
 //custom style.

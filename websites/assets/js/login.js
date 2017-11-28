@@ -7,6 +7,6 @@ if(form.userid.value == "hangmen" && form.pswrd.value == "initial") {
 
 	}
 else {
-		alert("Benutzername oder Passwort falsch eingegeben!")/*displays error message*/
+		alert("Benutzername oder Passwort/TAN falsch eingegeben!")/*displays error message*/
 		  }
 				}
