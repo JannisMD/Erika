@@ -4064,21 +4064,10 @@ iframe {
 	width: 60px;
 }
 
-
-/* Icon */
-#icon {
-	position: absolute;
-	bottom: 507px;
-	width: 30px;
-	right: 470px;
-	box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.125);
-
-}
-
  /* TAN */
   #tan {
 	position: absolute;
-	right: 480px;
-	bottom: 78px;
+	right: 513px;
+	bottom: -200px;
 
 	}
