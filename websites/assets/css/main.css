@@ -4067,9 +4067,12 @@ iframe {
 
 /* Icon */
 #icon {
+	position: absolute;
+	bottom: 507px;
+	width: 30px;
+	right: 470px;
+	box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.125);
 
-	
-	width: 60px;
 }
 
  /* TAN */
