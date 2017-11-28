@@ -490,12 +490,12 @@ $(document).ready(function(){
       });
 
 
-/* Hilfestellung BPMN Tool
+// Hilfestellung BPMN Tool
 function hilfeBPMN(){
   window.open("images/hilfe.pdf");
-}*/
+}
 
-function hilfeBPMN() {
+/*function hilfeBPMN() {
 var pre = document.createElement('pre');
 //custom style.
 pre.style.maxHeight = "400px";
@@ -512,9 +512,7 @@ alertify.confirm(pre, function(){
     }).set({labels:{ok:'Accept', cancel: 'Decline'}, padding: false});
 }
 
-
-
-var text = document.write('<img src="https://comps.canstockphoto.com/java-green-round-button-stock-illustrations_csp50057757.jpg">');
+var text = window.open("images/hilfe.pdf")*/
 
 
 
