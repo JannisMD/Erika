@@ -466,6 +466,7 @@ function gebeGefahrenAus(){
           "Risiken-Beschreibung: " + risikenBeschreibung3 + '<br/>' +
           "Maßnahmen: " + maßnahmen3 + '<br/>' +
           "Akteure: " + akteure3);
+
 }
 
 
@@ -494,12 +495,12 @@ $(document).ready(function(){
 function hilfeBPMN(){
   window.open("images/hilfe.pdf");
 }
-
-function popUp() {
+// Hier wird ein Notification für das Button "TAN Generieren" ausgegeben
+/*function popUp() {
   alertify.success('TAN wurde per SMS geschickt');
 }
 
-/*function hilfeBPMN() {
+function hilfeBPMN() {
 var pre = document.createElement('pre');
 //custom style.
 pre.style.maxHeight = "400px";
@@ -507,6 +508,7 @@ pre.style.margin = "0";
 pre.style.padding = "24px";
 pre.style.whiteSpace = "pre-wrap";
 pre.style.textAlign = "justify";
+pre.style.overflow = "scroll";
 pre.appendChild(document.createTextNode((text)));
 //show as confirm
 alertify.confirm(pre, function(){
@@ -516,7 +518,7 @@ alertify.confirm(pre, function(){
     }).set({labels:{ok:'Accept', cancel: 'Decline'}, padding: false});
 }
 
-var text = window.open("images/hilfe.pdf")*/
+var text = "Merhabaaaaa";*/
 
 
 
