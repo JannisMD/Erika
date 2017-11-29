@@ -7,6 +7,7 @@ if(form.userid.value == "hangmen" && form.pswrd.value == "initial") {
 
 	}
 else {
-		alert("Benutzername oder Passwort/TAN falsch eingegeben!")/*displays error message*/
+	alertify.alert('Benutzername oder Passwort/TAN falsch eingegeben!', function(){; });
+
 		  }
 				}

@@ -3997,19 +3997,20 @@ iframe {
 
 .tooltip .tooltiptext {
     visibility: hidden;
-    width: 650px;
+		/* Textlänge */
+		width: 650px;
     background-color: none;
     color: #fff;
     text-align: left;
     border-radius: 6px;
-    padding: 5px 0;
+    padding: 250px 0;
 
     /* Position the tooltip */
     position: absolute;
     z-index: 1;
     top: 10%;
-    left: 150%;
-    margin-left: -60px;
+
+    
 }
 
 .tooltip:hover .tooltiptext {
@@ -4071,4 +4072,99 @@ iframe {
 	right: 513px;
 	bottom: -200px;
 
+	}
+
+
+	/* SLideshow Erklärvideos */
+
+	* {box-sizing:border-box}
+	body {font-family: Verdana,sans-serif;margin:0}
+	.mySlides {display:none}
+
+	/* Slideshow container */
+	.slideshow-container {
+		position: relative;
+		margin: auto;
+		width: 50%;
+
+
+	}
+
+	/* Next & previous buttons */
+	.prev, .next {
+		cursor: pointer;
+		position: absolute;
+		top: 50%;
+		width: auto;
+		padding: 16px;
+		margin-top: -22px;
+		color: white;
+		font-weight: bold;
+		font-size: 18px;
+		transition: 0.6s ease;
+		border-radius: 0 3px 3px 0;
+	}
+
+	/* Position the "next button" to the right */
+	.next {
+		right: 0;
+		border-radius: 3px 0 0 3px;
+	}
+
+	.prev:hover, .next:hover {
+		background-color: rgba(0,0,0,0.8);
+	}
+
+	.text {
+		color: #f2f2f2;
+		font-size: 15px;
+		padding: 8px 12px;
+		position: absolute;
+		bottom: 8px;
+		width: 100%;
+		text-align: center;
+	}
+
+	.numbertext {
+		color: #f2f2f2;
+		font-size: 12px;
+		padding: 8px 12px;
+		position: absolute;
+		top: 0;
+	}
+
+	.dot {
+		cursor: pointer;
+		height: 15px;
+		width: 15px;
+		margin: 0 2px;
+		background-color: #bbb;
+		border-radius: 50%;
+		display: inline-block;
+		transition: background-color 0.6s ease;
+	}
+
+	.active, .dot:hover {
+		background-color: #717171;
+	}
+
+	.fade {
+		-webkit-animation-name: fade;
+		-webkit-animation-duration: 1.5s;
+		animation-name: fade;
+		animation-duration: 1.5s;
+	}
+
+	@-webkit-keyframes fade {
+		from {opacity: .4}
+		to {opacity: 1}
+	}
+
+	@keyframes fade {
+		from {opacity: .4}
+		to {opacity: 1}
+	}
+
+	@media only screen and (max-width: 300px) {
+		.prev, .next,.text {font-size: 11px}
 	}

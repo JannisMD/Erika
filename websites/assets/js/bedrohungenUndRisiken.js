@@ -496,11 +496,12 @@ function hilfeBPMN(){
   window.open("images/hilfe.pdf");
 }
 // Hier wird ein Notification für das Button "TAN Generieren" ausgegeben
-/*function popUp() {
+function popUp() {
   alertify.success('TAN wurde per SMS geschickt');
 }
 
-function hilfeBPMN() {
+
+/*function hilfeBPMN() {
 var pre = document.createElement('pre');
 //custom style.
 pre.style.maxHeight = "400px";

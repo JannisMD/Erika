@@ -9,14 +9,20 @@
 		<title>LOOT Menue</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="../bower_components/popper.js/dist/popper.min.js">
+		<link rel="stylesheet" href="../bower_components/popper.js/dist/umd/popper.min.js">
+		<link rel="stylesheet" href="../bower_components/popper.js/dist/esm/popper.min.js">
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!-- Bootstrap -->
+		<script src="../bower_components/bootstrap/dist/css/bootstrap.min.css" /></script>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
 	</head>
 	<body>
 
@@ -49,15 +55,42 @@
 							<div class="inner">
 								<h2>Erklärvideos</h2>
                   <p>Hier befinden sich zur unterschiedlichen Bereichen Erklärvideos.</p>
+									</head>
+									<!-- Slideshow -->
+									<body>
+									<div class="slideshow-container">
+									<div class="mySlides fade">
+									  <div class="numbertext">1 / 3</div>
+									  <img src="images/pic01.jpg" style="width:100%">
+									  <div class="text">Caption Text</div>
+									</div>
+
+									<div class="mySlides fade">
+									  <div class="numbertext">2 / 3</div>
+									  <img src="images/pic02.jpg" style="width:100%">
+									  <div class="text">Caption Two</div>
+									</div>
+
+									<div class="mySlides fade">
+									  <div class="numbertext">3 / 3</div>
+									  <img src="images/pic03.jpg" style="width:100%">
+									  <div class="text">Caption Three</div>
+									</div>
+
+									<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+									<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+								</div>
+									<br>
+
+									<div style="text-align:center">
+									  <span class="dot" onclick="currentSlide(1)"></span>
+									  <span class="dot" onclick="currentSlide(2)"></span>
+									  <span class="dot" onclick="currentSlide(3)"></span>
+									</div>
               </div>
             </header>
-
-						
-
-
-
-
-
+					</section>
 			</div>
 
 		<!-- Scripts -->
@@ -68,5 +101,7 @@
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/Chatbot.js"></script>
+			<script src="assets/js/Slideshow.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	</body>
 </html>
