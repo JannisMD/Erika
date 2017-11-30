@@ -16,6 +16,10 @@
 
 		<!-- SweetAlert wird importiert -->
 		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<!-- include the style -->
+		<link rel="stylesheet" href="bower_components/alertify-js/build/css/alertify.min.css" />
+		<!-- include a theme -->
+		<link rel="stylesheet" href="../bower_components/alertify-js/build/css/themes/default.min.css" />
 	</head>
 	<body>
 
@@ -51,21 +55,37 @@
 							<header>
 								<div class="inner">
 									<h2>Eigene Arbeitsabläufe</h2>
-	                    <p>Hier siehst du deine Arbeitsabläufe</p>
+	                    <p>Hier sehen Sie Ihre Arbeitsabläufe</p>
 	                    <!-- Arbeitsabläufe -->
-											<button type="button" id="show" class="btn btn-primary btn-lg" style="width: 62%">Übernommene AA1</button><br>
+											<button type="button" id="show" class="btn btn-primary btn-lg" style="width: 62%">Übernommener Arbeitsablauf: Versand</button>
+											<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/upload.png" style="width: 130%; padding-top: 15px"></button>
+											<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/papierkorb.png" style="width: 130%; padding-top: 15px"></button>
 											<div id="canvas" style="height: 400px; color: black;"></div>
 
 
-											<button type="button" id="show2" class="btn btn-primary btn-lg" style="width: 62%">Bearbeite AA</button><br>
+
+											<button type="button" id="show2" class="btn btn-primary btn-lg" style="width: 62%">Übernommener Arbeitsablauf: Produktion Holz</button>
+											<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/upload.png" style="width: 130%; padding-top: 15px"></button>
+											<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/papierkorb.png" style="width: 130%; padding-top: 15px"></button>
 											<div id="canvas2" style="height: 400px; color: black; background-color:white"></div>
 
 
-											<button type="button" id="show3" class="btn btn-primary btn-lg" style="width: 62%">SHochgeladene aa</button><br>
+											<button type="button" id="show3" class="btn btn-primary btn-lg" style="width: 62%">Übernommener Arbeitsablauf: Produktentwicklung</button>
+											<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/upload.png" style="width: 130%; padding-top: 15px"></button>
+											<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/papierkorb.png" style="width: 130%; padding-top: 15px"></button>
 											<div id="canvas3" style="height: 400px; color: black; background-color:white"></div>
 											<br>
-											<button type="button" onclick="getLayers()"  class="btn btn-primary btn-lg" style="width: auto">Arbeitsabläufe analysieren</button>
-											<button type="button" class="btn btn-primary btn-lg" onclick="gebeGefahrenAus()" style="width: auto">Ergebnisse ausgeben</button>
+											<br>
+											<button type="button" id="show3"onclick="popUp2()" class="btn btn-primary btn-lg" style="width: 62%">Bearbeitete Arbeitsabläufe</button>
+											<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/plus.png" style="width: 130%; padding-top: 15px;"></button>
+											<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/upload.png" style="width: 130%; padding-top: 15px"></button>
+											<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/papierkorb.png" style="width: 130%; padding-top: 15px"></button>
+											<button type="button" id="show3"onclick="popUp3()" class="btn btn-primary btn-lg" style="width: 62%">Hochgeladene Arbeitsabläufe</button>
+											<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/plus.png" style="width: 130%; padding-top: 15px;"></button>
+											<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/upload.png" style="width: 130%; padding-top: 15px"></button>
+											<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/papierkorb.png" style="width: 130%; padding-top: 15px"></button>
+											<br>
+
 									</div>
 	              </header>
 				</div>
@@ -81,6 +101,12 @@
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/Chatbot.js"></script>
+			<!--REIN MACHEN WENN VIEWER GEBRAUCHT WIRD -->
+			<script src="./../bower_components/bpmn-js/dist/bpmn-viewer.js"></script>
+			<script src="./../bower_components/bpmn-js/dist/bpmn-modeler.js"></script>
+			<script src="assets/js/bedrohungenUndRisiken.js"></script>
+			<script src="assets/js/arbeitsabläufe.js"></script>
+			<script src="./../bower_components/alertify-js/build/alertify.min.js"></script>
 
 	</body>
 </html>
