@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8" />
+	<title>PowerTip Test Suite</title>
+
+	<!-- QUnit Resources -->
+	<script type="text/javascript" src="https://code.jquery.com/qunit/qunit-2.1.1.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://code.jquery.com/qunit/qunit-2.1.1.css" />
+
+	<!-- Dynamic jQuery Version Loader -->
+	<script type="text/javascript">
+		var jqVersions = [ '1.7.0', '1.12.4', '2.2.4', '3.1.1' ],
+			currentJq = QUnit.urlParams.jquery || jqVersions[jqVersions.length - 1];
+
+		QUnit.config.urlConfig.push({
+			id: 'jquery',
+			label: 'jQuery version',
+			value: jqVersions,
+			tooltip: 'Select which version of jQuery to run the test suite on.'
+		});
+
+		document.write('<script src="https://code.jquery.com/jquery-' + currentJq + '.js">\x3C/script>');
+	</script>
+
+	<!-- PowerTip Core Resources -->
+	<script type="text/javascript" src="../src/core.js"></script>
+	<script type="text/javascript" src="../src/csscoordinates.js"></script>
+	<script type="text/javascript" src="../src/displaycontroller.js"></script>
+	<script type="text/javascript" src="../src/placementcalculator.js"></script>
+	<script type="text/javascript" src="../src/tooltipcontroller.js"></script>
+	<script type="text/javascript" src="../src/utility.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/jquery.powertip.css" />
+
+	<!-- Unit Test Scripts -->
+	<script type="text/javascript" src="unit/core.js"></script>
+	<script type="text/javascript" src="unit/csscoordinates.js"></script>
+	<script type="text/javascript" src="unit/displaycontroller.js"></script>
+	<script type="text/javascript" src="unit/placementcalculator.js"></script>
+	<script type="text/javascript" src="unit/tooltipcontroller.js"></script>
+	<script type="text/javascript" src="unit/utility.js"></script>
+</head>
+<body>
+	<div id="qunit"></div>
+</body>
+</html>

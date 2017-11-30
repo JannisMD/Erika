@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - "node"
+notifications:
+  irc:
+    channels:
+      - "irc.freenode.net#powertip"
+    skip_join: true

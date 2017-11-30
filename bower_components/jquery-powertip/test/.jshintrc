@@ -1,0 +1,46 @@
+{
+	"curly": true,
+	"eqeqeq": true,
+	"esversion": 3,
+	"forin": true,
+	"freeze": true,
+	"futurehostile": true,
+	"latedef": "nofunc",
+	"noarg": true,
+	"nonbsp": true,
+	"nonew": true,
+	"singleGroups": true,
+	"undef": true,
+	"unused": true,
+	"strict": true,
+
+	"browser": true,
+	"jquery": true,
+
+	"globals": {
+		"QUnit": false,
+		"require": false,
+
+		"DATA_DISPLAYCONTROLLER": false,
+		"DATA_HASACTIVEHOVER": false,
+		"DATA_POWERTIP": false,
+		"DATA_POWERTIPJQ": false,
+		"DATA_POWERTIPTARGET": false,
+		"session": true,
+		"Collision": false,
+
+		"CSSCoordinates": false,
+		"DisplayController": false,
+		"PlacementCalculator": false,
+		"TooltipController": false,
+
+		"isSvgElement": false,
+		"isMouseEvent": false,
+		"initTracking": false,
+		"trackMouse": false,
+		"isMouseOver": false,
+		"getTooltipContent": false,
+		"getViewportCollisions": false,
+		"countFlags": false
+	}
+}
