@@ -626,7 +626,7 @@ var text = window.open("images/hilfe.pdf")
 
       var ueberschriftArbeitsablauf1 = document.createElement("TR");
       var s1 = document.createElement("TD");
-      s1.innerHTML = "Standart Arbeitsablauf 1";
+      s1.innerHTML = "Standard Arbeitsablauf: Versand";
       s1.colSpan = 6;
       s1.style.backgroundColor = "rgb(83, 99, 142)";
 
@@ -792,7 +792,7 @@ var text = window.open("images/hilfe.pdf")
 
       var ueberschriftArbeitsablauf2 = document.createElement("TR");
       var s2 = document.createElement("TD");
-      s2.innerHTML = "Standart Arbeitsablauf 2";
+      s2.innerHTML = "Standard Arbeitsablauf: Produktion Holz";
       s2.colSpan = 6;
       s2.style.backgroundColor = "rgb(83, 99, 142)";
 
@@ -937,7 +937,7 @@ var text = window.open("images/hilfe.pdf")
 
     var ueberschriftArbeitsablauf3 = document.createElement("TR");
     var s3 = document.createElement("TD");
-    s3.innerHTML = "Standart Arbeitsablauf 3";
+    s3.innerHTML = "Standard Arbeitsablauf: Produktentwicklung";
     s3.colSpan = 6;
     s3.style.backgroundColor = "rgb(83, 99, 142)";
 
