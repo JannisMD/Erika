@@ -482,30 +482,18 @@ function gebeGefahrenAus(){
 
   }
 
-  alertify.errorAlert('Arbeitsschritt: ' + ' ' + '<b style="color: black">' + " Standard Arbeitsablauf 1" + '</b>' + '</div>' +  '<br/><br/>' +
-          "Bedrohung: " + bedrohungen + '<br/>' +
-          "Bedrohungs-Beschreibung: " + bedrohungenBeschreibung + '<br/>' +
-          "Risiken: " + risiken + '<br/>' +
-          "Risiken-Beschreibung: " + risikenBeschreibung + '<br/>' +
-          "Maßnahmen: " + maßnahmen + '<br/>' +
-          "Akteure: " + akteure +
-          '<br/><br/>' +
+  alertify.errorAlert('<font size="3">' + " Standard Arbeitsablauf: Versand" + '</font>' + '</div>' +  '<br/><br/>' +
+          '<img src="images/ElectricDangerKlein.png" alt="" id= /> '+'<b style="color: black">'+ "Bedrohungen: " +'</b>'+ bedrohungen + '<br/>' +'<br/>' +
+          '<img src="images/beschreibungRichtigRichtig.png" alt="" id= /> '+'<b style="color: black">'+ "Beschreibung: "+'</b>' + bedrohungenBeschreibung + '<br/>' + '<br/><br/><br/>' +
+          '<font size="3">' + " Standard Arbeitsablauf: Produktion Holz" + '</font>' + '</div>' +  '<br/><br/>' +
+          '<img src="images/ElectricDangerKlein.png" alt="" id= /> '+'<b style="color: black">'+ "Bedrohung: "+'</b>' + bedrohungen2 + '<br/>' +'<br/>' +
+          '<img src="images/beschreibungRichtigRichtig.png" alt="" id= /> '+'<b style="color: black">'+ "Beschreibung: " +'</b>' + bedrohungenBeschreibung2 + '<br/>' +
+          '<br/><br/><br/>' +
+          '<font size="3">' + "Standard Arbeitsablauf: Produktentwicklung" + '</font>' + '</div>' +  '<br/><br/>' +
+          '<img src="images/ElectricDangerKlein.png" alt="" id= /> '+'<b style="color: black">'+ "Bedrohung: "+'</b>' + bedrohungen3 + '<br/>' + '<br/>' +
+          '<img src="images/beschreibungRichtigRichtig.png" alt="" id= /> '+'<b style="color: black">'+ "Beschreibung: " +'</b>' + bedrohungenBeschreibung3 + '<br/>')
 
-          'Arbeitsschritt: ' + ' ' + '<b style="color: black">' + " Standard Arbeitsablauf 2" + '</b>' + '</div>' +  '<br/><br/>' +
-          "Bedrohung: " + bedrohungen2 + '<br/>' +
-          "Bedrohungs-Beschreibung: " + bedrohungenBeschreibung2 + '<br/>' +
-          "Risiken: " + risiken2 + '<br/>' +
-          "<b2>Risiken-Beschreibung:</b2>" + risikenBeschreibung2 + '<br/>' +
-          "Maßnahmen: " + maßnahmen2 + '<br/>' +
-          "Akteure: " + akteure2 + '<br/>' +
-          '<br/><br/>' +
-          'Arbeitsschritt: ' + ' ' + '<b style="color: black">' + " Standard Arbeitsablauf 3" + '</b>' + '</div>' +  '<br/><br/>' +
-          "Bedrohung: " + bedrohungen3 + '<br/>' +
-          "Bedrohungs-Beschreibung: " + bedrohungenBeschreibung3 + '<br/>' +
-          "Risiken: " + risiken3 + '<br/>' +
-          "Risiken-Beschreibung: " + risikenBeschreibung3 + '<br/>' +
-          "Maßnahmen: " + maßnahmen3 + '<br/>' +
-          "Akteure: " + akteure3);
+
 }
 
 
