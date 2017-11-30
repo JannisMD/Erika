@@ -673,7 +673,7 @@ var text = window.open("images/hilfe.pdf")
 
       tabelle.appendChild(zeileFuerUeberschriften);
 
-      console.log(taskP);
+      /*console.log(taskP);
       console.log(bedrohungenP);
       console.log(risikenP);
       console.log(maßnahmenP);
@@ -687,7 +687,7 @@ var text = window.open("images/hilfe.pdf")
       console.log(bedrohungen3P);
       console.log(risiken3P);
       console.log(maßnahmen3P);
-      console.log(akteure3P);
+      console.log(akteure3P);*/
 
 
       var index;
@@ -710,6 +710,7 @@ var text = window.open("images/hilfe.pdf")
         tabelle.appendChild(zeile);
 
         spalte1.innerHTML = taskP[index];
+        console.log(taskP[index]);
 
         var dieBedrohungen = bedrohungenP[index].toString();
         var dieGetrenntenBedrohungen = dieBedrohungen.split(',');
@@ -780,6 +781,7 @@ var text = window.open("images/hilfe.pdf")
         spalte2.style.border = "solid";
         spalte3.style.border = "solid";
         spalte4.style.border = "solid";
+      }
 
 
 
@@ -930,7 +932,7 @@ var text = window.open("images/hilfe.pdf")
 
         }
 
-    }
+
     //JETZT ALLES FÜR DEN NÄCHSTEN GESCHÄFTSPROZESS/////////////////////////////////////////////////////////////////////////////////77
 
     var ueberschriftArbeitsablauf3 = document.createElement("TR");
