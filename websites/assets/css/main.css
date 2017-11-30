@@ -4108,6 +4108,7 @@ span.psw {
 	.next {
 		right: 0;
 		border-radius: 3px 0 0 3px;
+		
 	}
 
 	.prev:hover, .next:hover {
@@ -4167,4 +4168,3 @@ span.psw {
 	@media only screen and (max-width: 300px) {
 		.prev, .next,.text {font-size: 11px}
 	}
-	
