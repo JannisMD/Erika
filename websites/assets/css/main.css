@@ -4053,17 +4053,7 @@ span.psw {
 }
 
 
-/* Newsfeed */
-#newsfeed {
-	background: white;
-	border-radius: 50%;
-	bottom: 0;
-	margin: 20px;
-	/*padding: 0.5em 1em;*/
-	position: fixed;
-	right: 72px;
-	width: 60px;
-}
+
 
  /* TAN */
   #tan {
@@ -4108,7 +4098,7 @@ span.psw {
 	.next {
 		right: 0;
 		border-radius: 3px 0 0 3px;
-		
+
 	}
 
 	.prev:hover, .next:hover {
@@ -4168,3 +4158,53 @@ span.psw {
 	@media only screen and (max-width: 300px) {
 		.prev, .next,.text {font-size: 11px}
 	}
+
+/* Arbeitsablauf Image */
+#arbeitsablauf {
+	position: absolute;
+	width: 10%;
+	right: 230px;
+	top: 130px;
+}
+
+/* Erklärvideo Image */
+#erklärvideo {
+	position: absolute;
+	width: 7%;
+	right: 250px;
+	top: 150px;
+}
+
+/* Report Image */
+#report {
+	position: absolute;
+	width: 8%;
+	right: 250px;
+	top: 140px;
+}
+
+/* Bibliothek Image */
+#bibliothek {
+	position: absolute;
+	width: 8%;
+	right: 250px;
+	top: 140px;
+}
+
+#newsfeed {
+	position: absolute;
+	width: 8%;
+	right: 250px;
+	top: 140px;
+}
+
+/*#newsfeed {
+	background: white;
+	border-radius: 50%;
+	bottom: 0;
+	margin: 20px;*/
+	/*padding: 0.5em 1em;*/
+	/*position: fixed;
+	right: 92px;
+	width: 40px;
+}*/
