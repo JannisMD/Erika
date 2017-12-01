@@ -523,6 +523,12 @@ function hilfeBPMN(){
 
     /////////////////////////REPORT TABELLE ERSTELLEN//////////////////////////////////////////////////////////////////////////////////////////////////////////
     function erstelleReport(){
+      var tabelle = document.getElementById('tabelle');
+      while(tabelle.rows.length > 0){
+        tabelle.deleteRow(0);
+      }
+      tabelle.deleteTHead();
+
       var bedrohungenGezählt = 0;
       var risikenGezählt = 0;
       var maßnahmenGezählt= 0;
@@ -556,7 +562,7 @@ function hilfeBPMN(){
       var akteure3P = JSON.parse(localStorage.getItem("akteure3"));
 
       //TABELLE ERSTELLT
-      var tabelle = document.getElementById('tabelle');
+      //var tabelle = document.getElementById('tabelle');
       tabelle.style.border = "solid";
       tabelle.style.fontFamily = "Raleway, Helvetica, sans-serif";
 
@@ -1027,7 +1033,7 @@ function hilfeBPMN(){
       //////////////////////////////////////////////////////BILANZ///////////////////////////////////////
       var bilanzUeberschrift = document.createElement("TR");
       var s4 = document.createElement("TD");
-      s4.innerHTML = "Bilanz";
+      s4.innerHTML = "Zusammenfassung";
       s4.colSpan = 6;
       s4.style.backgroundColor = "rgb(83, 99, 142)";
 
@@ -1037,26 +1043,6 @@ function hilfeBPMN(){
       tabelle.appendChild(bilanzUeberschrift);
 
       ///////jetzt BILANZÜBERSCHRIFTEN/////////////////////////////////////////////////////////////////////////////////
-      var bilanzZeile1 = document.createElement("TR");
-      var bilanzspalte1 =document.createElement("TD");
-
-      var bilanzspalte2 = document.createElement("TD");
-
-      bilanzspalte1.innerHTML = "Posten";
-      bilanzspalte1.colSpan = 3;
-      bilanzspalte1.style.backgroundColor = "rgb(83, 99, 142)";
-      bilanzspalte1.style.border = "solid";
-      bilanzspalte1.style.textAlign = "center";
-
-      bilanzspalte2.innerHTML = "Anzahl";
-      bilanzspalte2.colSpan = 3;
-      bilanzspalte2.style.backgroundColor = "rgb(83, 99, 142)";
-      bilanzspalte2.style.border = "solid";
-      bilanzspalte2.style.textAlign = "center";
-
-      bilanzZeile1.appendChild(bilanzspalte1);
-      bilanzZeile1.appendChild(bilanzspalte2);
-      tabelle.appendChild(bilanzZeile1);
 
       //////NEUE ZEILE////////////////////////////////////////////////////////////////////////////////////////
       var bilanzZeile2 = document.createElement("TR");
@@ -1139,7 +1125,7 @@ function hilfeBPMN(){
       var prioritätenSpaltenUeberschrift = document.createElement("TD");
       var prioritätenSpaltenZahl = document.createElement("TD");
 
-      prioritätenSpaltenUeberschrift.innerHTML = "Ermittelte Prioritäten";
+      prioritätenSpaltenUeberschrift.innerHTML = "Umsetzungsempfehlung";
       prioritätenSpaltenUeberschrift.colSpan = 3;
       prioritätenSpaltenUeberschrift.style.border = "solid";
 
