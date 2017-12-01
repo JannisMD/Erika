@@ -521,6 +521,8 @@ function hilfeBPMN(){
   window.open("images/hilfe.pdf");
 }
 
+
+
     /////////////////////////REPORT TABELLE ERSTELLEN//////////////////////////////////////////////////////////////////////////////////////////////////////////
     function erstelleReport(){
       var tabelle = document.getElementById('tabelle');
@@ -1170,10 +1172,7 @@ function hilfeBPMN(){
 
 
   }
-  // Hilfestellung BPMN Tool
-  function hilfeBPMN(){
-    window.open("images/hilfe.pdf");
-  }
+
   // Hier wird ein Notification für das Button "TAN Generieren" ausgegeben
   function popUp() {
     alertify.success('TAN wurde per SMS geschickt');
