@@ -526,10 +526,19 @@ function hilfeBPMN(){
     /////////////////////////REPORT TABELLE ERSTELLEN//////////////////////////////////////////////////////////////////////////////////////////////////////////
     function erstelleReport(){
       var tabelle = document.getElementById('tabelle');
+
+      var thUeberschrift = document.getElementById('dieUeberschrift');
+      if(thUeberschrift != null){
+        thUeberschrift.remove();
+      }else{
+        console.log("thUeberschrift war null");
+      }
+
       while(tabelle.rows.length > 0){
         tabelle.deleteRow(0);
       }
-      tabelle.deleteTHead();
+      //tabelle.deleteTHead();
+       //document.getElementById("tabelle").deleteTHead();
 
       var bedrohungenGezählt = 0;
       var risikenGezählt = 0;
@@ -572,11 +581,12 @@ function hilfeBPMN(){
       var d = new Date();
       d.setUTCFullYear(2017);
       d.setUTCMonth(11);
-      d.setUTCDate(29);
+      d.setUTCDate(19);
       tabellenUeberschrift.innerHTML = "Report vom" + " "+ d.toLocaleDateString() ;
       tabellenUeberschrift.style.textAlign = "center";
       tabellenUeberschrift.style.border = "solid";
       tabellenUeberschrift.colSpan = 6;
+      tabellenUeberschrift.id = "dieUeberschrift";
 
 
       tabelle.appendChild(tabellenUeberschrift);
@@ -670,7 +680,7 @@ function hilfeBPMN(){
         console.log(taskP[index]);
 
         var dieBedrohungen = bedrohungenP[index].toString();
-        var dieGetrenntenBedrohungen = dieBedrohungen.split(',');
+        var dieGetrenntenBedrohungen = dieBedrohungen.split('#');
         var i;
         for(i = 0; i < dieGetrenntenBedrohungen.length; i++){
           var zeile = document.createElement("TR");
@@ -686,7 +696,7 @@ function hilfeBPMN(){
         //spalte2.innerHTML = bedrohungenP[index];
 
         var dieRisiken = risikenP[index].toString();
-        var dieGetrenntenRisiken = dieRisiken.split(',');
+        var dieGetrenntenRisiken = dieRisiken.split('#');
         var j;
         for(j = 0; j < dieGetrenntenRisiken.length; j++){
           var zeile = document.createElement("TR");
@@ -700,7 +710,7 @@ function hilfeBPMN(){
         //spalte3.innerHTML = risikenP[index];
 
         var dieMaßnahmen = maßnahmenP[index].toString();
-        var dieGetrenntenMaßnahmen = dieMaßnahmen.split(',');
+        var dieGetrenntenMaßnahmen = dieMaßnahmen.split('#');
         var k;
         for(k = 0; k < dieGetrenntenMaßnahmen.length; k++){
           var zeile = document.createElement("TR");
@@ -819,7 +829,7 @@ function hilfeBPMN(){
         spalte1.innerHTML = task2P[index2];
 
         var dieBedrohungen2 = bedrohungen2P[index2].toString();
-        var dieGetrenntenBedrohungen2 = dieBedrohungen2.split(',');
+        var dieGetrenntenBedrohungen2 = dieBedrohungen2.split('#');
         var i2;
         for(i2 = 0; i2 < dieGetrenntenBedrohungen2.length; i2++){
           var zeile = document.createElement("TR");
@@ -834,7 +844,7 @@ function hilfeBPMN(){
         //spalte2.innerHTML = bedrohungenP[index];
 
         var dieRisiken2 = risiken2P[index2].toString();
-        var dieGetrenntenRisiken2 = dieRisiken2.split(',');
+        var dieGetrenntenRisiken2 = dieRisiken2.split('#');
         var j2;
         for(j2 = 0; j2 < dieGetrenntenRisiken2.length; j2++){
           var zeile = document.createElement("TR");
@@ -848,7 +858,7 @@ function hilfeBPMN(){
         //spalte3.innerHTML = risikenP[index];
 
         var dieMaßnahmen2 = maßnahmen2P[index2].toString();
-        var dieGetrenntenMaßnahmen2 = dieMaßnahmen2.split(',');
+        var dieGetrenntenMaßnahmen2 = dieMaßnahmen2.split('#');
         var k2;
         for(k2 = 0; k2 < dieGetrenntenMaßnahmen2.length; k2++){
           var zeile = document.createElement("TR");
@@ -963,7 +973,7 @@ function hilfeBPMN(){
       spalte1.innerHTML = task3P[index3];
 
       var dieBedrohungen3 = bedrohungen3P[index3].toString();
-      var dieGetrenntenBedrohungen3 = dieBedrohungen3.split(',');
+      var dieGetrenntenBedrohungen3 = dieBedrohungen3.split('#');
       var i3;
       for(i3 = 0; i3 < dieGetrenntenBedrohungen3.length; i3++){
         var zeile = document.createElement("TR");
@@ -978,7 +988,7 @@ function hilfeBPMN(){
       //spalte2.innerHTML = bedrohungenP[index];
 
       var dieRisiken3 = risiken3P[index3].toString();
-      var dieGetrenntenRisiken3 = dieRisiken3.split(',');
+      var dieGetrenntenRisiken3 = dieRisiken3.split('#');
       var j3;
       for(j3 = 0; j3 < dieGetrenntenRisiken3.length; j3++){
         var zeile = document.createElement("TR");
@@ -992,7 +1002,7 @@ function hilfeBPMN(){
       //spalte3.innerHTML = risikenP[index];
 
       var dieMaßnahmen3 = maßnahmen3P[index3].toString();
-      var dieGetrenntenMaßnahmen3 = dieMaßnahmen3.split(',');
+      var dieGetrenntenMaßnahmen3 = dieMaßnahmen3.split('#');
       var k3;
       for(k3 = 0; k3 < dieGetrenntenMaßnahmen3.length; k3++){
         var zeile = document.createElement("TR");
