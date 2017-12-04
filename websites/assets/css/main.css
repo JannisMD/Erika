@@ -4216,11 +4216,11 @@ span.psw {
 
 #fragezeichen {
 	position: fixed;
-	background: white;
-	width: 60px;
+	background: none;
+	width: 30px;
 	border-radius: 50%;
-	right: 100px;
-	top: 658px;
+	right: 35px;
+	top: 610px;
 }
 
 #video {
@@ -4228,4 +4228,11 @@ span.psw {
 	width: 600px;
 	height: 415px;
 	right: 55px;
+}
+
+#lootLogo {
+	position: absolute;
+	width: 15%;
+	right: 290px;
+	top: 160px;
 }
