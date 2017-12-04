@@ -4213,6 +4213,12 @@ span.psw {
 	/* header in 2793 hat den z-index: 1 und newsfeed sowie postfach den wert 2.
 	Somit bleiben newsfeed uns postfach im Vordergrund*/
 }
+#lootLogo{
+	position: absolute;
+	width: 15%;
+	right: 290px;
+	top: 160px;
+}
 
 #fragezeichen {
 	position: fixed;
@@ -4229,7 +4235,7 @@ span.psw {
 	height: 415px;
 	right: 55px;
 }
-<<<<<<< HEAD
+
 #rotNewsFeed{
 	position: fixed;
 left: 1310px;
@@ -4245,12 +4251,3 @@ visibility: hidden;
     width: 1%;
     z-index: 2;
 		visibility: hidden;
-=======
-
-#lootLogo {
-	position: absolute;
-	width: 15%;
-	right: 290px;
-	top: 160px;
->>>>>>> 3b31449c5ddfb1f41cd0e60e55e0001db0b497ed
-}
