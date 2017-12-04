@@ -4216,11 +4216,11 @@ span.psw {
 
 #fragezeichen {
 	position: fixed;
-	background: white;
-	width: 60px;
+	background: none;
+	width: 30px;
 	border-radius: 50%;
-	right: 100px;
-	top: 658px;
+	right: 35px;
+	top: 610px;
 }
 
 #video {
@@ -4229,6 +4229,7 @@ span.psw {
 	height: 415px;
 	right: 55px;
 }
+<<<<<<< HEAD
 #rotNewsFeed{
 	position: fixed;
 left: 1310px;
@@ -4244,4 +4245,12 @@ visibility: hidden;
     width: 1%;
     z-index: 2;
 		visibility: hidden;
+=======
+
+#lootLogo {
+	position: absolute;
+	width: 15%;
+	right: 290px;
+	top: 160px;
+>>>>>>> 3b31449c5ddfb1f41cd0e60e55e0001db0b497ed
 }
