@@ -270,8 +270,8 @@ function getLayers(){
                   // attach the overlayHtml to a node
                   overlays.add(dreieckSetzen, {
                     position: {
-                      bottom: 25,
-                      right: 25,
+                      bottom: 30,
+                      right: 35,
                     },
                     html: overlayHtml
 
@@ -330,8 +330,8 @@ function getLayers(){
                   // attach the overlayHtml to a node
                   overlays2.add(dreieckSetzen2, {
                     position: {
-                      bottom: 25,
-                      right: 25,
+                      bottom: 30,
+                      right: 35,
                     },
                     html: overlayHtml2
 
@@ -389,8 +389,8 @@ function getLayers(){
                   // attach the overlayHtml to a node
                   overlays3.add(dreieckSetzen3, {
                     position: {
-                      bottom: 25,
-                      right: 25,
+                      bottom: 30,
+                      right: 35,
                     },
                     html: overlayHtml3
 
