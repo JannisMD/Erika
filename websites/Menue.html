@@ -16,6 +16,10 @@
 
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!-- include the style -->
+		<link rel="stylesheet" href="bower_components/alertify-js/build/css/alertify.min.css" />
+		<!-- include a theme -->
+		<link rel="stylesheet" href="../bower_components/alertify-js/build/css/themes/default.min.css" />
 
 	</head>
 	<body>
@@ -32,9 +36,16 @@
 					</header>
 
 					<!-- Newsfeed Icon -->
-					<img id="newsfeed" src="images/rss.png">
+					<div class="testFuerNewsfeed">
+						<img id="newsfeed" onclick="popUpNewsFeed()" src="images/rss.png">
+						<img id="rotNewsFeed" src="images/Rot1.png">
+					</div>
+
 					<!-- Postfach Icon -->
-					<img id="postfach" src="images/postfach.png">
+					<div class="testFuerPostfach">
+						<img id="postfach" onclick="popUpMaßnahmeUmsetzen()" src="images/postfach.png">
+						<img id="rotPostfach" src="images/Rot1.png">
+					</div>
 
 				<!-- Menu -->
 					<nav id="menu">
@@ -111,6 +122,8 @@
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/Timer.js"></script>
       <script src="assets/js/Chatbot.js"></script>
+			<script src="assets/js/menue.js"></script>
+			<script src="./../bower_components/alertify-js/build/alertify.min.js"></script>
 
 </body>
 </html>
