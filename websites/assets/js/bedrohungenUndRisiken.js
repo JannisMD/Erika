@@ -146,6 +146,10 @@ function getLayers(){
   //PROZESSE SPEICHERN///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   saveXML();
 
+  ///////////////////////////Button richtig anzeigen ///////////////////////////////////////////////////////////////////////////////////////////////////////
+  var ergebnisseAusgebenButton = document.getElementById("ergebnisseAusgebenButton");
+  ergebnisseAusgebenButton.style.visibility = "visible";
+
   //HIER WIRD DIE XML AUSGEWERTET UND GESCHAUT WELCHE TASK HABE ICH & FÜR WELCHE BRAUCHE ICH EIN DREIECK
   //////////////////////////////////////////////////////////////////////////////////////////////////////
   //DA WIR LEIDER DIE XML ALS STRING ABGESPEICHERT HABEN BRAUCHE ICH EINEN PARSER
@@ -446,19 +450,19 @@ function saveXML(){
   viewer.moddle.toXML(viewer.definitions, {format: true},function (err,updatedXML){
     fertigeXmlDatei = updatedXML;
     console.log(fertigeXmlDatei);
-    alertify.success('Areitsablauf 1 erfolgreich gespeichert');
+    alertify.success('Arbeitsabläufe erfolgreich gespeichert & analysiert');
   });
   //Arbeitsablauf2 SPEICHERN
   viewer2.moddle.toXML(viewer2.definitions, {format: true},function (err,updatedXML2){
     fertigeXmlDatei2 = updatedXML2;
     console.log(fertigeXmlDatei2);
-    alertify.success('Areitsablauf 2 erfolgreich gespeichert');
+
   });
   //Arbeitsablauf3 SPEICHERN
   viewer3.moddle.toXML(viewer3.definitions, {format: true},function (err,updatedXML3){
     fertigeXmlDatei3 = updatedXML3;
     console.log(fertigeXmlDatei3);
-    alertify.success('Areitsablauf 3 erfolgreich gespeichert');
+
   });
 
 }
@@ -492,6 +496,9 @@ function gebeGefahrenAus(){
           '<font size="3">' + "Standard Arbeitsablauf: Produktentwicklung" + '</font>' + '</div>' +  '<br/><br/>' +
           '<img src="images/ElectricDangerKlein.png" alt="" id= /> '+'<b style="color: black">'+ "Bedrohung: "+'</b>' + bedrohungen3 + '<br/>' + '<br/>' +
           '<img src="images/beschreibungRichtigRichtig.png" alt="" id= /> '+'<b style="color: black">'+ "Beschreibung: " +'</b>' + bedrohungenBeschreibung3 + '<br/>')
+
+          alertify.success('Report wurde erstellt und' +'</br>' +' kann im Menüpunkt:"Report" angesehen werden');
+          reportAnzeigen();
 
 
 }
@@ -1187,3 +1194,695 @@ function hilfeBPMN(){
   function popUp() {
     alertify.success('TAN wurde per SMS geschickt');
   }
+//FUNKTION KANN NICHT HERUNTERGELADEN werden
+function kannNichtHeruntergeladenWerden() {
+  alertify.error('Wartungsarbeiten! Report kann gerade nicht heruntergeladen werden.');
+}
+
+
+
+
+
+
+////
+//////
+////////////REPORT VOM 19.11.2017 erstellen/////////////////////////////////////////////////////////////////////////////////////////////////////////////7
+function erstelleReportZwei(){
+  var tabelle = document.getElementById('tabelle');
+
+  var thUeberschrift = document.getElementById('dieUeberschrift');
+  if(thUeberschrift != null){
+    thUeberschrift.remove();
+  }else{
+    console.log("thUeberschrift war null");
+  }
+
+  while(tabelle.rows.length > 0){
+    tabelle.deleteRow(0);
+  }
+  //tabelle.deleteTHead();
+   //document.getElementById("tabelle").deleteTHead();
+
+  var bedrohungenGezählt = 0;
+  var risikenGezählt = 0;
+  var maßnahmenGezählt= 0;
+  var prioritätRotGezählt= 0;
+  var prioritätGelbGezählt= 0;
+  var prioritätGrünGezählt= 0;
+
+  //Arbeitsablauf1 ///////////////////////////////////////
+  var taskP = JSON.parse(localStorage.getItem("task"));
+  var bedrohungenP = JSON.parse(localStorage.getItem("bedrohungen"));
+  var bedrohungenBeschreibungP = JSON.parse(localStorage.getItem("bedrohungenBeschreibung"));
+  var risikenP = JSON.parse(localStorage.getItem("risiken"));
+  var risikenBeschreibungP = JSON.parse(localStorage.getItem("risikenBeschreibung"));
+  var maßnahmenP = JSON.parse(localStorage.getItem("maßnahmen"));
+  var akteureP = JSON.parse(localStorage.getItem("akteure"));
+
+  var task2P = JSON.parse(localStorage.getItem("task2"));
+  var bedrohungen2P = JSON.parse(localStorage.getItem("bedrohungen2"));
+  var bedrohungenBeschreibung2P = JSON.parse(localStorage.getItem("bedrohungenBeschreibung2"));
+  var risiken2P = JSON.parse(localStorage.getItem("risiken2"));
+  var risikenBeschreibung2P = JSON.parse(localStorage.getItem("risikenBeschreibung2"));
+  var maßnahmen2P = JSON.parse(localStorage.getItem("maßnahmen2"));
+  var akteure2P = JSON.parse(localStorage.getItem("akteure2"));
+
+  var task3P = JSON.parse(localStorage.getItem("task3"));
+  var bedrohungen3P = JSON.parse(localStorage.getItem("bedrohungen3"));
+  var bedrohungenBeschreibung3P = JSON.parse(localStorage.getItem("bedrohungenBeschreibung3"));
+  var risiken3P = JSON.parse(localStorage.getItem("risiken3"));
+  var risikenBeschreibung3P = JSON.parse(localStorage.getItem("risikenBeschreibung3"));
+  var maßnahmen3P = JSON.parse(localStorage.getItem("maßnahmen3"));
+  var akteure3P = JSON.parse(localStorage.getItem("akteure3"));
+
+  //TABELLE ERSTELLT
+  //var tabelle = document.getElementById('tabelle');
+  tabelle.style.border = "solid";
+  tabelle.style.fontFamily = "Raleway, Helvetica, sans-serif";
+
+  var tabellenUeberschrift = document.createElement("TH")
+  var d = new Date();
+  d.setUTCFullYear(2017);
+  d.setUTCMonth(11);
+  d.setUTCDate(19);
+  tabellenUeberschrift.innerHTML = "Report vom 19.11.2017";
+  tabellenUeberschrift.style.textAlign = "center";
+  tabellenUeberschrift.style.border = "solid";
+  tabellenUeberschrift.colSpan = 6;
+  tabellenUeberschrift.id = "dieUeberschrift";
+
+
+  tabelle.appendChild(tabellenUeberschrift);
+
+  var ueberschriftArbeitsablauf1 = document.createElement("TR");
+  var s1 = document.createElement("TD");
+  s1.innerHTML = "Standard Arbeitsablauf: Versand";
+  s1.colSpan = 6;
+  s1.style.backgroundColor = "rgb(83, 99, 142)";
+
+  ueberschriftArbeitsablauf1.appendChild(s1);
+  ueberschriftArbeitsablauf1.style.border = "solid";
+
+
+
+  tabelle.appendChild(ueberschriftArbeitsablauf1);
+
+  var zeileFuerUeberschriften = document.createElement("TR");
+  zeileFuerUeberschriften.style.backgroundColor = "rgb(83, 99, 142)"
+
+  var taskUeberschrift = document.createElement("TD");
+  taskUeberschrift.innerHTML = "Arbeitsschritt";
+  taskUeberschrift.style.border = "solid";
+  taskUeberschrift.style.textAlign = "center"
+
+  var bedrohungenUeberschrift = document.createElement("TD");
+  bedrohungenUeberschrift.innerHTML = "Bedrohungen";
+  bedrohungenUeberschrift.style.border = "solid";
+  bedrohungenUeberschrift.style.textAlign = "center"
+
+  var risikenUeberschrift = document.createElement("TD");
+  risikenUeberschrift.innerHTML = "Risiken";
+  risikenUeberschrift.style.border = "solid";
+  risikenUeberschrift.style.textAlign = "center"
+
+  var maßnahmenUeberschrift = document.createElement("TD");
+  maßnahmenUeberschrift.innerHTML = "Maßnahmen";
+  maßnahmenUeberschrift.style.border = "solid";
+  maßnahmenUeberschrift.style.textAlign = "center"
+
+  var prioritaetenUeberschrift = document.createElement("TD");
+  prioritaetenUeberschrift.innerHTML = "Priorität";
+  prioritaetenUeberschrift.style.border = "solid";
+  prioritaetenUeberschrift.style.textAlign = "center"
+
+  zeileFuerUeberschriften.appendChild(taskUeberschrift);
+  zeileFuerUeberschriften.appendChild(bedrohungenUeberschrift);
+  zeileFuerUeberschriften.appendChild(risikenUeberschrift);
+  zeileFuerUeberschriften.appendChild(maßnahmenUeberschrift);
+  zeileFuerUeberschriften.appendChild(prioritaetenUeberschrift);
+
+  tabelle.appendChild(zeileFuerUeberschriften);
+
+  /*console.log(taskP);
+  console.log(bedrohungenP);
+  console.log(risikenP);
+  console.log(maßnahmenP);
+  console.log(akteureP);
+  console.log(task2P);
+  console.log(bedrohungen2P);
+  console.log(risiken2P);
+  console.log(maßnahmen2P);
+  console.log(akteure2P);
+  console.log(task3P);
+  console.log(bedrohungen3P);
+  console.log(risiken3P);
+  console.log(maßnahmen3P);
+  console.log(akteure3P);*/
+
+
+  var index;
+  for(index = 0; index < taskP.length; index++){
+
+    var zeile = document.createElement("TR");
+
+    var spalte1 = document.createElement("TD");
+    var spalte2 = document.createElement("TD");
+    var spalte3 = document.createElement("TD");
+    var spalte4 = document.createElement("TD");
+    var spalte5 = document.createElement("TD");
+
+    zeile.appendChild(spalte1);
+    zeile.appendChild(spalte2);
+    zeile.appendChild(spalte3);
+    zeile.appendChild(spalte4);
+    zeile.appendChild(spalte5);
+
+    tabelle.appendChild(zeile);
+
+    spalte1.innerHTML = taskP[index];
+    console.log(taskP[index]);
+
+    var dieBedrohungen = bedrohungenP[index].toString();
+    var dieGetrenntenBedrohungen = dieBedrohungen.split('#');
+    var i;
+    for(i = 0; i < dieGetrenntenBedrohungen.length; i++){
+      var zeile = document.createElement("TR");
+      var ul = document.createElement("UL");
+      var li = document.createElement("LI");
+      li.innerHTML = dieGetrenntenBedrohungen[i];
+      ul.appendChild(li);
+      zeile.appendChild(ul);
+      spalte2.appendChild(zeile);
+
+    }
+
+    //spalte2.innerHTML = bedrohungenP[index];
+
+    var dieRisiken = risikenP[index].toString();
+    var dieGetrenntenRisiken = dieRisiken.split('#');
+    var j;
+    for(j = 0; j < dieGetrenntenRisiken.length; j++){
+      var zeile = document.createElement("TR");
+      var ul = document.createElement("UL");
+      var li = document.createElement("LI");
+      li.innerHTML = dieGetrenntenRisiken[j];
+      ul.appendChild(li);
+      zeile.appendChild(ul);
+      spalte3.appendChild(zeile);
+    }
+    //spalte3.innerHTML = risikenP[index];
+
+    var dieMaßnahmen = maßnahmenP[index].toString();
+    var dieGetrenntenMaßnahmen = dieMaßnahmen.split('#');
+    var k;
+    for(k = 0; k < dieGetrenntenMaßnahmen.length; k++){
+      var zeile = document.createElement("TR");
+      var ul = document.createElement("UL");
+      var li = document.createElement("LI");
+      li.innerHTML = dieGetrenntenMaßnahmen[k];
+      ul.appendChild(li);
+      zeile.appendChild(ul);
+      spalte4.appendChild(zeile);
+    }
+  //  spalte4.innerHTML = maßnahmenP[index];
+    //console.log(dieGetrenntenRisiken.length);
+    risikenGezählt += dieGetrenntenRisiken.length;
+    maßnahmenGezählt += dieGetrenntenMaßnahmen.length;
+    bedrohungenGezählt += dieGetrenntenBedrohungen.length;
+
+
+    if(akteureP[index] == 0){
+      spalte5.style.backgroundColor = "green";
+      //spalte5.style.color = "green";
+      spalte5.style.border = "solid";
+      prioritätGrünGezählt += 1;
+    }else if(akteureP[index] == 1){
+      spalte5.style.backgroundColor = "yellow";
+      //spalte5.style.color = "yellow";
+      spalte5.style.border = "solid";
+      prioritätGelbGezählt += 1;
+    }else{
+      spalte5.style.backgroundColor = "red";
+      //spalte5.style.color = "red";
+      spalte5.style.border = "solid";
+      prioritätRotGezählt += 1;
+    }
+    spalte1.style.border = "solid";
+    spalte2.style.border = "solid";
+    spalte3.style.border = "solid";
+    spalte4.style.border = "solid";
+  }
+
+
+
+
+
+
+  //JETZT ALLES FÜR DEN NÄCHSTEN GESCHÄFTSPROZESS/////////////////////////////////////////////////////////////////////////////////77
+
+  var ueberschriftArbeitsablauf2 = document.createElement("TR");
+  var s2 = document.createElement("TD");
+  s2.innerHTML = "Standard Arbeitsablauf: Produktion Holz";
+  s2.colSpan = 6;
+  s2.style.backgroundColor = "rgb(83, 99, 142)";
+
+  ueberschriftArbeitsablauf2.appendChild(s2);
+  ueberschriftArbeitsablauf2.style.border = "solid";
+
+
+
+  tabelle.appendChild(ueberschriftArbeitsablauf2);
+
+  var zeileFuerUeberschriften2 = document.createElement("TR");
+  zeileFuerUeberschriften2.style.backgroundColor = "rgb(83, 99, 142)"
+
+  var taskUeberschrift2 = document.createElement("TD");
+  taskUeberschrift2.innerHTML = "Arbeitsschritt";
+  taskUeberschrift2.style.border = "solid";
+  taskUeberschrift2.style.textAlign = "center"
+
+  var bedrohungenUeberschrift2 = document.createElement("TD");
+  bedrohungenUeberschrift2.innerHTML = "Bedrohungen";
+  bedrohungenUeberschrift2.style.border = "solid";
+  bedrohungenUeberschrift2.style.textAlign = "center"
+
+  var risikenUeberschrift2 = document.createElement("TD");
+  risikenUeberschrift2.innerHTML = "Risiken";
+  risikenUeberschrift2.style.border = "solid";
+  risikenUeberschrift2.style.textAlign = "center"
+
+  var maßnahmenUeberschrift2 = document.createElement("TD");
+  maßnahmenUeberschrift2.innerHTML = "Maßnahmen";
+  maßnahmenUeberschrift2.style.border = "solid";
+  maßnahmenUeberschrift2.style.textAlign = "center"
+
+  var prioritaetenUeberschrift2 = document.createElement("TD");
+  prioritaetenUeberschrift2.innerHTML = "Priorität";
+  prioritaetenUeberschrift2.style.border = "solid";
+  prioritaetenUeberschrift2.style.textAlign = "center"
+
+  zeileFuerUeberschriften2.appendChild(taskUeberschrift2);
+  zeileFuerUeberschriften2.appendChild(bedrohungenUeberschrift2);
+  zeileFuerUeberschriften2.appendChild(risikenUeberschrift2);
+  zeileFuerUeberschriften2.appendChild(maßnahmenUeberschrift2);
+  zeileFuerUeberschriften2.appendChild(prioritaetenUeberschrift2);
+
+  tabelle.appendChild(zeileFuerUeberschriften2);
+
+  //////////////////////////////////////////////////
+  var index2;
+  for(index2 = 0; index2 < task2P.length; index2++){
+
+    var zeile = document.createElement("TR");
+
+    var spalte1 = document.createElement("TD");
+    var spalte2 = document.createElement("TD");
+    var spalte3 = document.createElement("TD");
+    var spalte4 = document.createElement("TD");
+    var spalte5 = document.createElement("TD");
+
+    zeile.appendChild(spalte1);
+    zeile.appendChild(spalte2);
+    zeile.appendChild(spalte3);
+    zeile.appendChild(spalte4);
+    zeile.appendChild(spalte5);
+
+    tabelle.appendChild(zeile);
+
+    spalte1.innerHTML = task2P[index2];
+
+    var dieBedrohungen2 = bedrohungen2P[index2].toString();
+    var dieGetrenntenBedrohungen2 = dieBedrohungen2.split('#');
+    var i2;
+    for(i2 = 0; i2 < dieGetrenntenBedrohungen2.length; i2++){
+      var zeile = document.createElement("TR");
+      var ul = document.createElement("UL");
+      var li = document.createElement("LI");
+      li.innerHTML = dieGetrenntenBedrohungen2[i2];
+      ul.appendChild(li);
+      zeile.appendChild(ul);
+      spalte2.appendChild(zeile);
+    }
+
+    //spalte2.innerHTML = bedrohungenP[index];
+
+    var dieRisiken2 = risiken2P[index2].toString();
+    var dieGetrenntenRisiken2 = dieRisiken2.split('#');
+    var j2;
+    for(j2 = 0; j2 < dieGetrenntenRisiken2.length; j2++){
+      var zeile = document.createElement("TR");
+      var ul = document.createElement("UL");
+      var li = document.createElement("LI");
+      li.innerHTML = dieGetrenntenRisiken2[j2];
+      ul.appendChild(li);
+      zeile.appendChild(ul);
+      spalte3.appendChild(zeile);
+    }
+    //spalte3.innerHTML = risikenP[index];
+
+    var dieMaßnahmen2 = maßnahmen2P[index2].toString();
+    var dieGetrenntenMaßnahmen2 = dieMaßnahmen2.split('#');
+    var k2;
+    for(k2 = 0; k2 < dieGetrenntenMaßnahmen2.length; k2++){
+      var zeile = document.createElement("TR");
+      var ul = document.createElement("UL");
+      var li = document.createElement("LI");
+      li.innerHTML = dieGetrenntenMaßnahmen2[k2];
+      ul.appendChild(li);
+      zeile.appendChild(ul);
+      spalte4.appendChild(zeile);
+    }
+  //  spalte4.innerHTML = maßnahmenP[index];
+  //console.log(dieGetrenntenRisiken2.length);
+    risikenGezählt += dieGetrenntenRisiken2.length;
+    maßnahmenGezählt += dieGetrenntenMaßnahmen2.length;
+    bedrohungenGezählt += dieGetrenntenBedrohungen2.length;
+
+
+    if(akteure2P[index2] == 0){
+      spalte5.style.backgroundColor = "green";
+      //spalte5.style.color = "green";
+      spalte5.style.border = "solid";
+      prioritätGrünGezählt += 1;
+    }else if(akteure2P[index2] += 1){
+      spalte5.style.backgroundColor = "yellow";
+      //spalte5.style.color = "yellow";
+      spalte5.style.border = "solid";
+      prioritätGelbGezählt += 1;
+    }else{
+      spalte5.style.backgroundColor = "red";
+      //spalte5.style.color = "red";
+      spalte5.style.border = "solid";
+      prioritätRotGezählt += 1;
+    }
+    spalte1.style.border = "solid";
+    spalte2.style.border = "solid";
+    spalte3.style.border = "solid";
+    spalte4.style.border = "solid";
+
+    }
+
+
+  //JETZT ALLES FÜR DEN NÄCHSTEN GESCHÄFTSPROZESS/////////////////////////////////////////////////////////////////////////////////77
+
+  var ueberschriftArbeitsablauf3 = document.createElement("TR");
+  var s3 = document.createElement("TD");
+  s3.innerHTML = "Standard Arbeitsablauf: Produktentwicklung";
+  s3.colSpan = 6;
+  s3.style.backgroundColor = "rgb(83, 99, 142)";
+
+  ueberschriftArbeitsablauf3.appendChild(s3);
+  ueberschriftArbeitsablauf3.style.border = "solid";
+
+
+
+  tabelle.appendChild(ueberschriftArbeitsablauf3);
+
+  var zeileFuerUeberschriften3 = document.createElement("TR");
+  zeileFuerUeberschriften3.style.backgroundColor = "rgb(83, 99, 142)"
+
+  var taskUeberschrift3 = document.createElement("TD");
+  taskUeberschrift3.innerHTML = "Arbeitsschritt";
+  taskUeberschrift3.style.border = "solid";
+  taskUeberschrift3.style.textAlign = "center"
+
+  var bedrohungenUeberschrift3 = document.createElement("TD");
+  bedrohungenUeberschrift3.innerHTML = "Bedrohungen";
+  bedrohungenUeberschrift3.style.border = "solid";
+  bedrohungenUeberschrift3.style.textAlign = "center"
+
+  var risikenUeberschrift3 = document.createElement("TD");
+  risikenUeberschrift3.innerHTML = "Risiken";
+  risikenUeberschrift3.style.border = "solid";
+  risikenUeberschrift3.style.textAlign = "center"
+
+  var maßnahmenUeberschrift3 = document.createElement("TD");
+  maßnahmenUeberschrift3.innerHTML = "Maßnahmen";
+  maßnahmenUeberschrift3.style.border = "solid";
+  maßnahmenUeberschrift3.style.textAlign = "center"
+
+  var prioritaetenUeberschrift3 = document.createElement("TD");
+  prioritaetenUeberschrift3.innerHTML = "Priorität";
+  prioritaetenUeberschrift3.style.border = "solid";
+  prioritaetenUeberschrift3.style.textAlign = "center";
+
+  zeileFuerUeberschriften3.appendChild(taskUeberschrift3);
+  zeileFuerUeberschriften3.appendChild(bedrohungenUeberschrift3);
+  zeileFuerUeberschriften3.appendChild(risikenUeberschrift3);
+  zeileFuerUeberschriften3.appendChild(maßnahmenUeberschrift3);
+  zeileFuerUeberschriften3.appendChild(prioritaetenUeberschrift3);
+
+  tabelle.appendChild(zeileFuerUeberschriften3);
+  ////////////////////////////////////////////////////////////////////////////////////////////
+  var index3;
+  for(index3 = 0; index3 < task3P.length; index3++){
+
+  var zeile = document.createElement("TR");
+
+  var spalte1 = document.createElement("TD");
+  var spalte2 = document.createElement("TD");
+  var spalte3 = document.createElement("TD");
+  var spalte4 = document.createElement("TD");
+  var spalte5 = document.createElement("TD");
+
+  zeile.appendChild(spalte1);
+  zeile.appendChild(spalte2);
+  zeile.appendChild(spalte3);
+  zeile.appendChild(spalte4);
+  zeile.appendChild(spalte5);
+
+  tabelle.appendChild(zeile);
+
+  spalte1.innerHTML = task3P[index3];
+
+  var dieBedrohungen3 = bedrohungen3P[index3].toString();
+  var dieGetrenntenBedrohungen3 = dieBedrohungen3.split('#');
+  var i3;
+  for(i3 = 0; i3 < dieGetrenntenBedrohungen3.length; i3++){
+    var zeile = document.createElement("TR");
+    var ul = document.createElement("UL");
+    var li = document.createElement("LI");
+    li.innerHTML = dieGetrenntenBedrohungen3[i3];
+    ul.appendChild(li);
+    zeile.appendChild(ul);
+    spalte2.appendChild(zeile);
+  }
+
+  //spalte2.innerHTML = bedrohungenP[index];
+
+  var dieRisiken3 = risiken3P[index3].toString();
+  var dieGetrenntenRisiken3 = dieRisiken3.split('#');
+  var j3;
+  for(j3 = 0; j3 < dieGetrenntenRisiken3.length; j3++){
+    var zeile = document.createElement("TR");
+    var ul = document.createElement("UL");
+    var li = document.createElement("LI");
+    li.innerHTML = dieGetrenntenRisiken3[j3];
+    ul.appendChild(li);
+    zeile.appendChild(ul);
+    spalte3.appendChild(zeile);
+  }
+  //spalte3.innerHTML = risikenP[index];
+
+  var dieMaßnahmen3 = maßnahmen3P[index3].toString();
+  var dieGetrenntenMaßnahmen3 = dieMaßnahmen3.split('#');
+  var k3;
+  for(k3 = 0; k3 < dieGetrenntenMaßnahmen3.length; k3++){
+    var zeile = document.createElement("TR");
+    var ul = document.createElement("UL");
+    var li = document.createElement("LI");
+    li.innerHTML = dieGetrenntenMaßnahmen3[k3];
+    ul.appendChild(li);
+    zeile.appendChild(ul);
+    spalte4.appendChild(zeile);
+  }
+  //  spalte4.innerHTML = maßnahmenP[index];
+  //console.log(dieGetrenntenRisiken3.length);
+  risikenGezählt += dieGetrenntenRisiken3.length;
+  maßnahmenGezählt += dieGetrenntenMaßnahmen3.length;
+  bedrohungenGezählt += dieGetrenntenBedrohungen3.length;
+
+
+  if(akteure3P[index3] == 0){
+    spalte5.style.backgroundColor = "green";
+    //spalte5.style.color = "green";
+    spalte5.style.border = "solid";
+    prioritätGrünGezählt += 1;
+  }else if(akteure3P[index3] == 1){
+    spalte5.style.backgroundColor = "yellow";
+    //spalte5.style.color = "yellow";
+    spalte5.style.border = "solid";
+    prioritätGelbGezählt += 1;
+  }else{
+    spalte5.style.backgroundColor = "red";
+    //spalte5.style.color = "red";
+    spalte5.style.border = "solid";
+    prioritätRotGezählt += 1;
+  }
+  spalte1.style.border = "solid";
+  spalte2.style.border = "solid";
+  spalte3.style.border = "solid";
+  spalte4.style.border = "solid";
+
+  }
+  //////////////////////////////////////////////////////BILANZ///////////////////////////////////////
+  var bilanzUeberschrift = document.createElement("TR");
+  var s4 = document.createElement("TD");
+  s4.innerHTML = "Zusammenfassung";
+  s4.colSpan = 6;
+  s4.style.backgroundColor = "rgb(83, 99, 142)";
+
+  bilanzUeberschrift.appendChild(s4);
+  bilanzUeberschrift.style.border = "solid";
+  bilanzUeberschrift.style.textAlign = "center";
+  tabelle.appendChild(bilanzUeberschrift);
+
+  ///////jetzt BILANZÜBERSCHRIFTEN/////////////////////////////////////////////////////////////////////////////////
+
+  //////NEUE ZEILE////////////////////////////////////////////////////////////////////////////////////////
+  var bilanzZeile2 = document.createElement("TR");
+  var untersuchteArbeitsabläufeSpalteUeberschrift = document.createElement("TD");
+  var untersuchteArbeitsabläufeSpalteZahl = document.createElement("TD");
+
+  untersuchteArbeitsabläufeSpalteUeberschrift.innerHTML = "Untersuchte Arbeitsabläufe";
+  untersuchteArbeitsabläufeSpalteUeberschrift.colSpan = 3;
+
+  untersuchteArbeitsabläufeSpalteUeberschrift.style.border = "solid";
+
+  untersuchteArbeitsabläufeSpalteZahl.innerHTML = "3";
+  untersuchteArbeitsabläufeSpalteZahl.colSpan = 3;
+  untersuchteArbeitsabläufeSpalteZahl.style.border = "solid";
+
+  bilanzZeile2.appendChild(untersuchteArbeitsabläufeSpalteUeberschrift);
+  bilanzZeile2.appendChild(untersuchteArbeitsabläufeSpalteZahl);
+
+  tabelle.appendChild(bilanzZeile2);
+
+  /////////////////NEUE ZEILE///////////////////////////////////////////////////////////////////////////////
+  var bilanzZeile3 = document.createElement("TR");
+  var gefundeneBedrohungenSpalteUeberschrift = document.createElement("TD");
+  var gefundeneBedrohungenSpalteZahl = document.createElement("TD");
+
+  gefundeneBedrohungenSpalteUeberschrift.innerHTML = "Gefundene Bedrohungen";
+  gefundeneBedrohungenSpalteUeberschrift.colSpan = 3;
+
+  gefundeneBedrohungenSpalteUeberschrift.style.border = "solid";
+
+  gefundeneBedrohungenSpalteZahl.innerHTML = bedrohungenGezählt;
+  gefundeneBedrohungenSpalteZahl.colSpan = 3;
+  gefundeneBedrohungenSpalteZahl.style.border = "solid";
+
+  bilanzZeile3.appendChild(gefundeneBedrohungenSpalteUeberschrift);
+  bilanzZeile3.appendChild(gefundeneBedrohungenSpalteZahl);
+
+  tabelle.appendChild(bilanzZeile3);
+
+  /////////////////NEUE ZEILE///////////////////////////////////////////////////////////////////////////////
+  var bilanzZeile4 = document.createElement("TR");
+  var gefundeneRisikenSpalteUeberschrift = document.createElement("TD");
+  var gefundeneRisikenSpalteZahl = document.createElement("TD");
+
+  gefundeneRisikenSpalteUeberschrift.innerHTML = "Gefundene Risiken";
+  gefundeneRisikenSpalteUeberschrift.colSpan = 3;
+
+  gefundeneRisikenSpalteUeberschrift.style.border = "solid";
+
+  gefundeneRisikenSpalteZahl.innerHTML = risikenGezählt;
+  gefundeneRisikenSpalteZahl.colSpan = 3;
+  gefundeneRisikenSpalteZahl.style.border = "solid";
+
+  bilanzZeile4.appendChild(gefundeneRisikenSpalteUeberschrift);
+  bilanzZeile4.appendChild(gefundeneRisikenSpalteZahl);
+
+  tabelle.appendChild(bilanzZeile4);
+
+  /////////////////NEUE ZEILE///////////////////////////////////////////////////////////////////////////////
+  var bilanzZeile5 = document.createElement("TR");
+  var ermittelteMaßnahmenSpalteUeberschrift = document.createElement("TD");
+  var ermittelteMaßnahmenSpalteZahl = document.createElement("TD");
+
+  ermittelteMaßnahmenSpalteUeberschrift.innerHTML = "Ermittelte Maßnahmen";
+  ermittelteMaßnahmenSpalteUeberschrift.colSpan = 3;
+
+  ermittelteMaßnahmenSpalteUeberschrift.style.border = "solid";
+
+  ermittelteMaßnahmenSpalteZahl.innerHTML = maßnahmenGezählt;
+  ermittelteMaßnahmenSpalteZahl.colSpan = 3;
+  ermittelteMaßnahmenSpalteZahl.style.border = "solid";
+
+  bilanzZeile5.appendChild(ermittelteMaßnahmenSpalteUeberschrift);
+  bilanzZeile5.appendChild(ermittelteMaßnahmenSpalteZahl);
+
+  tabelle.appendChild(bilanzZeile5);
+
+  /////////////////NEUE ZEILE//////////////////////////////////////////////////////////////////////////////
+  var bilanzZeile6 = document.createElement("TR");
+  var prioritätenSpaltenUeberschrift = document.createElement("TD");
+  var prioritätenSpaltenZahl = document.createElement("TD");
+
+  prioritätenSpaltenUeberschrift.innerHTML = "Umsetzungsempfehlung";
+  prioritätenSpaltenUeberschrift.colSpan = 3;
+  prioritätenSpaltenUeberschrift.style.border = "solid";
+
+  prioritätenSpaltenZahl.colSpan = 3;
+  prioritätenSpaltenZahl.style.border = "solid";
+
+  var prioritätenZeileRot = document.createElement("TR");
+  var prioritätenZeileGelb = document.createElement("TR");
+  var prioritätenZeileGrün = document.createElement("TR");
+
+  prioritätenZeileRot.innerHTML = prioritätRotGezählt + " "+"Hohe Prioritäten";
+  prioritätenZeileGelb.innerHTML = prioritätGelbGezählt+ " "+"Mittlere Prioritäten";
+  prioritätenZeileGrün.innerHTML = prioritätGrünGezählt+ " "+"Niedrige Prioritäten";
+
+  prioritätenZeileRot.style.textAlign = "center";
+  prioritätenZeileRot.style.backgroundColor = "red";
+
+
+  prioritätenZeileGelb.style.textAlign = "center";
+  prioritätenZeileGelb.style.backgroundColor = "#a9a905";
+
+  prioritätenZeileGrün.style.textAlign = "center";
+  prioritätenZeileGrün.style.backgroundColor = "green";
+
+  prioritätenSpaltenZahl.appendChild(prioritätenZeileRot);
+  prioritätenSpaltenZahl.appendChild(prioritätenZeileGelb);
+  prioritätenSpaltenZahl.appendChild(prioritätenZeileGrün);
+
+  bilanzZeile6.appendChild(prioritätenSpaltenUeberschrift);
+  bilanzZeile6.appendChild(prioritätenSpaltenZahl);
+
+  tabelle.appendChild(bilanzZeile6);
+
+
+  console.log(risikenGezählt);
+  console.log(maßnahmenGezählt);
+  console.log(bedrohungenGezählt);
+  console.log(prioritätRotGezählt);
+  console.log(prioritätGelbGezählt);
+  console.log(prioritätGrünGezählt);
+}
+
+function druckenEins(){
+  erstelleReport();
+  window.print();
+}
+function druckenZwei(){
+  erstelleReportZwei();
+  window.print();
+}
+function reportAnzeigen(){
+  var reportButton = document.getElementById("zuReportButton");
+  reportButton.style.visibility="visible";
+}
+
+function hinzufuegen(){
+  alertify.error("Arbeitsabläufe hinzufügen ist nicht möglich, da sie die Testversion benutzen");
+}
+function uploaden(){
+  alertify.error("Arbeitsabläufe uploaden ist nicht möglich, da sie die Testversion benutzen");
+}
+
+function loeschen(){
+  alertify.error("Arbeitsabläufe löschen ist nicht möglich, da sie die Testversion benutzen");
+}

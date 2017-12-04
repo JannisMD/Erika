@@ -61,36 +61,95 @@
 								<img id="arbeitsablauf" src="images/ablauf.png" alt="">
 								<img id="fragezeichen" src="images/fragezeichen.png" onclick="hilfeBPMN()">
 								<h2>Risikobewertung</h2>
-                    <p>Wählen Sie den passenden Standard Arbeitsablauf</p>
+                    <p>Hier sehen Sie Standard Arbeitsabläufe aus der Holzbranche. Bitte passen Sie diese Arbeitsabläufe den Arbeitsabläufen Ihres Unternehmens an.</p>
 										<!--button type="button"  onclick="hilfeBPMN()" name="button" style="width: 12%">Hilfe</button-->
 
 										<br>
+										<table style="border: solid; text-align: center;">
+											<thead style="border: solid;">
+												<tr>
+													<th scope="col" style="border: solid;text-align: center;background-color: rgb(83, 99, 142);font-family: Raleway, Helvetica, sans-serif;">Abteilung: Versand</th>
+												</tr>
+											</thead>
+											<tbody style="border: solid;">
+												<tr style="border: solid;">
+													<td style="border: solid;"><button type="button" id="show"  class="btn btn-primary btn-lg" style="width: 62%">Arbeitsablauf: Produkt versenden</button>
+													<button type="button" name="button" onclick="loeschen();" style="height: 54px; width: 8%"><img src="images/papierkorb.png" style="width: 130%; padding-top: 15px"></button>
+													<div id="canvas" style="height: 600px; color: black; width: 101%"></div></td>
+
+												</tr>
+												<tr style="border: solid;">
+													<td style="border: solid;"><button type="button" name="button" onclick="hinzufuegen();"style="height: 54px; width: 8%"><img src="images/plus.png" style="width: 130%; padding-top: 15px;"></button><button type="button" name="button"onclick="uploaden();" style="height: 54px; width: 8%"><img src="images/upload.png" style="width: 130%; padding-top: 15px"></button></td>
+												</tr>
+											</tbody>
+										</table>
+										<br><br>
+
+
+										<table style="border: solid; text-align: center;">
+											<thead style="border: solid;">
+												<tr>
+													<th scope="col" style="border: solid;text-align: center;background-color: rgb(83, 99, 142);font-family: Raleway, Helvetica, sans-serif;">Abteilung: Produktion</th>
+												</tr>
+											</thead>
+											<tbody style="border: solid;">
+												<tr style="border: solid;">
+													<td style="border: solid;"><button type="button" id="show2" class="btn btn-primary btn-lg" style="width: 62%">Arbeitsablauf: Holzproduktion</button>
+													<button type="button" name="button" onclick="loeschen();" style="height: 54px; width: 8%"><img src="images/papierkorb.png" style="width: 130%; padding-top: 15px"></button>
+													<div id="canvas2" style="height: 600px; color: black; background-color:white; width: 101%"></div></td>
+
+												</tr>
+												<tr style="border: solid;">
+													<td style="border: solid;"><button type="button" name="button" onclick="hinzufuegen();" style="height: 54px; width: 8%"><img src="images/plus.png" style="width: 130%; padding-top: 15px;"></button>
+													<button type="button" name="button" onclick="uploaden();"style="height: 54px; width: 8%"><img src="images/upload.png" style="width: 130%; padding-top: 15px"></button></td>
+												</tr>
+											</tbody>
+										</table>
                     <!-- Arbeitsabläufe -->
-										<h3>Abteilung: Versand</h3>
+										<!--<h3>Abteilung: Versand</h3>
 										<button type="button" id="show" onclick="button2()" class="btn btn-primary btn-lg" style="width: 62%">Produkt versenden</button>
 										<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/plus.png" style="width: 130%; padding-top: 15px;"></button>
 										<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/upload.png" style="width: 130%; padding-top: 15px"></button>
 										<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/papierkorb.png" style="width: 130%; padding-top: 15px"></button>
 										<div id="canvas" style="height: 600px; color: black; width: 120%"></div>
-										<br><br>
-										<h3>Abteilung: Produktion</h3>
+										<br><br> -->
+										<!--<h3>Abteilung: Produktion</h3>
 										<button type="button" id="show2" class="btn btn-primary btn-lg" style="width: 62%">Holzproduktion</button>
 										<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/plus.png" style="width: 130%; padding-top: 15px;"></button>
 										<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/upload.png" style="width: 130%; padding-top: 15px"></button>
 										<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/papierkorb.png" style="width: 130%; padding-top: 15px"></button>
-										<div id="canvas2" style="height: 600px; color: black; background-color:white; width: 120%"></div>
+										<div id="canvas2" style="height: 600px; color: black; background-color:white; width: 120%"></div>-->
 										<br><br>
-										<h3>Abteilung: Produktionsentwicklung</h3>
+										<table style="border: solid; text-align: center;">
+											<thead style="border: solid;">
+												<tr>
+													<th scope="col" style="border: solid;text-align: center;background-color: rgb(83, 99, 142);font-family: Raleway, Helvetica, sans-serif;">Abteilung: Entwicklung</th>
+												</tr>
+											</thead>
+											<tbody style="border: solid;">
+												<tr style="border: solid;">
+													<td style="border: solid;"><button type="button" id="show3" class="btn btn-primary btn-lg" style="width: 62%">Arbeitsablauf: Produktentwicklung</button>
+													<button type="button" name="button"onclick="loeschen();" style="height: 54px; width: 8%"><img src="images/papierkorb.png" style="width: 130%; padding-top: 15px"></button>
+													<div id="canvas3" style="height: 600px; color: black; background-color:white; width: 101%"></div></td>
+												</tr>
+												<tr style="border: solid;">
+													<td style="border: solid;"><button type="button" name="button" onclick="hinzufuegen();"style="height: 54px; width: 8%"><img src="images/plus.png" style="width: 130%; padding-top: 15px;"></button>
+													<button type="button" name="button" onclick="uploaden();"style="height: 54px; width: 8%"><img src="images/upload.png" style="width: 130%; padding-top: 15px"></button></td>
+												</tr>
+											</tbody>
+										</table>
+										<!--<h3>Abteilung: Produktionsentwicklung</h3>
 										<button type="button" id="show3" class="btn btn-primary btn-lg" style="width: 62%">Produktentwicklung</button>
 										<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/plus.png" style="width: 130%; padding-top: 15px;"></button>
 										<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/upload.png" style="width: 130%; padding-top: 15px"></button>
 										<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/papierkorb.png" style="width: 130%; padding-top: 15px"></button>
-										<div id="canvas3" style="height: 600px; color: black; background-color:white; width: 120%"></div>
+										<div id="canvas3" style="height: 600px; color: black; background-color:white; width: 120%"></div>-->
 										<br>
+										<br>
+										<button type="button"id="analysierenButton" onclick="getLayers()"  class="btn btn-primary btn-lg" style="width: 49%; background-color: green">Arbeitsabläufe analysieren</button><br>
+										<button type="button" id="ergebnisseAusgebenButton"class="btn btn-primary btn-lg" onclick="gebeGefahrenAus()" style="width: auto;background-color: green; visibility: hidden;">Ergebnisse ausgeben</button>
+										<a href="Report.html"><button href="Report.html"type="submit" id="zuReportButton"class="btn btn-primary btn-lg" style="width: auto;background-color: green; visibility: hidden;"><a href="Report.html">Report anzeigen</button></a>
 
-										<br>
-										<button type="button" onclick="getLayers()"  class="btn btn-primary btn-lg" style="width: auto; background-color: green">Arbeitsabläufe analysieren</button><br>
-										<button type="button" class="btn btn-primary btn-lg" onclick="gebeGefahrenAus()" style="width: auto;">Ergebnisse ausgeben</button>
 										<!--object width="600" height="1000" type="application/pdf" data="images/hilfe.pdf"></object-->
 
 								</div>

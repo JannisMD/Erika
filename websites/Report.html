@@ -13,6 +13,10 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!-- include the style -->
+		<link rel="stylesheet" href="bower_components/alertify-js/build/css/alertify.min.css" />
+		<!-- include a theme -->
+		<link rel="stylesheet" href="../bower_components/alertify-js/build/css/themes/default.min.css" />
 	</head>
 	<body>
 
@@ -51,7 +55,29 @@
 								<img id="report" src="images/report.png" alt="">
 								<h2>Report</h2>
                     <p>Hier sehen Sie die Reports aus bisher durchgeführten Risikobewertungen</p>
-										<button type="button" onclick="erstelleReport()"  class="btn btn-primary btn-lg" style="width: auto">19.12.2017</button>
+										<br>
+										<table style="border: solid; text-align: center;">
+											<thead style="border: solid;">
+												<tr>
+													<th scope="col" style="border: solid;text-align: center;">Report</th>
+													<th scope="col" style="border: solid;text-align: center;">Auswählen</th>
+												</tr>
+											</thead>
+											<tbody style="border: solid;">
+												<tr style="border: solid;">
+													<td style="border: solid;"><button type="button" onclick="erstelleReport()"  class="btn btn-primary btn-lg" style="width: auto">19.12.2017</button></td>
+													<td><button type="button" onclick="druckenEins();"  class="btn btn-primary btn-lg" style="width: auto;background: green;">Ausdrucken</button></td>
+												</tr>
+												<tr style="border: solid;">
+													<td style="border: solid;"><button type="button" onclick="erstelleReportZwei()"  class="btn btn-primary btn-lg" style="width: auto">19.11.2017</button></td>
+													<td><button type="button" onclick="druckenZwei();"  class="btn btn-primary btn-lg" style="width: auto;background: green;">Ausdrucken</button></td>
+												</tr>
+											</tbody>
+
+
+										</table>
+
+										<!--button type="button" onclick="erstelleReport()"  class="btn btn-primary btn-lg" style="width: auto">19.12.2017</button-->
 										<table id="tabelle">
 
 													      </table>
@@ -69,6 +95,9 @@
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/Chatbot.js"></script>
 			<script src="assets/js/bedrohungenUndRisiken.js"></script>
+			<script src="assets/js/report.js"></script>
+			<script src="./../bower_components/alertify-js/build/alertify.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js"></script>
 
 	</body>
 </html>
