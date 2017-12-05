@@ -4,7 +4,7 @@ window.onload = function loadFrame() {
         var newsLetter = document.getElementById("rotNewsFeed");
         postfach.style.visibility="visible";
         newsLetter.style.visibility="visible";
-    }, 7000);
+    }, 4000);
 };
 
 
