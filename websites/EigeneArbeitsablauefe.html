@@ -57,34 +57,34 @@
 						<section id="wrapper">
 							<header>
 								<div class="inner">
-									<img id="arbeitsablauf" src="images/ablauf.png" alt="">
-									<h2>Eigene Arbeitsabläufe</h2>
+									<img id="arbeitsablauf"style="visibility: hidden;" src="images/ablauf.png" alt="">
+									<h2 style="text-align: center;">Eigene Arbeitsabläufe</h2>
 	                    <p>Hier sehen Sie Ihre Arbeitsabläufe</p>
 	                    <!-- Arbeitsabläufe -->
 											<br>
 											<table style="border: solid; text-align: center;">
 												<thead style="border: solid;">
 													<tr>
-														<th scope="col" style="border: solid;text-align: center;background-color: rgb(83, 99, 142);font-family: Raleway, Helvetica, sans-serif;font-size: xx-large;">Übernommene Arbeitsabläufe</th>
+														<th scope="col" style="border: solid;text-align: center;background-color: rgb(41, 125, 124);font-family: Raleway, Helvetica, sans-serif;font-size: xx-large;">Übernommene Arbeitsabläufe</th>
 													</tr>
 												</thead>
 												<tbody style="border: solid;">
 													<tr style="border: solid;">
 														<td style="border: solid;"><button type="button" id="show" class="btn btn-primary btn-lg" style="width: 62%">Versand</button>
 														<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/download.png" style="width: 130%; padding-top: 15px"></button>
-														<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/papierkorb.png" style="width: 130%; padding-top: 15px"></button>
+														<button type="button" name="button" onclick="loeschen();" style="height: 54px; width: 8%"><img src="images/papierkorb.png" style="width: 130%; padding-top: 15px"></button>
 														<div id="canvas" style="height: 600px; color: black; width: 101%"></div></td>
 													</tr>
 													<tr style="border: solid;">
 														<td style="border: solid;"><button type="button" id="show2" class="btn btn-primary btn-lg" style="width: 62%">Holzproduktion</button>
 														<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/download.png" style="width: 130%; padding-top: 15px"></button>
-														<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/papierkorb.png" style="width: 130%; padding-top: 15px"></button>
+														<button type="button" name="button" onclick="loeschen();" style="height: 54px; width: 8%"><img src="images/papierkorb.png" style="width: 130%; padding-top: 15px"></button>
 														<div id="canvas2" style="height: 600px; color: black; background-color:white; width: 101%"></div></td>
 													</tr>
 													<tr style="border: solid;">
 														<td style="border: solid;"><button type="button" id="show3" class="btn btn-primary btn-lg" style="width: 62%">Produktentwicklung</button>
 														<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/download.png" style="width: 130%; padding-top: 15px"></button>
-														<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/papierkorb.png" style="width: 130%; padding-top: 15px"></button>
+														<button type="button" name="button" onclick="loeschen();" style="height: 54px; width: 8%"><img src="images/papierkorb.png" style="width: 130%; padding-top: 15px"></button>
 														<div id="canvas3" style="height: 600px; color: black; background-color:white; width: 101%"></div></td>
 													</tr>
 												</tbody>
@@ -111,13 +111,13 @@
 											<table style="border: solid; text-align: center;">
 												<thead style="border: solid;">
 													<tr>
-														<th scope="col" style="border: solid;text-align: center;background-color: rgb(83, 99, 142);font-family: Raleway, Helvetica, sans-serif;font-size: xx-large;">Bearbeitete Arbeitsabläufe</th>
+														<th scope="col" style="border: solid;text-align: center;background-color: rgb(41, 125, 124);font-family: Raleway, Helvetica, sans-serif;font-size: xx-large;">Bearbeitete Arbeitsabläufe</th>
 													</tr>
 												</thead>
 												<tbody style="border: solid;">
 													<tr style="border: solid;">
 														<td style="border: solid;"><button type="button" name="button" style="height: 54px; width: 8%"><img src="images/plus.png" style="width: 130%; padding-top: 15px;"></button>
-														<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/upload.png" style="width: 130%; padding-top: 15px"></button></td>
+														<button type="button" name="button" onclick="uploaden();"style="height: 54px; width: 8%"><img src="images/upload.png" style="width: 130%; padding-top: 15px"></button></td>
 													</tr>
 												</tbody>
 											</table>
@@ -130,12 +130,12 @@
 											<table style="border: solid; text-align: center;">
 												<thead style="border: solid;">
 													<tr>
-														<th scope="col" style="border: solid;text-align: center;background-color: rgb(83, 99, 142);font-family: Raleway, Helvetica, sans-serif;font-size: xx-large;">Hochgeladene Arbeitsabläufe</th>
+														<th scope="col" style="border: solid;text-align: center;background-color: rgb(41, 125, 124);font-family: Raleway, Helvetica, sans-serif;font-size: xx-large;">Hochgeladene Arbeitsabläufe</th>
 													</tr>
 												</thead>
 												<tbody style="border: solid;">
 													<tr style="border: solid;">
-														<td style="border: solid;"><button type="button" name="button" style="height: 54px; width: 8%"><img src="images/upload.png" style="width: 130%; padding-top: 15px"></button></td>
+														<td style="border: solid;"><button type="button" name="button"onclick="uploaden();" style="height: 54px; width: 8%"><img src="images/upload.png" style="width: 130%; padding-top: 15px"></button></td>
 													</tr>
 												</tbody>
 											</table>
