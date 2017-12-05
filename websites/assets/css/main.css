@@ -4229,15 +4229,6 @@ span.psw {
 	top: 658px;
 }
 
-#fragezeichen2 {
-	position: fixed;
-	background: white;
-	width: 60px;
-	border-radius: 50%;
-	right: 20px;
-	top: 580px;
-}
-
 #video {
 	position: relative;
 	width: 600px;
@@ -4245,7 +4236,7 @@ span.psw {
 	right: 55px;
 }
 
-#rotNewsFeed{
+#rotNewsFeed {
 	position: fixed;
 left: 1310px;
 top: 1px;
@@ -4253,10 +4244,19 @@ width: 1%;
 z-index: 2;
 visibility: hidden;
 }
-#rotPostfach{
+
+#rotPostfach {
 	position: fixed;
     left: 1260px;
     top: 1px;
     width: 1%;
     z-index: 2;
 		visibility: hidden;
+	}
+
+	#gruppenlogo {
+		position: absolute;
+		width: 15%;
+		right: 240px;
+		top: 110px;
+	}
