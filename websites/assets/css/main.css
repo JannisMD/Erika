@@ -4238,12 +4238,12 @@ span.psw {
 
 #rotNewsFeed {
 	position: fixed;
-left: 1310px;
-top: 1px;
-width: 1%;
-z-index: 2;
-visibility: hidden;
-}
+	left: 1310px;
+	top: 1px;
+	width: 1%;
+	z-index: 2;
+	visibility: hidden;
+	}
 
 #rotPostfach {
 	position: fixed;
@@ -4257,6 +4257,14 @@ visibility: hidden;
 	#gruppenlogo {
 		position: absolute;
 		width: 15%;
-		right: 240px;
+		right: 280px;
 		top: 110px;
+	}
+
+	#gruppenlogoHeader {
+		position: fixed;
+		width: 6%;
+		left: 700px;
+		z-index: 2;
+
 	}
