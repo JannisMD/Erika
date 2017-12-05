@@ -141,6 +141,7 @@ function getLayers(){
    maßnahmen3.length = 0;
    akteure3.length = 0;
 
+   //NACH PRIORITÄT FRAGEN///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
   //PROZESSE SPEICHERN///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -485,17 +486,89 @@ function gebeGefahrenAus(){
       },true,'alert');
 
   }
+  //////////////////////////////die bedrohungen1 splitten und die doppelten Werte rausnehmen//////////////////////////////////////////////////////////////////////////////////////
+  console.log(bedrohungen);
+  var dieBedrohungenString = bedrohungen.toString();
+  console.log(dieBedrohungenString);
+  var dieGetrenntenBedrohungenSplit = dieBedrohungenString.split('#');
+
+  var dieGetrenntenBedrohungenSplitRichtig = dieGetrenntenBedrohungenSplit.toString().split(',');
+  console.log(dieGetrenntenBedrohungenSplit);
+  console.log(dieGetrenntenBedrohungenSplitRichtig);
+
+  var uniqueBedrohungen = [];
+  $.each(dieGetrenntenBedrohungenSplitRichtig, function(i, el){
+    if($.inArray(el, uniqueBedrohungen) === -1) uniqueBedrohungen.push(el);
+  });
+  console.log(uniqueBedrohungen);
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  //////////////////////////////die bedrohungenBeschreibung splitten und doppelte Werte rausnehmen/////////////////////////////////////////////////////////////////////////
+  var dieBedrohungenBeschreibungString = bedrohungenBeschreibung.toString();
+  var dieGetrenntenBedrohungenBeschreibungSplit = dieBedrohungenBeschreibungString.split('#');
+
+  var uniqueBedrohungenBeschreibung = [];
+  $.each(dieGetrenntenBedrohungenBeschreibungSplit, function(i, el){
+    if($.inArray(el, uniqueBedrohungenBeschreibung) === -1) uniqueBedrohungenBeschreibung.push(el);
+  });
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  //////////////////////////////die bedrohungen2 splitten und die doppelten Werte rausnehmen//////////////////////////////////////////////////////////////////////////////////////
+
+  var dieBedrohungenString2 = bedrohungen2.toString();
+  var dieGetrenntenBedrohungenSplit2 = dieBedrohungenString2.split('#');
+
+  var dieGetrenntenBedrohungenSplitRichtig2 = dieGetrenntenBedrohungenSplit2.toString().split(',');
+
+  var uniqueBedrohungen2 = [];
+  $.each(dieGetrenntenBedrohungenSplitRichtig2, function(i, el){
+    if($.inArray(el, uniqueBedrohungen2) === -1) uniqueBedrohungen2.push(el);
+  });
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  //////////////////////////////die bedrohungenBeschreibung splitten und doppelte Werte rausnehmen/////////////////////////////////////////////////////////////////////////
+  var dieBedrohungenBeschreibungString2 = bedrohungenBeschreibung2.toString();
+  var dieGetrenntenBedrohungenBeschreibungSplit2 = dieBedrohungenBeschreibungString2.split('#');
+
+  var uniqueBedrohungenBeschreibung2 = [];
+  $.each(dieGetrenntenBedrohungenBeschreibungSplit2, function(i, el){
+    if($.inArray(el, uniqueBedrohungenBeschreibung2) === -1) uniqueBedrohungenBeschreibung2.push(el);
+  });
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  //////////////////////////////die bedrohungen3 splitten und die doppelten Werte rausnehmen//////////////////////////////////////////////////////////////////////////////////////
+
+  var dieBedrohungenString3 = bedrohungen3.toString();
+  var dieGetrenntenBedrohungenSplit3 = dieBedrohungenString3.split('#');
+
+  var dieGetrenntenBedrohungenSplitRichtig3 = dieGetrenntenBedrohungenSplit3.toString().split(',');
+
+  var uniqueBedrohungen3 = [];
+  $.each(dieGetrenntenBedrohungenSplitRichtig3, function(i, el){
+    if($.inArray(el, uniqueBedrohungen3) === -1) uniqueBedrohungen3.push(el);
+  });
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  //////////////////////////////die bedrohungenBeschreibung3 splitten und doppelte Werte rausnehmen/////////////////////////////////////////////////////////////////////////
+  var dieBedrohungenBeschreibungString3 = bedrohungenBeschreibung3.toString();
+  var dieGetrenntenBedrohungenBeschreibungSplit3 = dieBedrohungenBeschreibungString3.split('#');
+
+  var uniqueBedrohungenBeschreibung3 = [];
+  $.each(dieGetrenntenBedrohungenBeschreibungSplit3, function(i, el){
+    if($.inArray(el, uniqueBedrohungenBeschreibung3) === -1) uniqueBedrohungenBeschreibung3.push(el);
+  });
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   alertify.errorAlert('<font size="3">' + " Standard Arbeitsablauf: Versand" + '</font>' + '</div>' +  '<br/><br/>' +
-          '<img src="images/ElectricDangerKlein.png" alt="" id= /> '+'<b style="color: black">'+ "Bedrohungen: " +'</b>'+ bedrohungen + '<br/>' +'<br/>' +
-          '<img src="images/beschreibungRichtigRichtig.png" alt="" id= /> '+'<b style="color: black">'+ "Beschreibung: "+'</b>' + bedrohungenBeschreibung + '<br/>' + '<br/><br/><br/>' +
+          '<img src="images/ElectricDangerKlein.png" alt="" id= /> '+'<b style="color: black">'+ "Bedrohungen: " +'</b>'+ uniqueBedrohungen + '<br/>' +'<br/>' +
+          '<img src="images/beschreibungRichtigRichtig.png" alt="" id= /> '+'<b style="color: black">'+ "Beschreibung: "+'</b>' + uniqueBedrohungenBeschreibung + '<br/>' + '<br/><br/><br/>' +
           '<font size="3">' + " Standard Arbeitsablauf: Produktion Holz" + '</font>' + '</div>' +  '<br/><br/>' +
-          '<img src="images/ElectricDangerKlein.png" alt="" id= /> '+'<b style="color: black">'+ "Bedrohung: "+'</b>' + bedrohungen2 + '<br/>' +'<br/>' +
-          '<img src="images/beschreibungRichtigRichtig.png" alt="" id= /> '+'<b style="color: black">'+ "Beschreibung: " +'</b>' + bedrohungenBeschreibung2 + '<br/>' +
+          '<img src="images/ElectricDangerKlein.png" alt="" id= /> '+'<b style="color: black">'+ "Bedrohung: "+'</b>' + uniqueBedrohungen2 + '<br/>' +'<br/>' +
+          '<img src="images/beschreibungRichtigRichtig.png" alt="" id= /> '+'<b style="color: black">'+ "Beschreibung: " +'</b>' + uniqueBedrohungenBeschreibung2 + '<br/>' +
           '<br/><br/><br/>' +
           '<font size="3">' + "Standard Arbeitsablauf: Produktentwicklung" + '</font>' + '</div>' +  '<br/><br/>' +
-          '<img src="images/ElectricDangerKlein.png" alt="" id= /> '+'<b style="color: black">'+ "Bedrohung: "+'</b>' + bedrohungen3 + '<br/>' + '<br/>' +
-          '<img src="images/beschreibungRichtigRichtig.png" alt="" id= /> '+'<b style="color: black">'+ "Beschreibung: " +'</b>' + bedrohungenBeschreibung3 + '<br/>')
+          '<img src="images/ElectricDangerKlein.png" alt="" id= /> '+'<b style="color: black">'+ "Bedrohung: "+'</b>' + uniqueBedrohungen3 + '<br/>' + '<br/>' +
+          '<img src="images/beschreibungRichtigRichtig.png" alt="" id= /> '+'<b style="color: black">'+ "Beschreibung: " +'</b>' + uniqueBedrohungenBeschreibung3 + '<br/>')
 
           alertify.success('Report wurde erstellt und' +'</br>' +' kann im Menüpunkt:"Report" angesehen werden');
           reportAnzeigen();
@@ -521,8 +594,104 @@ $(document).ready(function(){
           $("#canvas3").toggle(1000);
       });
       });
+///////////////////////////////////////////////////////////
+$(document).ready(function(){
+  $("#showGewichtung").click(function(){
+      $("#hochGewichtung").toggle(1000);
+      $("#mittelGewichtung").toggle(1000);
+      $("#niedrigGewichtung").toggle(1000);
+  });
+});
+$(document).ready(function(){
+  $("#showGewichtung2").click(function(){
+      $("#hochGewichtung2").toggle(1000);
+      $("#mittelGewichtung2").toggle(1000);
+      $("#niedrigGewichtung2").toggle(1000);
+  });
+});
+$(document).ready(function(){
+  $("#showGewichtung3").click(function(){
+      $("#hochGewichtung3").toggle(1000);
+      $("#mittelGewichtung3").toggle(1000);
+      $("#niedrigGewichtung3").toggle(1000);
+  });
+});
 
+////////////////////////////////////////////////////GEWICHTUNG KLICK FUNKTION EINS///////////////////////////////////////////////////////////////////////////////////
+function hochAusgewählt1(){
+  var hoch = document.getElementById('hochGewichtung');
+  var mittel = document.getElementById('mittelGewichtung');
+  var niedrig = document.getElementById('niedrigGewichtung');
 
+  mittel.style.visibility = "hidden";
+  niedrig.style.visibility = "hidden";
+}
+function mittelAusgewählt1(){
+  var hoch = document.getElementById('hochGewichtung');
+  var mittel = document.getElementById('mittelGewichtung');
+  var niedrig = document.getElementById('niedrigGewichtung');
+
+  hoch.style.visibility = "hidden";
+  niedrig.style.visibility = "hidden";
+}
+function niedrigAusgewählt1(){
+  var hoch = document.getElementById('hochGewichtung');
+  var mittel = document.getElementById('mittelGewichtung');
+  var niedrig = document.getElementById('niedrigGewichtung');
+
+  mittel.style.visibility = "hidden";
+  hoch.style.visibility = "hidden";
+}
+/////////////////////////////////////////////////////GEWICHTUNG KLICKEN ZWEI//////////////////////////////////////////////////////////////////////
+function hochAusgewählt2(){
+  var hoch = document.getElementById('hochGewichtung2');
+  var mittel = document.getElementById('mittelGewichtung2');
+  var niedrig = document.getElementById('niedrigGewichtung2');
+
+  mittel.style.visibility = "hidden";
+  niedrig.style.visibility = "hidden";
+}
+function mittelAusgewählt2(){
+  var hoch = document.getElementById('hochGewichtung2');
+  var mittel = document.getElementById('mittelGewichtung2');
+  var niedrig = document.getElementById('niedrigGewichtung2');
+
+  hoch.style.visibility = "hidden";
+  niedrig.style.visibility = "hidden";
+}
+function niedrigAusgewählt2(){
+  var hoch = document.getElementById('hochGewichtung2');
+  var mittel = document.getElementById('mittelGewichtung2');
+  var niedrig = document.getElementById('niedrigGewichtung2');
+
+  mittel.style.visibility = "hidden";
+  hoch.style.visibility = "hidden";
+}
+////////////////////////////////////////////////////////////////////////GEWICHTUNG KLICKEN DREI/////////////////////////////////////////
+function hochAusgewählt3(){
+  var hoch = document.getElementById('hochGewichtung3');
+  var mittel = document.getElementById('mittelGewichtung3');
+  var niedrig = document.getElementById('niedrigGewichtung3');
+
+  mittel.style.visibility = "hidden";
+  niedrig.style.visibility = "hidden";
+}
+function mittelAusgewählt3(){
+  var hoch = document.getElementById('hochGewichtung3');
+  var mittel = document.getElementById('mittelGewichtung3');
+  var niedrig = document.getElementById('niedrigGewichtung3');
+
+  hoch.style.visibility = "hidden";
+  niedrig.style.visibility = "hidden";
+}
+function niedrigAusgewählt3(){
+  var hoch = document.getElementById('hochGewichtung3');
+  var mittel = document.getElementById('mittelGewichtung3');
+  var niedrig = document.getElementById('niedrigGewichtung3');
+
+  mittel.style.visibility = "hidden";
+  hoch.style.visibility = "hidden";
+}
 // Hilfestellung BPMN Tool
 function hilfeBPMN(){
   window.open("images/hilfe.pdf");
