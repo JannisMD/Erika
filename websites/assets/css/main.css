@@ -4257,14 +4257,14 @@ span.psw {
 	#gruppenlogo {
 		position: absolute;
 		width: 15%;
-		right: 240px;
+		right: 280px;
 		top: 110px;
 	}
 
 	#gruppenlogoHeader {
 		position: fixed;
 		width: 6%;
-		left: 650px;
+		left: 700px;
 		z-index: 2;
 
 	}
