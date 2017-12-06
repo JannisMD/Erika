@@ -142,6 +142,10 @@ function getLayers(){
    akteure3.length = 0;
 
    //NACH PRIORITÄT FRAGEN///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+   alertify.alert('<font size="3">' + "Welche Bedrohungen und Risiken?" +
+   '</font>',
+   '<b style="color: black";font-size: inherit;>'+"Welche Bedrohungen und Risiken möchten Sie angezeigt bekommen?"+'<b style="color: black";font-size: inherit;>'+ '</b>'+'<br/>' +
+   '<input type="checkbox" name="vehicle" value="Bike"> I have a bike' +'</br>'+'<input type="checkbox" name="vehicle" value="Car" checked> I have a car' );
 
 
   //PROZESSE SPEICHERN///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
