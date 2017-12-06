@@ -2046,15 +2046,18 @@ function reportAnzeigen(){
 }
 
 function hinzufuegen(){
-  alertify.error("Arbeitsabläufe hinzufügen ist nicht möglich, da sie die Testversion benutzen");
+  alertify.error("Arbeitsabläufe hinzufügen ist nicht möglich, da Sie die Testversion benutzen");
 }
 function uploaden(){
-  alertify.error("Arbeitsabläufe uploaden ist nicht möglich, da sie die Testversion benutzen");
+  alertify.error("Arbeitsabläufe uploaden ist nicht möglich, da Sie die Testversion benutzen");
 }
 
 function loeschen(){
-  alertify.error("Arbeitsabläufe löschen ist nicht möglich, da sie die Testversion benutzen");
+  alertify.error("Arbeitsabläufe löschen ist nicht möglich, da Sie die Testversion benutzen");
 }
 function wasIstGewichtung(){
-  alertify.alert('hallo')
+  alertify.alert('<font size="3">' + "Was ist Gewichtung?" +
+  '</font>',
+  '<img style="margin: auto; display: block;" src="images/waageKlein.png" alt="" id= /> '+'<b style="color: black";font-size: inherit;>'+ '<br/>' +
+  "Arbeitsabläufe haben unterschiedliche Prioritäten für ein Unternehmen, einige dienen nur der Verwaltung andere sind geschäftskritischer. Deshalb ist es wichtig, Arbeitsabläufe aus Ihrer Sicht zu gewichten. Hierbei müssen Sie einschätzen, wie geschäftskritisch ein Arbeitslauf für ihr Unternehmen ist und diesen dann nach: Hoch, Mittel, Niedrig kategorisieren. Mithilfe dieser Einschätzung und unserem Priorisierungsalgorithmus können wir Ihnen eine optimale Einschätzung geben." +'</b>');
 }

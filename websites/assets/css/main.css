@@ -3182,7 +3182,6 @@
 			font-weight: 200;
 			letter-spacing: 0.1em;
 			line-height: 2;
-			text-transform: uppercase;
 		}
 
 		@media screen and (max-width: 1280px) {
@@ -3292,7 +3291,7 @@
 			font-weight: 200;
 			letter-spacing: 0.1em;
 			line-height: 2;
-			text-transform: uppercase;
+
 
 		}
 

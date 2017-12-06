@@ -84,7 +84,7 @@ app.get('/diagram.bpmn', function(req,res){
   console.log('diagram wird abgefragt');
   var fs = require('fs');
 
-  var diagramSenden = fs.readFileSync('./VersandRichtig.bpmn', 'utf8');
+  var diagramSenden = fs.readFileSync('./Versand (1).bpmn', 'utf8');
 
   console.log(diagramSenden);
   res.send(diagramSenden);
@@ -94,7 +94,7 @@ app.get('/B_01.bpmn', function(req,res){
   console.log('diagram wird abgefragt');
   var fs = require('fs');
 
-  var diagramSenden = fs.readFileSync('./ProduktionHolzRichtig.bpmn', 'utf8');
+  var diagramSenden = fs.readFileSync('./Produktion Holz I 4.0 (1).bpmn', 'utf8');
 
   console.log(diagramSenden);
   res.send(diagramSenden);
@@ -104,7 +104,7 @@ app.get('/B_02.bpmn', function(req,res){
   console.log('diagram wird abgefragt');
   var fs = require('fs');
 
-  var diagramSenden = fs.readFileSync('./ProduktentwicklungRichtigVertikal.bpmn', 'utf8');
+  var diagramSenden = fs.readFileSync('./Produktentwicklung (1).bpmn', 'utf8');
 
   console.log(diagramSenden);
   res.send(diagramSenden);
