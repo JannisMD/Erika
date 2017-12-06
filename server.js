@@ -104,7 +104,7 @@ app.get('/B_02.bpmn', function(req,res){
   console.log('diagram wird abgefragt');
   var fs = require('fs');
 
-  var diagramSenden = fs.readFileSync('./ProduktentwicklungRichtig.bpmn', 'utf8');
+  var diagramSenden = fs.readFileSync('./ProduktentwicklungRichtigVertikal.bpmn', 'utf8');
 
   console.log(diagramSenden);
   res.send(diagramSenden);

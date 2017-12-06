@@ -3293,6 +3293,7 @@
 			letter-spacing: 0.1em;
 			line-height: 2;
 			text-transform: uppercase;
+
 		}
 
 	@media screen and (max-width: 1280px) {
@@ -4078,7 +4079,7 @@ span.psw {
 	.slideshow-container {
 		position: relative;
 		margin: auto;
-		width: 50%;
+		width: 47%;
 
 
 	}
@@ -4096,7 +4097,7 @@ span.psw {
 		font-size: 18px;
 		transition: 0.6s ease;
 		border-radius: 0 3px 3px 0;
-		right: 490px;
+		right: 103%;
 	}
 
 	/* Position the "next button" to the right */
@@ -4222,11 +4223,11 @@ span.psw {
 
 #fragezeichen {
 	position: fixed;
-  background: white;
-	width: 60px;
-  border-radius: 50%;
-  right: 86px;
-  top: 870px;
+    background: white;
+    width: 60px;
+    border-radius: 50%;
+		right: 1%;
+    top: 84%;
 }
 
 #video {
@@ -4265,7 +4266,7 @@ span.psw {
 	#gruppenlogoHeader {
 		position: fixed;
 		width: 6%;
-		left: 48%;
+		left: 47%;
 		z-index: 2;
 
 	}
