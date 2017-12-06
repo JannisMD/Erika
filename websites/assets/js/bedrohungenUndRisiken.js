@@ -142,10 +142,7 @@ function getLayers(){
    akteure3.length = 0;
 
    //NACH PRIORITÄT FRAGEN///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-   alertify.alert('<font size="3">' + "Welche Bedrohungen und Risiken?" +
-   '</font>',
-   '<b style="color: black";font-size: inherit;>'+"Welche Bedrohungen und Risiken möchten Sie angezeigt bekommen?"+'<b style="color: black";font-size: inherit;>'+ '</b>'+'<br/>' +
-   '<input type="checkbox" name="vehicle" value="Bike"> I have a bike' +'</br>'+'<input type="checkbox" name="vehicle" value="Car" checked> I have a car' );
+   
 
 
   //PROZESSE SPEICHERN///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -770,6 +767,135 @@ function hilfeBPMN(){
 
 
       tabelle.appendChild(tabellenUeberschrift);
+      //////BILANZ NEU ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+      var bilanzUeberschrift = document.createElement("TR");
+      var s4 = document.createElement("TD");
+      s4.innerHTML = "Zusammenfassung";
+      s4.colSpan = 6;
+      s4.style.backgroundColor = "rgb(83, 99, 142)";
+
+      bilanzUeberschrift.appendChild(s4);
+      bilanzUeberschrift.style.border = "solid";
+      bilanzUeberschrift.style.textAlign = "center";
+      tabelle.appendChild(bilanzUeberschrift);
+
+      ///////jetzt BILANZÜBERSCHRIFTEN/////////////////////////////////////////////////////////////////////////////////
+
+      //////NEUE ZEILE////////////////////////////////////////////////////////////////////////////////////////
+      var bilanzZeile2 = document.createElement("TR");
+      var untersuchteArbeitsabläufeSpalteUeberschrift = document.createElement("TD");
+      var untersuchteArbeitsabläufeSpalteZahl = document.createElement("TD");
+
+      untersuchteArbeitsabläufeSpalteUeberschrift.innerHTML = "Untersuchte Arbeitsabläufe";
+      untersuchteArbeitsabläufeSpalteUeberschrift.colSpan = 3;
+
+      untersuchteArbeitsabläufeSpalteUeberschrift.style.border = "solid";
+
+      untersuchteArbeitsabläufeSpalteZahl.innerHTML = "3";
+      untersuchteArbeitsabläufeSpalteZahl.colSpan = 3;
+      untersuchteArbeitsabläufeSpalteZahl.style.border = "solid";
+
+      bilanzZeile2.appendChild(untersuchteArbeitsabläufeSpalteUeberschrift);
+      bilanzZeile2.appendChild(untersuchteArbeitsabläufeSpalteZahl);
+
+      tabelle.appendChild(bilanzZeile2);
+
+      /////////////////NEUE ZEILE///////////////////////////////////////////////////////////////////////////////
+      var bilanzZeile3 = document.createElement("TR");
+      var gefundeneBedrohungenSpalteUeberschrift = document.createElement("TD");
+      var gefundeneBedrohungenSpalteZahl = document.createElement("TD");
+
+      gefundeneBedrohungenSpalteUeberschrift.innerHTML = "Gefundene Bedrohungen";
+      gefundeneBedrohungenSpalteUeberschrift.colSpan = 3;
+
+      gefundeneBedrohungenSpalteUeberschrift.style.border = "solid";
+
+      //gefundeneBedrohungenSpalteZahl.innerHTML = bedrohungenGezählt;
+      gefundeneBedrohungenSpalteZahl.colSpan = 3;
+      gefundeneBedrohungenSpalteZahl.style.border = "solid";
+
+      bilanzZeile3.appendChild(gefundeneBedrohungenSpalteUeberschrift);
+      bilanzZeile3.appendChild(gefundeneBedrohungenSpalteZahl);
+
+      tabelle.appendChild(bilanzZeile3);
+
+      /////////////////NEUE ZEILE///////////////////////////////////////////////////////////////////////////////
+      var bilanzZeile4 = document.createElement("TR");
+      var gefundeneRisikenSpalteUeberschrift = document.createElement("TD");
+      var gefundeneRisikenSpalteZahl = document.createElement("TD");
+
+      gefundeneRisikenSpalteUeberschrift.innerHTML = "Gefundene Risiken";
+      gefundeneRisikenSpalteUeberschrift.colSpan = 3;
+
+      gefundeneRisikenSpalteUeberschrift.style.border = "solid";
+
+      //gefundeneRisikenSpalteZahl.innerHTML = risikenGezählt;
+      gefundeneRisikenSpalteZahl.colSpan = 3;
+      gefundeneRisikenSpalteZahl.style.border = "solid";
+
+      bilanzZeile4.appendChild(gefundeneRisikenSpalteUeberschrift);
+      bilanzZeile4.appendChild(gefundeneRisikenSpalteZahl);
+
+      tabelle.appendChild(bilanzZeile4);
+
+      /////////////////NEUE ZEILE///////////////////////////////////////////////////////////////////////////////
+      var bilanzZeile5 = document.createElement("TR");
+      var ermittelteMaßnahmenSpalteUeberschrift = document.createElement("TD");
+      var ermittelteMaßnahmenSpalteZahl = document.createElement("TD");
+
+      ermittelteMaßnahmenSpalteUeberschrift.innerHTML = "Ermittelte Maßnahmen";
+      ermittelteMaßnahmenSpalteUeberschrift.colSpan = 3;
+
+      ermittelteMaßnahmenSpalteUeberschrift.style.border = "solid";
+
+      //ermittelteMaßnahmenSpalteZahl.innerHTML = maßnahmenGezählt;
+      ermittelteMaßnahmenSpalteZahl.colSpan = 3;
+      ermittelteMaßnahmenSpalteZahl.style.border = "solid";
+
+      bilanzZeile5.appendChild(ermittelteMaßnahmenSpalteUeberschrift);
+      bilanzZeile5.appendChild(ermittelteMaßnahmenSpalteZahl);
+
+      tabelle.appendChild(bilanzZeile5);
+
+      /////////////////NEUE ZEILE//////////////////////////////////////////////////////////////////////////////
+      var bilanzZeile6 = document.createElement("TR");
+      var prioritätenSpaltenUeberschrift = document.createElement("TD");
+      var prioritätenSpaltenZahl = document.createElement("TD");
+
+      prioritätenSpaltenUeberschrift.innerHTML = "Umsetzungsempfehlung";
+      prioritätenSpaltenUeberschrift.colSpan = 3;
+      prioritätenSpaltenUeberschrift.style.border = "solid";
+
+      prioritätenSpaltenZahl.colSpan = 3;
+      prioritätenSpaltenZahl.style.border = "solid";
+
+      var prioritätenZeileRot = document.createElement("TR");
+      var prioritätenZeileGelb = document.createElement("TR");
+      var prioritätenZeileGrün = document.createElement("TR");
+      /*
+      prioritätenZeileRot.innerHTML = prioritätRotGezählt + " "+"Hohe Prioritäten";
+      prioritätenZeileGelb.innerHTML = prioritätGelbGezählt+ " "+"Mittlere Prioritäten";
+      prioritätenZeileGrün.innerHTML = prioritätGrünGezählt+ " "+"Niedrige Prioritäten";*/
+
+      prioritätenZeileRot.style.textAlign = "center";
+      prioritätenZeileRot.style.backgroundColor = "red";
+
+
+      prioritätenZeileGelb.style.textAlign = "center";
+      prioritätenZeileGelb.style.backgroundColor = "#a9a905";
+
+      prioritätenZeileGrün.style.textAlign = "center";
+      prioritätenZeileGrün.style.backgroundColor = "green";
+
+      prioritätenSpaltenZahl.appendChild(prioritätenZeileRot);
+      prioritätenSpaltenZahl.appendChild(prioritätenZeileGelb);
+      prioritätenSpaltenZahl.appendChild(prioritätenZeileGrün);
+
+      bilanzZeile6.appendChild(prioritätenSpaltenUeberschrift);
+      bilanzZeile6.appendChild(prioritätenSpaltenZahl);
+
+      tabelle.appendChild(bilanzZeile6);
+      ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
       var ueberschriftArbeitsablauf1 = document.createElement("TR");
       var s1 = document.createElement("TD");
@@ -1223,134 +1349,13 @@ function hilfeBPMN(){
 
       }
       //////////////////////////////////////////////////////BILANZ///////////////////////////////////////
-      var bilanzUeberschrift = document.createElement("TR");
-      var s4 = document.createElement("TD");
-      s4.innerHTML = "Zusammenfassung";
-      s4.colSpan = 6;
-      s4.style.backgroundColor = "rgb(83, 99, 142)";
-
-      bilanzUeberschrift.appendChild(s4);
-      bilanzUeberschrift.style.border = "solid";
-      bilanzUeberschrift.style.textAlign = "center";
-      tabelle.appendChild(bilanzUeberschrift);
-
-      ///////jetzt BILANZÜBERSCHRIFTEN/////////////////////////////////////////////////////////////////////////////////
-
-      //////NEUE ZEILE////////////////////////////////////////////////////////////////////////////////////////
-      var bilanzZeile2 = document.createElement("TR");
-      var untersuchteArbeitsabläufeSpalteUeberschrift = document.createElement("TD");
-      var untersuchteArbeitsabläufeSpalteZahl = document.createElement("TD");
-
-      untersuchteArbeitsabläufeSpalteUeberschrift.innerHTML = "Untersuchte Arbeitsabläufe";
-      untersuchteArbeitsabläufeSpalteUeberschrift.colSpan = 3;
-
-      untersuchteArbeitsabläufeSpalteUeberschrift.style.border = "solid";
-
-      untersuchteArbeitsabläufeSpalteZahl.innerHTML = "3";
-      untersuchteArbeitsabläufeSpalteZahl.colSpan = 3;
-      untersuchteArbeitsabläufeSpalteZahl.style.border = "solid";
-
-      bilanzZeile2.appendChild(untersuchteArbeitsabläufeSpalteUeberschrift);
-      bilanzZeile2.appendChild(untersuchteArbeitsabläufeSpalteZahl);
-
-      tabelle.appendChild(bilanzZeile2);
-
-      /////////////////NEUE ZEILE///////////////////////////////////////////////////////////////////////////////
-      var bilanzZeile3 = document.createElement("TR");
-      var gefundeneBedrohungenSpalteUeberschrift = document.createElement("TD");
-      var gefundeneBedrohungenSpalteZahl = document.createElement("TD");
-
-      gefundeneBedrohungenSpalteUeberschrift.innerHTML = "Gefundene Bedrohungen";
-      gefundeneBedrohungenSpalteUeberschrift.colSpan = 3;
-
-      gefundeneBedrohungenSpalteUeberschrift.style.border = "solid";
-
-      gefundeneBedrohungenSpalteZahl.innerHTML = bedrohungenGezählt;
-      gefundeneBedrohungenSpalteZahl.colSpan = 3;
-      gefundeneBedrohungenSpalteZahl.style.border = "solid";
-
-      bilanzZeile3.appendChild(gefundeneBedrohungenSpalteUeberschrift);
-      bilanzZeile3.appendChild(gefundeneBedrohungenSpalteZahl);
-
-      tabelle.appendChild(bilanzZeile3);
-
-      /////////////////NEUE ZEILE///////////////////////////////////////////////////////////////////////////////
-      var bilanzZeile4 = document.createElement("TR");
-      var gefundeneRisikenSpalteUeberschrift = document.createElement("TD");
-      var gefundeneRisikenSpalteZahl = document.createElement("TD");
-
-      gefundeneRisikenSpalteUeberschrift.innerHTML = "Gefundene Risiken";
-      gefundeneRisikenSpalteUeberschrift.colSpan = 3;
-
-      gefundeneRisikenSpalteUeberschrift.style.border = "solid";
-
-      gefundeneRisikenSpalteZahl.innerHTML = risikenGezählt;
-      gefundeneRisikenSpalteZahl.colSpan = 3;
-      gefundeneRisikenSpalteZahl.style.border = "solid";
-
-      bilanzZeile4.appendChild(gefundeneRisikenSpalteUeberschrift);
-      bilanzZeile4.appendChild(gefundeneRisikenSpalteZahl);
-
-      tabelle.appendChild(bilanzZeile4);
-
-      /////////////////NEUE ZEILE///////////////////////////////////////////////////////////////////////////////
-      var bilanzZeile5 = document.createElement("TR");
-      var ermittelteMaßnahmenSpalteUeberschrift = document.createElement("TD");
-      var ermittelteMaßnahmenSpalteZahl = document.createElement("TD");
-
-      ermittelteMaßnahmenSpalteUeberschrift.innerHTML = "Ermittelte Maßnahmen";
-      ermittelteMaßnahmenSpalteUeberschrift.colSpan = 3;
-
-      ermittelteMaßnahmenSpalteUeberschrift.style.border = "solid";
-
-      ermittelteMaßnahmenSpalteZahl.innerHTML = maßnahmenGezählt;
-      ermittelteMaßnahmenSpalteZahl.colSpan = 3;
-      ermittelteMaßnahmenSpalteZahl.style.border = "solid";
-
-      bilanzZeile5.appendChild(ermittelteMaßnahmenSpalteUeberschrift);
-      bilanzZeile5.appendChild(ermittelteMaßnahmenSpalteZahl);
-
-      tabelle.appendChild(bilanzZeile5);
-
-      /////////////////NEUE ZEILE//////////////////////////////////////////////////////////////////////////////
-      var bilanzZeile6 = document.createElement("TR");
-      var prioritätenSpaltenUeberschrift = document.createElement("TD");
-      var prioritätenSpaltenZahl = document.createElement("TD");
-
-      prioritätenSpaltenUeberschrift.innerHTML = "Umsetzungsempfehlung";
-      prioritätenSpaltenUeberschrift.colSpan = 3;
-      prioritätenSpaltenUeberschrift.style.border = "solid";
-
-      prioritätenSpaltenZahl.colSpan = 3;
-      prioritätenSpaltenZahl.style.border = "solid";
-
-      var prioritätenZeileRot = document.createElement("TR");
-      var prioritätenZeileGelb = document.createElement("TR");
-      var prioritätenZeileGrün = document.createElement("TR");
-
       prioritätenZeileRot.innerHTML = prioritätRotGezählt + " "+"Hohe Prioritäten";
       prioritätenZeileGelb.innerHTML = prioritätGelbGezählt+ " "+"Mittlere Prioritäten";
       prioritätenZeileGrün.innerHTML = prioritätGrünGezählt+ " "+"Niedrige Prioritäten";
 
-      prioritätenZeileRot.style.textAlign = "center";
-      prioritätenZeileRot.style.backgroundColor = "red";
-
-
-      prioritätenZeileGelb.style.textAlign = "center";
-      prioritätenZeileGelb.style.backgroundColor = "#a9a905";
-
-      prioritätenZeileGrün.style.textAlign = "center";
-      prioritätenZeileGrün.style.backgroundColor = "green";
-
-      prioritätenSpaltenZahl.appendChild(prioritätenZeileRot);
-      prioritätenSpaltenZahl.appendChild(prioritätenZeileGelb);
-      prioritätenSpaltenZahl.appendChild(prioritätenZeileGrün);
-
-      bilanzZeile6.appendChild(prioritätenSpaltenUeberschrift);
-      bilanzZeile6.appendChild(prioritätenSpaltenZahl);
-
-      tabelle.appendChild(bilanzZeile6);
-
+      ermittelteMaßnahmenSpalteZahl.innerHTML = maßnahmenGezählt;
+      gefundeneRisikenSpalteZahl.innerHTML = risikenGezählt;
+      gefundeneBedrohungenSpalteZahl.innerHTML = bedrohungenGezählt;
 
       console.log(risikenGezählt);
       console.log(maßnahmenGezählt);
@@ -1446,6 +1451,136 @@ function erstelleReportZwei(){
 
 
   tabelle.appendChild(tabellenUeberschrift);
+
+  //////BILANZ NEU ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  var bilanzUeberschrift = document.createElement("TR");
+  var s4 = document.createElement("TD");
+  s4.innerHTML = "Zusammenfassung";
+  s4.colSpan = 6;
+  s4.style.backgroundColor = "rgb(83, 99, 142)";
+
+  bilanzUeberschrift.appendChild(s4);
+  bilanzUeberschrift.style.border = "solid";
+  bilanzUeberschrift.style.textAlign = "center";
+  tabelle.appendChild(bilanzUeberschrift);
+
+  ///////jetzt BILANZÜBERSCHRIFTEN/////////////////////////////////////////////////////////////////////////////////
+
+  //////NEUE ZEILE////////////////////////////////////////////////////////////////////////////////////////
+  var bilanzZeile2 = document.createElement("TR");
+  var untersuchteArbeitsabläufeSpalteUeberschrift = document.createElement("TD");
+  var untersuchteArbeitsabläufeSpalteZahl = document.createElement("TD");
+
+  untersuchteArbeitsabläufeSpalteUeberschrift.innerHTML = "Untersuchte Arbeitsabläufe";
+  untersuchteArbeitsabläufeSpalteUeberschrift.colSpan = 3;
+
+  untersuchteArbeitsabläufeSpalteUeberschrift.style.border = "solid";
+
+  untersuchteArbeitsabläufeSpalteZahl.innerHTML = "3";
+  untersuchteArbeitsabläufeSpalteZahl.colSpan = 3;
+  untersuchteArbeitsabläufeSpalteZahl.style.border = "solid";
+
+  bilanzZeile2.appendChild(untersuchteArbeitsabläufeSpalteUeberschrift);
+  bilanzZeile2.appendChild(untersuchteArbeitsabläufeSpalteZahl);
+
+  tabelle.appendChild(bilanzZeile2);
+
+  /////////////////NEUE ZEILE///////////////////////////////////////////////////////////////////////////////
+  var bilanzZeile3 = document.createElement("TR");
+  var gefundeneBedrohungenSpalteUeberschrift = document.createElement("TD");
+  var gefundeneBedrohungenSpalteZahl = document.createElement("TD");
+
+  gefundeneBedrohungenSpalteUeberschrift.innerHTML = "Gefundene Bedrohungen";
+  gefundeneBedrohungenSpalteUeberschrift.colSpan = 3;
+
+  gefundeneBedrohungenSpalteUeberschrift.style.border = "solid";
+
+  //gefundeneBedrohungenSpalteZahl.innerHTML = bedrohungenGezählt;
+  gefundeneBedrohungenSpalteZahl.colSpan = 3;
+  gefundeneBedrohungenSpalteZahl.style.border = "solid";
+
+  bilanzZeile3.appendChild(gefundeneBedrohungenSpalteUeberschrift);
+  bilanzZeile3.appendChild(gefundeneBedrohungenSpalteZahl);
+
+  tabelle.appendChild(bilanzZeile3);
+
+  /////////////////NEUE ZEILE///////////////////////////////////////////////////////////////////////////////
+  var bilanzZeile4 = document.createElement("TR");
+  var gefundeneRisikenSpalteUeberschrift = document.createElement("TD");
+  var gefundeneRisikenSpalteZahl = document.createElement("TD");
+
+  gefundeneRisikenSpalteUeberschrift.innerHTML = "Gefundene Risiken";
+  gefundeneRisikenSpalteUeberschrift.colSpan = 3;
+
+  gefundeneRisikenSpalteUeberschrift.style.border = "solid";
+
+  //gefundeneRisikenSpalteZahl.innerHTML = risikenGezählt;
+  gefundeneRisikenSpalteZahl.colSpan = 3;
+  gefundeneRisikenSpalteZahl.style.border = "solid";
+
+  bilanzZeile4.appendChild(gefundeneRisikenSpalteUeberschrift);
+  bilanzZeile4.appendChild(gefundeneRisikenSpalteZahl);
+
+  tabelle.appendChild(bilanzZeile4);
+
+  /////////////////NEUE ZEILE///////////////////////////////////////////////////////////////////////////////
+  var bilanzZeile5 = document.createElement("TR");
+  var ermittelteMaßnahmenSpalteUeberschrift = document.createElement("TD");
+  var ermittelteMaßnahmenSpalteZahl = document.createElement("TD");
+
+  ermittelteMaßnahmenSpalteUeberschrift.innerHTML = "Ermittelte Maßnahmen";
+  ermittelteMaßnahmenSpalteUeberschrift.colSpan = 3;
+
+  ermittelteMaßnahmenSpalteUeberschrift.style.border = "solid";
+
+  //ermittelteMaßnahmenSpalteZahl.innerHTML = maßnahmenGezählt;
+  ermittelteMaßnahmenSpalteZahl.colSpan = 3;
+  ermittelteMaßnahmenSpalteZahl.style.border = "solid";
+
+  bilanzZeile5.appendChild(ermittelteMaßnahmenSpalteUeberschrift);
+  bilanzZeile5.appendChild(ermittelteMaßnahmenSpalteZahl);
+
+  tabelle.appendChild(bilanzZeile5);
+
+  /////////////////NEUE ZEILE//////////////////////////////////////////////////////////////////////////////
+  var bilanzZeile6 = document.createElement("TR");
+  var prioritätenSpaltenUeberschrift = document.createElement("TD");
+  var prioritätenSpaltenZahl = document.createElement("TD");
+
+  prioritätenSpaltenUeberschrift.innerHTML = "Umsetzungsempfehlung";
+  prioritätenSpaltenUeberschrift.colSpan = 3;
+  prioritätenSpaltenUeberschrift.style.border = "solid";
+
+  prioritätenSpaltenZahl.colSpan = 3;
+  prioritätenSpaltenZahl.style.border = "solid";
+
+  var prioritätenZeileRot = document.createElement("TR");
+  var prioritätenZeileGelb = document.createElement("TR");
+  var prioritätenZeileGrün = document.createElement("TR");
+  /*
+  prioritätenZeileRot.innerHTML = prioritätRotGezählt + " "+"Hohe Prioritäten";
+  prioritätenZeileGelb.innerHTML = prioritätGelbGezählt+ " "+"Mittlere Prioritäten";
+  prioritätenZeileGrün.innerHTML = prioritätGrünGezählt+ " "+"Niedrige Prioritäten";*/
+
+  prioritätenZeileRot.style.textAlign = "center";
+  prioritätenZeileRot.style.backgroundColor = "red";
+
+
+  prioritätenZeileGelb.style.textAlign = "center";
+  prioritätenZeileGelb.style.backgroundColor = "#a9a905";
+
+  prioritätenZeileGrün.style.textAlign = "center";
+  prioritätenZeileGrün.style.backgroundColor = "green";
+
+  prioritätenSpaltenZahl.appendChild(prioritätenZeileRot);
+  prioritätenSpaltenZahl.appendChild(prioritätenZeileGelb);
+  prioritätenSpaltenZahl.appendChild(prioritätenZeileGrün);
+
+  bilanzZeile6.appendChild(prioritätenSpaltenUeberschrift);
+  bilanzZeile6.appendChild(prioritätenSpaltenZahl);
+
+  tabelle.appendChild(bilanzZeile6);
+  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   var ueberschriftArbeitsablauf1 = document.createElement("TR");
   var s1 = document.createElement("TD");
@@ -1756,59 +1891,59 @@ function erstelleReportZwei(){
     }
 
 
-  //JETZT ALLES FÜR DEN NÄCHSTEN GESCHÄFTSPROZESS/////////////////////////////////////////////////////////////////////////////////77
+//JETZT ALLES FÜR DEN NÄCHSTEN GESCHÄFTSPROZESS/////////////////////////////////////////////////////////////////////////////////77
 
-  var ueberschriftArbeitsablauf3 = document.createElement("TR");
-  var s3 = document.createElement("TD");
-  s3.innerHTML = "Standard Arbeitsablauf: Produktentwicklung";
-  s3.colSpan = 6;
-  s3.style.backgroundColor = "rgb(83, 99, 142)";
+var ueberschriftArbeitsablauf3 = document.createElement("TR");
+var s3 = document.createElement("TD");
+s3.innerHTML = "Standard Arbeitsablauf: Produktentwicklung";
+s3.colSpan = 6;
+s3.style.backgroundColor = "rgb(83, 99, 142)";
 
-  ueberschriftArbeitsablauf3.appendChild(s3);
-  ueberschriftArbeitsablauf3.style.border = "solid";
+ueberschriftArbeitsablauf3.appendChild(s3);
+ueberschriftArbeitsablauf3.style.border = "solid";
 
 
 
-  tabelle.appendChild(ueberschriftArbeitsablauf3);
+tabelle.appendChild(ueberschriftArbeitsablauf3);
 
-  var zeileFuerUeberschriften3 = document.createElement("TR");
-  zeileFuerUeberschriften3.style.backgroundColor = "rgb(83, 99, 142)"
+var zeileFuerUeberschriften3 = document.createElement("TR");
+zeileFuerUeberschriften3.style.backgroundColor = "rgb(83, 99, 142)"
 
-  var taskUeberschrift3 = document.createElement("TD");
-  taskUeberschrift3.innerHTML = "Arbeitsschritt";
-  taskUeberschrift3.style.border = "solid";
-  taskUeberschrift3.style.textAlign = "center"
+var taskUeberschrift3 = document.createElement("TD");
+taskUeberschrift3.innerHTML = "Arbeitsschritt";
+taskUeberschrift3.style.border = "solid";
+taskUeberschrift3.style.textAlign = "center"
 
-  var bedrohungenUeberschrift3 = document.createElement("TD");
-  bedrohungenUeberschrift3.innerHTML = "Bedrohungen";
-  bedrohungenUeberschrift3.style.border = "solid";
-  bedrohungenUeberschrift3.style.textAlign = "center"
+var bedrohungenUeberschrift3 = document.createElement("TD");
+bedrohungenUeberschrift3.innerHTML = "Bedrohungen";
+bedrohungenUeberschrift3.style.border = "solid";
+bedrohungenUeberschrift3.style.textAlign = "center"
 
-  var risikenUeberschrift3 = document.createElement("TD");
-  risikenUeberschrift3.innerHTML = "Risiken";
-  risikenUeberschrift3.style.border = "solid";
-  risikenUeberschrift3.style.textAlign = "center"
+var risikenUeberschrift3 = document.createElement("TD");
+risikenUeberschrift3.innerHTML = "Risiken";
+risikenUeberschrift3.style.border = "solid";
+risikenUeberschrift3.style.textAlign = "center"
 
-  var maßnahmenUeberschrift3 = document.createElement("TD");
-  maßnahmenUeberschrift3.innerHTML = "Maßnahmen";
-  maßnahmenUeberschrift3.style.border = "solid";
-  maßnahmenUeberschrift3.style.textAlign = "center"
+var maßnahmenUeberschrift3 = document.createElement("TD");
+maßnahmenUeberschrift3.innerHTML = "Maßnahmen";
+maßnahmenUeberschrift3.style.border = "solid";
+maßnahmenUeberschrift3.style.textAlign = "center"
 
-  var prioritaetenUeberschrift3 = document.createElement("TD");
-  prioritaetenUeberschrift3.innerHTML = "Priorität";
-  prioritaetenUeberschrift3.style.border = "solid";
-  prioritaetenUeberschrift3.style.textAlign = "center";
+var prioritaetenUeberschrift3 = document.createElement("TD");
+prioritaetenUeberschrift3.innerHTML = "Priorität";
+prioritaetenUeberschrift3.style.border = "solid";
+prioritaetenUeberschrift3.style.textAlign = "center";
 
-  zeileFuerUeberschriften3.appendChild(taskUeberschrift3);
-  zeileFuerUeberschriften3.appendChild(bedrohungenUeberschrift3);
-  zeileFuerUeberschriften3.appendChild(risikenUeberschrift3);
-  zeileFuerUeberschriften3.appendChild(maßnahmenUeberschrift3);
-  zeileFuerUeberschriften3.appendChild(prioritaetenUeberschrift3);
+zeileFuerUeberschriften3.appendChild(taskUeberschrift3);
+zeileFuerUeberschriften3.appendChild(bedrohungenUeberschrift3);
+zeileFuerUeberschriften3.appendChild(risikenUeberschrift3);
+zeileFuerUeberschriften3.appendChild(maßnahmenUeberschrift3);
+zeileFuerUeberschriften3.appendChild(prioritaetenUeberschrift3);
 
-  tabelle.appendChild(zeileFuerUeberschriften3);
-  ////////////////////////////////////////////////////////////////////////////////////////////
-  var index3;
-  for(index3 = 0; index3 < task3P.length; index3++){
+tabelle.appendChild(zeileFuerUeberschriften3);
+////////////////////////////////////////////////////////////////////////////////////////////
+var index3;
+for(index3 = 0; index3 < task3P.length; index3++){
 
   var zeile = document.createElement("TR");
 
@@ -1869,8 +2004,8 @@ function erstelleReportZwei(){
     zeile.appendChild(ul);
     spalte4.appendChild(zeile);
   }
-  //  spalte4.innerHTML = maßnahmenP[index];
-  //console.log(dieGetrenntenRisiken3.length);
+//  spalte4.innerHTML = maßnahmenP[index];
+//console.log(dieGetrenntenRisiken3.length);
   risikenGezählt += dieGetrenntenRisiken3.length;
   maßnahmenGezählt += dieGetrenntenMaßnahmen3.length;
   bedrohungenGezählt += dieGetrenntenBedrohungen3.length;
@@ -1899,134 +2034,13 @@ function erstelleReportZwei(){
 
   }
   //////////////////////////////////////////////////////BILANZ///////////////////////////////////////
-  var bilanzUeberschrift = document.createElement("TR");
-  var s4 = document.createElement("TD");
-  s4.innerHTML = "Zusammenfassung";
-  s4.colSpan = 6;
-  s4.style.backgroundColor = "rgb(83, 99, 142)";
-
-  bilanzUeberschrift.appendChild(s4);
-  bilanzUeberschrift.style.border = "solid";
-  bilanzUeberschrift.style.textAlign = "center";
-  tabelle.appendChild(bilanzUeberschrift);
-
-  ///////jetzt BILANZÜBERSCHRIFTEN/////////////////////////////////////////////////////////////////////////////////
-
-  //////NEUE ZEILE////////////////////////////////////////////////////////////////////////////////////////
-  var bilanzZeile2 = document.createElement("TR");
-  var untersuchteArbeitsabläufeSpalteUeberschrift = document.createElement("TD");
-  var untersuchteArbeitsabläufeSpalteZahl = document.createElement("TD");
-
-  untersuchteArbeitsabläufeSpalteUeberschrift.innerHTML = "Untersuchte Arbeitsabläufe";
-  untersuchteArbeitsabläufeSpalteUeberschrift.colSpan = 3;
-
-  untersuchteArbeitsabläufeSpalteUeberschrift.style.border = "solid";
-
-  untersuchteArbeitsabläufeSpalteZahl.innerHTML = "3";
-  untersuchteArbeitsabläufeSpalteZahl.colSpan = 3;
-  untersuchteArbeitsabläufeSpalteZahl.style.border = "solid";
-
-  bilanzZeile2.appendChild(untersuchteArbeitsabläufeSpalteUeberschrift);
-  bilanzZeile2.appendChild(untersuchteArbeitsabläufeSpalteZahl);
-
-  tabelle.appendChild(bilanzZeile2);
-
-  /////////////////NEUE ZEILE///////////////////////////////////////////////////////////////////////////////
-  var bilanzZeile3 = document.createElement("TR");
-  var gefundeneBedrohungenSpalteUeberschrift = document.createElement("TD");
-  var gefundeneBedrohungenSpalteZahl = document.createElement("TD");
-
-  gefundeneBedrohungenSpalteUeberschrift.innerHTML = "Gefundene Bedrohungen";
-  gefundeneBedrohungenSpalteUeberschrift.colSpan = 3;
-
-  gefundeneBedrohungenSpalteUeberschrift.style.border = "solid";
-
-  gefundeneBedrohungenSpalteZahl.innerHTML = bedrohungenGezählt;
-  gefundeneBedrohungenSpalteZahl.colSpan = 3;
-  gefundeneBedrohungenSpalteZahl.style.border = "solid";
-
-  bilanzZeile3.appendChild(gefundeneBedrohungenSpalteUeberschrift);
-  bilanzZeile3.appendChild(gefundeneBedrohungenSpalteZahl);
-
-  tabelle.appendChild(bilanzZeile3);
-
-  /////////////////NEUE ZEILE///////////////////////////////////////////////////////////////////////////////
-  var bilanzZeile4 = document.createElement("TR");
-  var gefundeneRisikenSpalteUeberschrift = document.createElement("TD");
-  var gefundeneRisikenSpalteZahl = document.createElement("TD");
-
-  gefundeneRisikenSpalteUeberschrift.innerHTML = "Gefundene Risiken";
-  gefundeneRisikenSpalteUeberschrift.colSpan = 3;
-
-  gefundeneRisikenSpalteUeberschrift.style.border = "solid";
-
-  gefundeneRisikenSpalteZahl.innerHTML = risikenGezählt;
-  gefundeneRisikenSpalteZahl.colSpan = 3;
-  gefundeneRisikenSpalteZahl.style.border = "solid";
-
-  bilanzZeile4.appendChild(gefundeneRisikenSpalteUeberschrift);
-  bilanzZeile4.appendChild(gefundeneRisikenSpalteZahl);
-
-  tabelle.appendChild(bilanzZeile4);
-
-  /////////////////NEUE ZEILE///////////////////////////////////////////////////////////////////////////////
-  var bilanzZeile5 = document.createElement("TR");
-  var ermittelteMaßnahmenSpalteUeberschrift = document.createElement("TD");
-  var ermittelteMaßnahmenSpalteZahl = document.createElement("TD");
-
-  ermittelteMaßnahmenSpalteUeberschrift.innerHTML = "Ermittelte Maßnahmen";
-  ermittelteMaßnahmenSpalteUeberschrift.colSpan = 3;
-
-  ermittelteMaßnahmenSpalteUeberschrift.style.border = "solid";
-
-  ermittelteMaßnahmenSpalteZahl.innerHTML = maßnahmenGezählt;
-  ermittelteMaßnahmenSpalteZahl.colSpan = 3;
-  ermittelteMaßnahmenSpalteZahl.style.border = "solid";
-
-  bilanzZeile5.appendChild(ermittelteMaßnahmenSpalteUeberschrift);
-  bilanzZeile5.appendChild(ermittelteMaßnahmenSpalteZahl);
-
-  tabelle.appendChild(bilanzZeile5);
-
-  /////////////////NEUE ZEILE//////////////////////////////////////////////////////////////////////////////
-  var bilanzZeile6 = document.createElement("TR");
-  var prioritätenSpaltenUeberschrift = document.createElement("TD");
-  var prioritätenSpaltenZahl = document.createElement("TD");
-
-  prioritätenSpaltenUeberschrift.innerHTML = "Umsetzungsempfehlung";
-  prioritätenSpaltenUeberschrift.colSpan = 3;
-  prioritätenSpaltenUeberschrift.style.border = "solid";
-
-  prioritätenSpaltenZahl.colSpan = 3;
-  prioritätenSpaltenZahl.style.border = "solid";
-
-  var prioritätenZeileRot = document.createElement("TR");
-  var prioritätenZeileGelb = document.createElement("TR");
-  var prioritätenZeileGrün = document.createElement("TR");
-
   prioritätenZeileRot.innerHTML = prioritätRotGezählt + " "+"Hohe Prioritäten";
   prioritätenZeileGelb.innerHTML = prioritätGelbGezählt+ " "+"Mittlere Prioritäten";
   prioritätenZeileGrün.innerHTML = prioritätGrünGezählt+ " "+"Niedrige Prioritäten";
 
-  prioritätenZeileRot.style.textAlign = "center";
-  prioritätenZeileRot.style.backgroundColor = "red";
-
-
-  prioritätenZeileGelb.style.textAlign = "center";
-  prioritätenZeileGelb.style.backgroundColor = "#a9a905";
-
-  prioritätenZeileGrün.style.textAlign = "center";
-  prioritätenZeileGrün.style.backgroundColor = "green";
-
-  prioritätenSpaltenZahl.appendChild(prioritätenZeileRot);
-  prioritätenSpaltenZahl.appendChild(prioritätenZeileGelb);
-  prioritätenSpaltenZahl.appendChild(prioritätenZeileGrün);
-
-  bilanzZeile6.appendChild(prioritätenSpaltenUeberschrift);
-  bilanzZeile6.appendChild(prioritätenSpaltenZahl);
-
-  tabelle.appendChild(bilanzZeile6);
-
+  ermittelteMaßnahmenSpalteZahl.innerHTML = maßnahmenGezählt;
+  gefundeneRisikenSpalteZahl.innerHTML = risikenGezählt;
+  gefundeneBedrohungenSpalteZahl.innerHTML = bedrohungenGezählt;
 
   console.log(risikenGezählt);
   console.log(maßnahmenGezählt);
