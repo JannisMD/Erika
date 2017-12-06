@@ -2055,3 +2055,6 @@ function uploaden(){
 function loeschen(){
   alertify.error("Arbeitsabläufe löschen ist nicht möglich, da sie die Testversion benutzen");
 }
+function wasIstGewichtung(){
+  alertify.alert('hallo')
+}
