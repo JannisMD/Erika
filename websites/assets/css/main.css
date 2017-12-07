@@ -3870,11 +3870,9 @@
 
 	}
 
-
-
-
 form {
     border: 0px solid #f1f1f1;
+		width: 25%;
     margin:auto;
 }
 
@@ -4278,3 +4276,7 @@ span.psw {
 		content: "";
 		display: block;
 	}
+
+#checkBox {
+	width: 100%;
+}
