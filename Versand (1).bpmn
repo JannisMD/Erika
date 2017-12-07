@@ -51,7 +51,7 @@
             <flowNodeRef>sid-30D0BB57-B4AE-490C-9F52-59AB793029E2</flowNodeRef>
          </lane>
       </laneSet>
-      <task completionQuantity="1" id="sid-B9011D8B-CA77-4FE1-8E0D-FCB064F0C384" isForCompensation="false" name="Informationen einholen&#10;" startQuantity="1">
+      <task completionQuantity="1" id="sid-B9011D8B-CA77-4FE1-8E0D-FCB064F0C384" isForCompensation="false" name="Informationen einholen" startQuantity="1">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#FFFFFF"/>
             <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000"/>

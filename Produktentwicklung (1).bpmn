@@ -79,7 +79,7 @@
          <incoming>sid-9D432293-0E80-4964-931F-037A7910219D</incoming>
          <outgoing>sid-D00E5704-E046-4D0C-A71F-24FF5BE60B5D</outgoing>
       </task>
-      <task completionQuantity="1" id="sid-B162C601-3E5F-44A0-BB10-CFD558B5D4A4" isForCompensation="false" name="Informationen einholen&#10;" startQuantity="1">
+      <task completionQuantity="1" id="sid-B162C601-3E5F-44A0-BB10-CFD558B5D4A4" isForCompensation="false" name="Informationen einholen" startQuantity="1">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#FFFFFF"/>
             <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000"/>
@@ -96,7 +96,7 @@
             <targetRef>sid-B162C601-3E5F-44A0-BB10-CFD558B5D4A4</targetRef>
          </dataInputAssociation>
       </task>
-      <task completionQuantity="1" id="sid-49FE8690-5CB6-4F5B-A31B-1B9EB927138E" isForCompensation="false" name="Nutzergruppe beobachten&#10;" startQuantity="1">
+      <task completionQuantity="1" id="sid-49FE8690-5CB6-4F5B-A31B-1B9EB927138E" isForCompensation="false" name="Nutzergruppe beobachten" startQuantity="1">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#FFFFFF"/>
             <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000"/>
@@ -116,7 +116,7 @@
          <incoming>sid-359D195B-E22B-44E1-B4A1-672207E49ECF</incoming>
          <outgoing>sid-E31FF6F3-8F32-4D3E-BDA2-3E4E88A31F8E</outgoing>
       </task>
-      <task completionQuantity="1" id="sid-A095FD52-64D0-4339-818D-51134EB2AE26" isForCompensation="false" name="Ideen finden&#10;" startQuantity="1">
+      <task completionQuantity="1" id="sid-A095FD52-64D0-4339-818D-51134EB2AE26" isForCompensation="false" name="Ideen finden" startQuantity="1">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#FFFFFF"/>
             <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000"/>
@@ -156,7 +156,7 @@
          <outgoing>sid-9D432293-0E80-4964-931F-037A7910219D</outgoing>
          <outgoing>sid-C5FC008C-3FF8-4B1E-BCB7-4A06802B48B2</outgoing>
       </exclusiveGateway>
-      <task completionQuantity="1" id="sid-FCC6B000-4E62-4A07-9989-3E146C0ACE27" isForCompensation="false" name="Produkt fertigstellen&#10;" startQuantity="1">
+      <task completionQuantity="1" id="sid-FCC6B000-4E62-4A07-9989-3E146C0ACE27" isForCompensation="false" name="Produkt fertigstellen" startQuantity="1">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#FFFFFF"/>
             <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000"/>
@@ -173,7 +173,7 @@
             <targetRef>sid-2A0BE1A3-0F12-430D-963C-3C0E25426C8D</targetRef>
          </dataOutputAssociation>
       </task>
-      <endEvent id="sid-540050C9-E6F7-4378-84F2-2B2FC4B0100F" name="Produkt &#10;produktionsfähig">
+      <endEvent id="sid-540050C9-E6F7-4378-84F2-2B2FC4B0100F" name="Produkt produktionsfähig">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
             <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000"/>

@@ -65,7 +65,7 @@
          </lane>
       </laneSet>
       <dataObject id="sid-7b21e948-f57f-4e49-b1f9-93385daa3753" isCollection="false" name="Konstruktionsdaten"/>
-      <dataObject id="sid-eaefa0db-4f79-455a-b8d1-35b276a277b8" isCollection="false" name="Auftrgsdaten speichern&#10;"/>
+      <dataObject id="sid-eaefa0db-4f79-455a-b8d1-35b276a277b8" isCollection="false" name="Auftrgsdaten speichern"/>
       <dataObject id="sid-358a8880-2ab4-487e-9ac4-98bf70a61fbd" isCollection="false" name="Maschinendaten werden von Maschinen selbständig ausgetauscht"/>
       <task completionQuantity="1" id="sid-692B4546-7D6E-4DD5-9C42-8E9483B503A3" isForCompensation="false" name="Material vorbereiten" startQuantity="1">
          <extensionElements>
@@ -161,7 +161,7 @@
          <incoming>sid-5F4562FC-8A8D-441E-B5E8-3156F094CABC</incoming>
          <outgoing>sid-B29DE254-F9E2-4A8C-83D2-6F92A3DDECA6</outgoing>
       </task>
-      <task completionQuantity="1" id="sid-DC4B6872-0386-4587-81D5-11454AF84553" isForCompensation="false" name="Material zur Kantmaschine bringen&#10;" startQuantity="1">
+      <task completionQuantity="1" id="sid-DC4B6872-0386-4587-81D5-11454AF84553" isForCompensation="false" name="Material zur Kantmaschine bringen" startQuantity="1">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#FFFFFF"/>
             <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000"/>
@@ -171,7 +171,7 @@
          <incoming>sid-B29DE254-F9E2-4A8C-83D2-6F92A3DDECA6</incoming>
          <outgoing>sid-CBBA0E4D-CC58-4F34-AFCE-B14EBD7C2C5F</outgoing>
       </task>
-      <task completionQuantity="1" id="sid-68110E23-CF70-40A0-A726-09EFC73F4C26" isForCompensation="false" name="Material kanten&#10;" startQuantity="1">
+      <task completionQuantity="1" id="sid-68110E23-CF70-40A0-A726-09EFC73F4C26" isForCompensation="false" name="Material kanten" startQuantity="1">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#FFFFFF"/>
             <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000"/>
@@ -221,7 +221,7 @@
          <incoming>sid-38E8F8EC-65BA-4607-94FA-A4916F0CA00D</incoming>
          <outgoing>sid-7DB929B7-A329-4A45-8573-D5538CD9F1E7</outgoing>
       </task>
-      <endEvent id="sid-403E5593-DFEC-4F7E-8E0D-1582ADB9E4C1" name="Fertigprodukt zum &#10;Versand weiterleiten">
+      <endEvent id="sid-403E5593-DFEC-4F7E-8E0D-1582ADB9E4C1" name="Fertigprodukt zum Versand weiterleiten">
          <extensionElements>
             <signavio:signavioMetaData metaKey="bgcolor" metaValue="#ffffff"/>
             <signavio:signavioMetaData metaKey="bordercolor" metaValue="#000000"/>
