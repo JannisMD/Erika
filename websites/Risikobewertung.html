@@ -163,6 +163,19 @@
 										<div id="canvas3" style="height: 600px; color: black; background-color:white; width: 120%"></div>-->
 										<br>
 										<br>
+
+										<main>
+											<form>
+												<fieldset>
+													<p>Welche Bedrohungen und Risiken sollen angezeigt werden?</p>
+													<input type="checkbox" id="mc" name="Zahlmethode" checked value="Mastercard">
+													<label for="mc"> IT Risiken und Bedrohungen</label>
+													<input type="checkbox" id="vi" name="Zahlmethode" checked value="Visa">
+													<label for="vi"> Allgemein Risiken und Bedrohungen</label>
+												</fieldset>
+											</form>
+										</main>
+
 										<button type="button"id="analysierenButton" onclick="getLayers()"  class="btn btn-primary btn-lg" style="width: 49%; background-color: #4CAF50;">Arbeitsabläufe analysieren</button><br>
 										<button type="button" id="ergebnisseAusgebenButton"class="btn btn-primary btn-lg" onclick="gebeGefahrenAus()" style="width: auto;background-color: #4CAF50; visibility: hidden;">Ergebnisse ausgeben</button>
 										<a href="Report.html"><button href="Report.html"type="submit" id="zuReportButton"class="btn btn-primary btn-lg" style="width: auto;background-color: #4CAF50; visibility: hidden;">Report anzeigen</button><a href="Report.html"></a>

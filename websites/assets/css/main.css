@@ -3875,7 +3875,6 @@
 
 form {
     border: 0px solid #f1f1f1;
-    width: 25%;
     margin:auto;
 }
 
@@ -4268,4 +4267,14 @@ span.psw {
 		left: 47%;
 		z-index: 2;
 
+	}
+
+	fieldset {
+		border: none;
+
+	}
+
+	label::after {
+		content: "";
+		display: block;
 	}
