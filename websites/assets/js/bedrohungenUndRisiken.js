@@ -142,7 +142,7 @@ function getLayers(){
    akteure3.length = 0;
 
    //NACH PRIORITÄT FRAGEN///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-   
+
 
 
   //PROZESSE SPEICHERN///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -269,6 +269,7 @@ function getLayers(){
                   console.log(risikenBeschreibung);
                   console.log(maßnahmen);
                   console.log(akteure);
+
                   var index = 0;
                   //hier war früher das pop up
                   var overlays = viewer.get('overlays');
@@ -486,6 +487,8 @@ function gebeGefahrenAus(){
           };
       },true,'alert');
 
+      console.log(task);
+
   }
   //////////////////////////////die bedrohungen1 splitten und die doppelten Werte rausnehmen//////////////////////////////////////////////////////////////////////////////////////
   console.log(bedrohungen);
@@ -617,6 +620,11 @@ $(document).ready(function(){
       $("#niedrigGewichtung3").toggle(1000);
   });
 });
+/*$(document).ready(function(){
+  $("#showGewichtungTask").click(function(){
+      $("#gewichtungTaskTabelle").toggle(1000);
+  });
+});*/
 
 ////////////////////////////////////////////////////GEWICHTUNG KLICK FUNKTION EINS///////////////////////////////////////////////////////////////////////////////////
 function hochAusgewählt1(){
@@ -2076,6 +2084,337 @@ function loeschen(){
 function wasIstGewichtung(){
   alertify.alert('<font size="3">' + "Was ist Gewichtung?" +
   '</font>',
-  '<img style="margin: auto; display: block;" src="images/waageKlein.png" alt="" id= /> '+'<b style="color: black";font-size: inherit;>'+ '<br/>' +
+  '<img style="margin: auto; display: block;" src="images/waageKlein.png" alt="" id= /> '+'<b style="color: black";font-size: inherit;>'+ '<br/>' + "Hier geht es um die Gewichtung des GESAMTEN Arbeitsablaufes!" + '<br/>' + '<br/>' +
   "Arbeitsabläufe haben unterschiedliche Prioritäten für ein Unternehmen, einige dienen nur der Verwaltung andere sind geschäftskritischer. Deshalb ist es wichtig, Arbeitsabläufe aus Ihrer Sicht zu gewichten. Hierbei müssen Sie einschätzen, wie geschäftskritisch ein Arbeitslauf für ihr Unternehmen ist und diesen dann nach: Hoch, Mittel, Niedrig kategorisieren. Mithilfe dieser Einschätzung und unserem Priorisierungsalgorithmus können wir Ihnen eine optimale Einschätzung geben." +'</b>');
+}
+function wasIstGewichtungTask(){
+  alertify.alert('<font size="3">' + "Was ist Gewichtung?" +
+  '</font>',
+  '<img style="margin: auto; display: block;" src="images/waageKlein.png" alt="" id= /> '+'<b style="color: black";font-size: inherit;>'+ '<br/>' + "Hier geht es um die Gewichtung eines EINZELNEN Arbeitsschrittes!" + '<br/>' + '<br/>' +
+  "Arbeitsschritte haben unterschiedliche Prioritäten für ein Unternehmen, einige dienen nur der Verwaltung andere sind geschäftskritischer. Deshalb ist es wichtig, Arbeitsschritte aus Ihrer Sicht zu gewichten. Hierbei müssen Sie einschätzen, wie geschäftskritisch ein Arbeitsschritt für ihr Unternehmen ist und diesen dann nach: Hoch, Mittel, Niedrig kategorisieren. Mithilfe dieser Einschätzung und unserem Priorisierungsalgorithmus können wir Ihnen eine optimale Einschätzung geben." +'</b>');
+}
+
+function gewichtungTaskErstellen(){
+  var tabelle = document.getElementById('gewichtungTaskTabelle')
+
+  while(tabelle.rows.length > 0){
+    tabelle.deleteRow(0);
+  }
+
+  viewer.moddle.toXML(viewer.definitions, {format: true},function (err,updatedXML){
+    fertigeXmlDatei = updatedXML;
+
+  });
+
+  var parser = new DOMParser();
+  var xmlDocument = parser.parseFromString(fertigeXmlDatei,"text/xml");
+  var tagElements = xmlDocument.getElementsByTagName('task');
+
+  var i1;
+  var tasksGewichtung = [];
+  for(i1 = 0; i1 < tagElements.length; i1++){
+    var taskName;
+    taskName = tagElements[i1].getAttribute('name');
+    tasksGewichtung[i1] = taskName;
+    taskName = '';
+  }
+
+  var i;
+  for (var i = 0; i < tasksGewichtung.length; i++) {
+    var hochId;
+    var mittelId;
+    var niedrigId;
+
+    var zeile = document.createElement('TR');
+    var spalte = document.createElement('TD');
+    var spalte2 = document.createElement('TD');
+
+    var hoch = document.createElement("BUTTON");
+    hoch.innerHTML = "Hoch"
+    hoch.style.width = "33%";
+    hoch.style.backgroundColor = "red"
+
+
+
+
+
+    var mittel = document.createElement("BUTTON");
+    mittel.innerHTML = "Mittel"
+    mittel.style.width = "33%";
+    mittel.style.backgroundColor = "rgb(169, 169, 5)"
+
+
+
+    var niedrig = document.createElement("BUTTON");
+    niedrig.innerHTML = "Niedrig"
+    niedrig.style.width = "33%";
+    niedrig.style.backgroundColor = "green"
+
+
+    spalte.innerHTML = tasksGewichtung[i];
+
+    spalte2.appendChild(hoch);
+    spalte2.appendChild(mittel);
+    spalte2.appendChild(niedrig);
+
+    zeile.appendChild(spalte);
+    zeile.appendChild(spalte2);
+
+    tabelle.appendChild(zeile);
+
+    hoch.onclick = function(){
+      var oben = this.parentElement;
+      console.log(oben);
+      $(this).closest("td").empty();
+      var hoch = document.createElement("BUTTON");
+      hoch.innerHTML = "Hoch"
+      hoch.style.width = "60%";
+      hoch.style.backgroundColor = "red"
+
+      oben.appendChild(hoch);
+    };
+  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    mittel.onclick = function(){
+      var oben = this.parentElement;
+      console.log(oben);
+      $(this).closest("td").empty();
+
+      var mittel = document.createElement("BUTTON");
+      mittel.innerHTML = "Mittel"
+      mittel.style.width = "60%";
+      mittel.style.backgroundColor = "rgb(169, 169, 5)"
+
+      oben.appendChild(mittel);
+
+    };
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    niedrig.onclick = function(){
+      var oben = this.parentElement;
+      console.log(oben);
+      $(this).closest("td").empty();
+      var niedrig = document.createElement("BUTTON");
+      niedrig.innerHTML = "Niedrig"
+      niedrig.style.width = "60%";
+      niedrig.style.backgroundColor = "green"
+
+      oben.appendChild(niedrig);
+    };
+  }
+}
+
+////////////////////////////////////////FÜR DEN 2 ARBEITSABLAUF //////////////////////////////////////////////////////////////////////////////
+function gewichtungTaskErstellen2(){
+  var tabelle = document.getElementById('gewichtungTaskTabelle2')
+
+  while(tabelle.rows.length > 0){
+    tabelle.deleteRow(0);
+  }
+
+  viewer2.moddle.toXML(viewer2.definitions, {format: true},function (err,updatedXML){
+    fertigeXmlDatei = updatedXML;
+
+  });
+
+  var parser = new DOMParser();
+  var xmlDocument = parser.parseFromString(fertigeXmlDatei,"text/xml");
+  var tagElements = xmlDocument.getElementsByTagName('task');
+
+  var i1;
+  var tasksGewichtung = [];
+  for(i1 = 0; i1 < tagElements.length; i1++){
+    var taskName;
+    taskName = tagElements[i1].getAttribute('name');
+    tasksGewichtung[i1] = taskName;
+    taskName = '';
+  }
+
+  var i;
+  for (var i = 0; i < tasksGewichtung.length; i++) {
+    var hochId;
+    var mittelId;
+    var niedrigId;
+
+    var zeile = document.createElement('TR');
+    var spalte = document.createElement('TD');
+    var spalte2 = document.createElement('TD');
+
+    var hoch = document.createElement("BUTTON");
+    hoch.innerHTML = "Hoch"
+    hoch.style.width = "33%";
+    hoch.style.backgroundColor = "red"
+
+
+
+
+
+    var mittel = document.createElement("BUTTON");
+    mittel.innerHTML = "Mittel"
+    mittel.style.width = "33%";
+    mittel.style.backgroundColor = "rgb(169, 169, 5)"
+
+
+
+    var niedrig = document.createElement("BUTTON");
+    niedrig.innerHTML = "Niedrig"
+    niedrig.style.width = "33%";
+    niedrig.style.backgroundColor = "green"
+
+
+    spalte.innerHTML = tasksGewichtung[i];
+
+    spalte2.appendChild(hoch);
+    spalte2.appendChild(mittel);
+    spalte2.appendChild(niedrig);
+
+    zeile.appendChild(spalte);
+    zeile.appendChild(spalte2);
+
+    tabelle.appendChild(zeile);
+
+    hoch.onclick = function(){
+      var oben = this.parentElement;
+      console.log(oben);
+      $(this).closest("td").empty();
+      var hoch = document.createElement("BUTTON");
+      hoch.innerHTML = "Hoch"
+      hoch.style.width = "60%";
+      hoch.style.backgroundColor = "red"
+
+      oben.appendChild(hoch);
+    };
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    mittel.onclick = function(){
+      var oben = this.parentElement;
+      console.log(oben);
+      $(this).closest("td").empty();
+
+      var mittel = document.createElement("BUTTON");
+      mittel.innerHTML = "Mittel"
+      mittel.style.width = "60%";
+      mittel.style.backgroundColor = "rgb(169, 169, 5)"
+
+      oben.appendChild(mittel);
+
+    };
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    niedrig.onclick = function(){
+      var oben = this.parentElement;
+      console.log(oben);
+      $(this).closest("td").empty();
+      var niedrig = document.createElement("BUTTON");
+      niedrig.innerHTML = "Niedrig"
+      niedrig.style.width = "60%";
+      niedrig.style.backgroundColor = "green"
+
+      oben.appendChild(niedrig);
+    };
+  }
+}
+///////////////////////////////////////////////////////////////////////////////////////ARBEITSABLAUF 3 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////7
+function gewichtungTaskErstellen3(){
+  var tabelle = document.getElementById('gewichtungTaskTabelle3')
+
+  while(tabelle.rows.length > 0){
+    tabelle.deleteRow(0);
+  }
+
+  viewer3.moddle.toXML(viewer3.definitions, {format: true},function (err,updatedXML){
+    fertigeXmlDatei = updatedXML;
+
+  });
+
+  var parser = new DOMParser();
+  var xmlDocument = parser.parseFromString(fertigeXmlDatei,"text/xml");
+  var tagElements = xmlDocument.getElementsByTagName('task');
+
+  var i1;
+  var tasksGewichtung = [];
+  for(i1 = 0; i1 < tagElements.length; i1++){
+    var taskName;
+    taskName = tagElements[i1].getAttribute('name');
+    tasksGewichtung[i1] = taskName;
+    taskName = '';
+  }
+
+  var i;
+  for (var i = 0; i < tasksGewichtung.length; i++) {
+    var hochId;
+    var mittelId;
+    var niedrigId;
+
+    var zeile = document.createElement('TR');
+    var spalte = document.createElement('TD');
+    var spalte2 = document.createElement('TD');
+
+    var hoch = document.createElement("BUTTON");
+    hoch.innerHTML = "Hoch"
+    hoch.style.width = "33%";
+    hoch.style.backgroundColor = "red"
+
+
+
+
+
+    var mittel = document.createElement("BUTTON");
+    mittel.innerHTML = "Mittel"
+    mittel.style.width = "33%";
+    mittel.style.backgroundColor = "rgb(169, 169, 5)"
+
+
+
+    var niedrig = document.createElement("BUTTON");
+    niedrig.innerHTML = "Niedrig"
+    niedrig.style.width = "33%";
+    niedrig.style.backgroundColor = "green"
+
+
+    spalte.innerHTML = tasksGewichtung[i];
+
+    spalte2.appendChild(hoch);
+    spalte2.appendChild(mittel);
+    spalte2.appendChild(niedrig);
+
+    zeile.appendChild(spalte);
+    zeile.appendChild(spalte2);
+
+    tabelle.appendChild(zeile);
+
+    hoch.onclick = function(){
+      var oben = this.parentElement;
+      console.log(oben);
+      $(this).closest("td").empty();
+      var hoch = document.createElement("BUTTON");
+      hoch.innerHTML = "Hoch"
+      hoch.style.width = "60%";
+      hoch.style.backgroundColor = "red"
+
+      oben.appendChild(hoch);
+    };
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    mittel.onclick = function(){
+      var oben = this.parentElement;
+      console.log(oben);
+      $(this).closest("td").empty();
+
+      var mittel = document.createElement("BUTTON");
+      mittel.innerHTML = "Mittel"
+      mittel.style.width = "60%";
+      mittel.style.backgroundColor = "rgb(169, 169, 5)"
+
+      oben.appendChild(mittel);
+
+    };
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    niedrig.onclick = function(){
+      var oben = this.parentElement;
+      console.log(oben);
+      $(this).closest("td").empty();
+      var niedrig = document.createElement("BUTTON");
+      niedrig.innerHTML = "Niedrig"
+      niedrig.style.width = "60%";
+      niedrig.style.backgroundColor = "green"
+
+      oben.appendChild(niedrig);
+    };
+  }
 }
