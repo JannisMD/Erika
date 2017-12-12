@@ -626,6 +626,16 @@ $(document).ready(function(){
       $("#gewichtungTaskTabelle").toggle(1000);
   });
 });
+$(document).ready(function(){
+  $("#showGewichtungTask2").click(function(){
+      $("#gewichtungTaskTabelle2").toggle(1000);
+  });
+});
+$(document).ready(function(){
+  $("#showGewichtungTask3").click(function(){
+      $("#gewichtungTaskTabelle3").toggle(1000);
+  });
+});
 
 ////////////////////////////////////////////////////GEWICHTUNG KLICK FUNKTION EINS///////////////////////////////////////////////////////////////////////////////////
 function hochAusgewählt1(){
@@ -1452,7 +1462,7 @@ function erstelleReportZwei(){
   d.setUTCFullYear(2017);
   d.setUTCMonth(11);
   d.setUTCDate(19);
-  tabellenUeberschrift.innerHTML = "Report vom 19.11.2017";
+  tabellenUeberschrift.innerHTML = "Report vom 05.01.2017";
   tabellenUeberschrift.style.textAlign = "center";
   tabellenUeberschrift.style.border = "solid";
   tabellenUeberschrift.colSpan = 6;
