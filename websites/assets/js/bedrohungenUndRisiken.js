@@ -584,6 +584,7 @@ function gebeGefahrenAus(){
 $(document).ready(function(){
   $("#show").click(function(){
       $("#canvas").toggle(1000);
+
   });
 });
 
@@ -620,11 +621,11 @@ $(document).ready(function(){
       $("#niedrigGewichtung3").toggle(1000);
   });
 });
-/*$(document).ready(function(){
+$(document).ready(function(){
   $("#showGewichtungTask").click(function(){
       $("#gewichtungTaskTabelle").toggle(1000);
   });
-});*/
+});
 
 ////////////////////////////////////////////////////GEWICHTUNG KLICK FUNKTION EINS///////////////////////////////////////////////////////////////////////////////////
 function hochAusgewählt1(){
