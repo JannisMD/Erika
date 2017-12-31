@@ -9,13 +9,7 @@
 		<title>LOOT Menue</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-
-		<!-- SweetAlert wird importiert -->
-		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 		<!-- include the style -->
 		<link rel="stylesheet" href="bower_components/alertify-js/build/css/alertify.min.css" />
 		<!-- include a theme -->
@@ -52,14 +46,16 @@
 							<a href="#" class="close">Close</a>
 						</div>
 					</nav>
+                        
+                        <!-- Einleitung für BPMN 2.0 (Fragezeichen) -->
 					<img id="fragezeichen" src="images/fragezeichen2.png" onclick="hilfeBPMN()">
+                        
 					<!-- Wrapper -->
 						<section id="wrapper">
 							<header>
 								<div class="inner">
-									<img id="arbeitsablauf"style="visibility: hidden;" src="images/ablauf.png" alt="">
 									<h2 style="text-align: center;">Eigene Arbeitsabläufe</h2>
-	                    <!-- Arbeitsabläufe -->
+                                    <!-- Arbeitsabläufe -->
 											<br>
 											<table style="border: solid; text-align: center;">
 												<thead style="border: solid;">
@@ -88,23 +84,6 @@
 													</tr>
 												</tbody>
 											</table>
-											<!--<button type="button" id="show" class="btn btn-primary btn-lg" style="width: 62%">Versand</button>
-											<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/download.png" style="width: 130%; padding-top: 15px"></button>
-											<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/papierkorb.png" style="width: 130%; padding-top: 15px"></button>
-											<div id="canvas" style="height: 600px; color: black; width: 120%"></div>-->
-
-
-
-											<!--<button type="button" id="show2" class="btn btn-primary btn-lg" style="width: 62%">Holzproduktion</button>
-											<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/download.png" style="width: 130%; padding-top: 15px"></button>
-											<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/papierkorb.png" style="width: 130%; padding-top: 15px"></button>
-											<div id="canvas2" style="height: 600px; color: black; background-color:white; width: 120%"></div>-->
-
-
-											<!--<button type="button" id="show3" class="btn btn-primary btn-lg" style="width: 62%">Produktentwicklung</button>
-											<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/download.png" style="width: 130%; padding-top: 15px"></button>
-											<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/papierkorb.png" style="width: 130%; padding-top: 15px"></button>
-											<div id="canvas3" style="height: 600px; color: black; background-color:white; width: 120%"></div>-->
 											<br><br>
 
 											<table style="border: solid; text-align: center;">
@@ -120,10 +99,6 @@
 													</tr>
 												</tbody>
 											</table>
-										<!--	<button type="button" id="show3"onclick="popUp2()" class="btn btn-primary btn-lg" style="width: 62%">Bearbeitete Arbeitsabläufe</button>
-											<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/plus.png" style="width: 130%; padding-top: 15px;"></button>
-											<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/upload.png" style="width: 130%; padding-top: 15px"></button>
-											<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/papierkorb.png" style="width: 130%; padding-top: 15px"></button>-->
 											<br><br>
 
 											<table style="border: solid; text-align: center;">
@@ -138,18 +113,11 @@
 													</tr>
 												</tbody>
 											</table>
-											<!--<button type="button" id="show3"onclick="popUp3()" class="btn btn-primary btn-lg" style="width: 62%">Hochgeladene Arbeitsabläufe</button>
-											<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/plus.png" style="width: 130%; padding-top: 15px;"></button>
-											<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/upload.png" style="width: 130%; padding-top: 15px"></button>
-											<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/papierkorb.png" style="width: 130%; padding-top: 15px"></button>-->
 											<br><br>
-
 									</div>
-	              </header>
-				</div>
-
-
-
+                                </header>
+                            </section>
+				        </div>
 
 		<!-- Scripts -->
 			<script src="assets/js/skel.min.js"></script>

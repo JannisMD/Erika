@@ -9,10 +9,7 @@
 		<title>LOOT Risikobewertung</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!-- REIN MACHEN WENN MODELAR GEBRAUCHT WIRD -->
 		<link rel="stylesheet" href="bower_components/bpmn-js/dist/assets/diagram-js.css" />
 		<link rel="stylesheet" href="bower_components/bpmn-js/dist/assets/bpmn-font/css/bpmn-embedded.css" />
@@ -20,8 +17,6 @@
 		<link rel="stylesheet" href="bower_components/alertify-js/build/css/alertify.min.css" />
 		<!-- include a theme -->
 		<link rel="stylesheet" href="../bower_components/alertify-js/build/css/themes/default.min.css" />
-
-
 	</head>
 	<body>
 
@@ -60,13 +55,12 @@
 						<header>
 							<div class="inner">
 								<!-- Fragezeichen Icon -->
-								<img id="arbeitsablauf" style="visibility: hidden;"src="images/ablauf.png" alt="">
 								<img id="fragezeichen" src="images/fragezeichen2.png" onclick="hilfeBPMN()">
 								<h2 style="text-align: center;">Risikobewertung</h2>
                     <p style="text-align: center;">Hier sehen Sie Standardarbeitsabläufe aus der Holzbranche. Bitte überprüfen Sie diese Abläufe und passen Sie gegebenfalls an.</p>
-										<!--button type="button"  onclick="hilfeBPMN()" name="button" style="width: 12%">Hilfe</button-->
-
 										<br>
+                                
+                                        <!-- 1-->
 										<table style="border: solid; text-align: center;">
 											<thead style="border: solid;">
 												<tr>
@@ -98,7 +92,7 @@
 										</table>
 										<br><br>
 
-
+                                         <!-- 2-->
 										<table style="border: solid; text-align: center;">
 											<thead style="border: solid;">
 												<tr>
@@ -129,20 +123,7 @@
 												</tr>
 											</tbody>
 										</table>
-                    <!-- Arbeitsabläufe -->
-										<!--<h3>Abteilung: Versand</h3>
-										<button type="button" id="show" onclick="button2()" class="btn btn-primary btn-lg" style="width: 62%">Produkt versenden</button>
-										<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/plus.png" style="width: 130%; padding-top: 15px;"></button>
-										<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/upload.png" style="width: 130%; padding-top: 15px"></button>
-										<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/papierkorb.png" style="width: 130%; padding-top: 15px"></button>
-										<div id="canvas" style="height: 600px; color: black; width: 120%"></div>
-										<br><br> -->
-										<!--<h3>Abteilung: Produktion</h3>
-										<button type="button" id="show2" class="btn btn-primary btn-lg" style="width: 62%">Holzproduktion</button>
-										<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/plus.png" style="width: 130%; padding-top: 15px;"></button>
-										<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/upload.png" style="width: 130%; padding-top: 15px"></button>
-										<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/papierkorb.png" style="width: 130%; padding-top: 15px"></button>
-										<div id="canvas2" style="height: 600px; color: black; background-color:white; width: 120%"></div>-->
+                                        <!-- 3 -->
 										<br><br>
 										<table style="border: solid; text-align: center;">
 											<thead style="border: solid;">
@@ -173,15 +154,9 @@
 												</tr>
 											</tbody>
 										</table>
-										<!--<h3>Abteilung: Produktionsentwicklung</h3>
-										<button type="button" id="show3" class="btn btn-primary btn-lg" style="width: 62%">Produktentwicklung</button>
-										<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/plus.png" style="width: 130%; padding-top: 15px;"></button>
-										<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/upload.png" style="width: 130%; padding-top: 15px"></button>
-										<button type="button" name="button" style="height: 54px; width: 8%"><img src="images/papierkorb.png" style="width: 130%; padding-top: 15px"></button>
-										<div id="canvas3" style="height: 600px; color: black; background-color:white; width: 120%"></div>-->
-										<br>
-										<br>
-
+										<br><br>
+                                
+                                        <!-- Checkbox -->
 										<main>
 											<form id="checkBox">
 												<fieldset>
@@ -196,12 +171,10 @@
 
 										<button type="button"id="analysierenButton" onclick="getLayers()"  class="btn btn-primary btn-lg" style="width: 49%; background-color: #4CAF50;">Arbeitsabläufe analysieren</button><br>
 										<button type="button" id="ergebnisseAusgebenButton"class="btn btn-primary btn-lg" onclick="gebeGefahrenAus()" style="width: auto;background-color: #4CAF50; visibility: hidden;">Ergebnisse ausgeben</button>
-										<a href="Report.html"><button href="Report.html"type="submit" id="zuReportButton"class="btn btn-primary btn-lg" style="width: auto;background-color: #4CAF50; visibility: hidden;">Report anzeigen</button><a href="Report.html"></a>
-
-										<!--object width="600" height="1000" type="application/pdf" data="images/hilfe.pdf"></object-->
-
+										<a href="Report.html"><button href="Report.html"type="submit" id="zuReportButton"class="btn btn-primary btn-lg" style="width: auto;background-color: #4CAF50; visibility: hidden;">Report anzeigen</button><a href="Report.html"></a></a>
 								</div>
               </header>
+                </section>
 			</div>
 
 
@@ -213,7 +186,6 @@
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/Chatbot.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 			<!--REIN MACHEN WENN VIEWER GEBRAUCHT WIRD -->
 			<script src="./../bower_components/bpmn-js/dist/bpmn-viewer.js"></script>

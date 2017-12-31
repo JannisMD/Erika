@@ -9,10 +9,7 @@
 		<title>LOOT Menue</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!-- include the style -->
 		<link rel="stylesheet" href="bower_components/alertify-js/build/css/alertify.min.css" />
 		<!-- include a theme -->
@@ -54,9 +51,7 @@
 					<section id="wrapper">
 						<header>
 							<div class="inner">
-								<img id="report" style="visibility: hidden;"src="images/report.png" alt="">
 								<h2 style="text-align: center;">Report</h2>
-
 										<br>
 										<table style="border: solid; text-align: center;">
 											<thead style="border: solid;">
@@ -75,17 +70,12 @@
 													<td><button type="button" onclick="druckenZwei();"  class="btn btn-primary btn-lg" style="width: auto;background: #4CAF50;">Ausdrucken</button></td>
 												</tr>
 											</tbody>
-
-
 										</table>
-
-										<!--button type="button" onclick="erstelleReport()"  class="btn btn-primary btn-lg" style="width: auto">19.12.2017</button-->
-										<table id="tabelle">
-
-													      </table>
+                                <!-- Report Tabelle wird geöffnet -->
+										<table id="tabelle"></table>
                             </div>
                         </header>
-
+                </section>
 			</div>
 
 		<!-- Scripts -->
@@ -93,7 +83,6 @@
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/Chatbot.js"></script>
 			<script src="assets/js/bedrohungenUndRisiken.js"></script>

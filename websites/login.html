@@ -9,45 +9,35 @@
 		<title>LOOT</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!-- include the style -->
-		<link rel="stylesheet" href="bower_components/alertify-js/build/css/alertify.min.css" />
-		<!-- include a theme -->
-		<link rel="stylesheet" href="../bower_components/alertify-js/build/css/themes/default.min.css" />
 	</head>
 	<body>
 
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
-
 				<!-- Header -->
+                <!-- Navigationsleiste -->
 					<header id="header" class="alt">
 						<h1><a href="index.html">LOOT</a></h1>
 						<nav>
 							<a href="#menu">Menu</a>
 						</nav>
 					</header>
-					<!-- Hangmen Logo im Header -->
-					<!--<img id="gruppenlogoHeader" src="images/GruppenLogo.png"><span class="icon fa-diamond"></span>-->
-
 				<!-- Menu -->
 					<nav id="menu">
+                        <!-- Erzeugt ein Hintergrundsbild bzw. border für die Menüleiste -->
 						<div class="inner">
 							<h2>Menu</h2>
+                            <!-- Schriftart und Style für die Menüpunkte -->
 							<ul class="links">
 								<li><a href="index.html">Home</a></li>
-								<!--li><a href="generic.html">Generic</a></li>
-								<li><a href="elements.html">Elements</a></li-->
 								<li><a href="login.html">Log In</a></li>
 							</ul>
 							<a href="#" class="close">Close</a>
 						</div>
 					</nav>
 
-				<!-- Banner -->
+				<!-- Überschrift -->
 					<section id="banner">
 						<div class="inner">
 							<h2>Einloggen</h2>
@@ -55,6 +45,7 @@
 					</section>
 
                 <!-- Einloggen-->
+                <!-- Hier wird das Anmeldefeld erzeugt mit Benutzername, Passwort und TAN -->
                 <form name="login">
                   <div class="imgcontainer">
                     <img src="images/login.png" alt="Avatar" class="avatar">
@@ -66,12 +57,12 @@
                     <label><b>Passwort</b></label>
                     <input type="password" style="width: 103%" placeholder="Passwort eingeben" name="pswrd" required>
 
-										<label><b>TAN</b></label>
+                      <label><b>TAN</b></label>
                     <input type="text" style="width: 103%" placeholder="TAN Nummer eingeben" name="tan" required>
-										<br><br>
-										<input type="button" name="button" onclick="popUp()" value="TAN generieren" style="background-color: none; width: 103%"></input>
-										<br><br>
-										<input type="submit" onclick="check(this.form)" value="Login" style="background-color: #4CAF50; width: 103%">
+				<br><br>
+				<input type="button" name="button" onclick="popUp()" value="TAN generieren" style="background-color: none; width: 103%"></input>
+				<br><br>
+				<input type="submit" onclick="check(this.form)" value="Login" style="background-color: #4CAF50; width: 103%">
                 </form>
 
 
@@ -85,9 +76,8 @@
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/login.js"></script>
-      <script src="assets/js/Chatbot.js"></script>
+            <script src="assets/js/Chatbot.js"></script>
 			<script src="assets/js/bedrohungenUndRisiken.js"></script>
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 			<script src="./../bower_components/alertify-js/build/alertify.min.js"></script>
 
 	</body>
